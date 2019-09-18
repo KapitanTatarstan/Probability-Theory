@@ -1,0 +1,38 @@
+% Задачи о вычислении массы тела.
+Пусть 
+\begin{enumerate}
+	\item[1)] 
+	Тело T занимает области $G \subseteq \mathbb{R}^3$
+	
+	\item[2)]
+	$f(x,y,z) \geqslant 0$ - значения плотности материала этого тела в точке $(x,y,z)$
+\end{enumerate}
+
+Требуется найти массу $m(T)$ тела T. \\
+
+\begin{enumerate}
+	\item[1)]
+	Разобъем область G на части: \\
+	$G = \bigcup\limits_{i = 1}^{n} G_i$ \\
+	$int G_i \cap int G_j = \emptyset$ при $i \neq j$
+	
+	\item[2)] 
+	В пределах каждой из побобластей выберем ...
+	
+	
+	
+	$G_i$ ... масса: \\
+	$\Delta m_i = m(G_i) \approx f(M_i) \Delta V_i$ \\
+	где $\Delta V_i = V(G_i)$, \\
+	$\Delta m_i$ - масса части тела, занимающего подобласть  $G_i$
+	
+	
+	\item[4)]
+	 Масса тела T тогда: \\
+	 $m(T) = \sum\limits_{i = 1}^{n} \Delta m_i \simeq \sum\limits_{i = 1}^{n} f(M_i) \Delta V_i$
+	 
+	 \item[5)]
+	 Эта формула тем точнее, чем меньше размеры $G_i$, поэтому естественно перейти к пределу: \\
+	 $m(T) = \lim\limits_{max diam (G_i) \rightarrow 0} \sum\limits_{i = 1}^{n} f(M_i) \Delta V_i$
+\end{enumerate}
+

@@ -1,0 +1,61 @@
+% 4. Вычисление тройного интеграла.
+Основная идея - сведение к повторному интегралу. \\
+
+\underline{Определение:} Область $G \subseteq \mathbb{R}^3$ называется z-правильной, если любая прямая, $\parallel$-ая Oz, пересекает границу G не более чем в двух точках или содержит участок границы целиком. \\
+
+z-правильную область G можно задать в виде: \\
+$G: \left\{ (x,y,z): (x,y) \int D_{xy}, z_1(x,y) \leqslant z \leqslant z_2(x,y) \right\}$ $(*)$ \\
+
+
+\underline{Th:} Пусть \\
+\begin{enumerate}
+	\item[1)] 
+	$\exists \iiint\limits_{G} f(x,y,z) dxdydz = I$
+	
+	\item[2)]
+	G является z-правильной и задана $(*)$ 
+	
+	\item[3)]
+	Для каждой фиксированной $(x,y) \in D_{xy}$ \\
+	$\exists \int\limits_{z_1(x,y)}^{z_2(x,y)} f(x,y,z) dz = F(x,y)$
+\end{enumerate}
+
+Тогда
+\begin{enumerate}
+	\item[1)]
+	$\exists$ повторный интеграл \\
+	$I_\text{повт.} = 
+	\iint\limits_{D_{xy}} F(x,y) dxdy = 
+	\iint\limits_{D_{xy}} dxdy \int\limits_{z_1(x,y)}^{z_2(x,y)} f(x,y,z) dz$
+	
+	\item[2)]
+	и $I_\text{повт.} = I$
+\end{enumerate}
+
+
+\underline{Замечание:} Если в условиях сформулированных th область $D_{xy}$ является y-правильной и задается в виде $D_{xy} = \left\{ (x,y): a \leqslant x \leqslant b, \varphi_1(x) \leqslant y \leqslant \varphi_2(x) \right\}$, то \\
+$\iiint\limits_{G} f(x,y,z) dxdydz = 
+\int\limits_{a}^{b} dx \int\limits_{\varphi_1(x)}^{\varphi_2(x)} dy \int\limits_{z_1(x,y)}^{z_2(x,y)} f(x,y,z) dz$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

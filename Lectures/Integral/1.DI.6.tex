@@ -1,0 +1,101 @@
+% Замена переменных в двойном интеграле
+
+Пусть \\
+\begin{enumerate}
+	\item[1)]
+	$I = \iint\limits_{D_xy} f(x,y) dxdy$
+	
+	\item[2)] 
+	$\Phi : D_{uv} \rightarrow D_{xy}$ \\
+	$\Phi 	
+	\begin{cases}
+		x = x(u,v) \\
+		y = y(u,v) \\
+	\end{cases} $ \\
+	
+	где $D_{uv}$  -  проще
+\end{enumerate}
+
+
+\underline{Th:} о замене переменных в двойном интеграле. \\
+Пусть: \\
+\begin{enumerate}
+	\item[1)] 
+	$D_{xy} = \Phi (D_{uv})$ 
+	
+	\item[2)]
+	$\Phi$ биективно
+	
+	\item[3)]
+	$\Phi$ интегрируема и непрерывно дифференцируема в $D_{uv}$ 
+	
+	\item[4)]
+	$J_{\Phi} \neq 0$ в $D_{uv}$ \\
+	$J_{\Phi} = 
+	\begin{vmatrix}
+		x'_u & x'_v \\
+		y'_u & y'_v \\
+	\end{vmatrix} $
+\end{enumerate}
+
+
+Тогда:
+\begin{enumerate}
+	\item[1)] 
+	функция $f \left( x\left(u,v\right), y\left(u,v\right) \right) \cdot \left| J_\Phi \left(u,v\right) \right|$ интегрируема в $D$ 
+	
+	\item[2)]
+	$\iint\limits_{D_{xy}} f(x,y)dxdy = \iint\limits_{D_{uv}} f\left( x\left(u,v\right), y\left(u,v\right) \right)  \cdot \left| J_\Phi \left(u,v\right) \right| du dv$
+\end{enumerate}
+
+\underline{Замечание:} \\
+1) th остается справедливой и в том случае, если условия 2), 3), 4) нарушаются в отдельности. \\
+
+\underline{Пример:} Двойной интеграл в полярной системе координат.
+
+$\begin{cases}
+	x = \rho \cdot \cos{\varphi} \\
+	y = \rho \cdot \sin{\varphi} \\
+\end{cases} $
+
+
+Рассмотрим двойной интеграл \\
+$ J_\Phi = 
+\begin{vmatrix}
+	x'_\rho & x'_\varphi \\
+	y'_\rho & y'_\varphi \\
+\end{vmatrix} = 
+\begin{vmatrix}
+	\cos{\varphi} & - \rho \cdot \sin{\varphi} \\
+	\sin{\varphi} & \rho \cdot \cos{\varphi} \\
+\end{vmatrix} = 
+\rho \left( \cos^2{\varphi} \cdot \sin^2{\varphi} \right) = \rho$
+
+Таким образом \\
+$\boxed{
+\iint\limits_{D_{xy}} f(x,y) dxdy = \iint\limits_{D_{\rho \varphi}} f \left( \rho \cdot \cos{\varphi}, \rho \cdot \sin{\varphi} \right) \rho \ d\rho \ d\varphi
+}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

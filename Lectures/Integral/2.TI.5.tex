@@ -1,0 +1,102 @@
+% 5. Замена переменных в тройном интеграле.
+
+\underline{Th:} Пусть 
+\begin{enumerate}
+	\item[1)]
+	$G_{xyz} = \Phi (G_{uvw}).$
+	
+	\item[2)]
+	$\Phi: G_{uvw} \to G_{xyz}$ \\
+	$\Phi: 
+	\begin{cases}
+		x = x(u,v,w) \\
+		y = y(u,v,w) \\
+		z = z(u,v,w) \\
+	\end{cases}$
+	
+	\item[3)] 
+	Отображение $\Phi$ биективно
+	
+	\item[4)]
+	$\Phi$ непрерывна и непрерывно-дифференцируемы в $G_{uvw}$
+	
+	\item[5)]
+	$J_\Phi (u,v,w) = 
+	\begin{vmatrix}
+		x'_u & x'_v & x'_w \\
+		y'_u & y'_v & y'_w \\
+		z'_u & z'_v & z'_w \\
+	\end{vmatrix} \neq 0$
+	
+	\item[6)] 
+	$f(x,y,z)$ интегрируема в $G_{xyz}$ 
+\end{enumerate}
+
+Тогда \\
+$\iiint\limits_{G} f(x,y,z) dxdydz = 
+\iiint\limits_{G_{uvw}} f\left( x\left(u,v,w\right), y\left(u,v,w\right), z\left(u,v,w\right) \right)  \left| J_\Phi (u,v,w) \right| du dv dw$
+
+\underline{Пример:} Цилиндрическая система координат: \\
+
+Декартовая система координат:
+
+Цилиндрическая система координат:
+
+Связь цилиндрической и декартовой системой координат: \\
+
+$\begin{cases}
+	x = \rho \cdot \cos{\varphi} \\
+	y = \rho \cdot \sin{\varphi} \\
+	z = z \\
+\end{cases}$\\
+
+$J_\text{цил.}  = 
+\begin{vmatrix}
+	\cos{\varphi} & -\rho \cdot \sin{\varphi} & 0 \\
+	\sin{\varphi} & \rho \cdot \cos{\varphi} & 0 \\
+	0 & 0 & 1 \\
+\end{vmatrix} = \rho$ \\
+
+
+Сферическая система координат:
+
+Связь декартовой и полярной системы координат:
+$\begin{cases}
+	x = r \cdot \cos{\Theta} \cdot \cos{\varphi} \\
+	y = r \cdot \cos{\Theta} \cdot \sin{\varphi} \\
+	z = r \cdot \sin{\Theta} \\
+\end{cases} $ \\
+
+$\left| J_\text{сф.}  \right| = 
+\begin{vmatrix}
+
+\end{vmatrix} = r^2 \cdot \cos{\Theta}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,182 @@
+%Определения и свойства двойного интеграла
+
+Пусть D - квадрируемая замкнутая плоская область. \\
+
+\underline{Определение:} Разбиением области D называется множество \\
+$R = \left\{D_1, ... , D_n\right\}$, \\
+где \\
+\begin{enumerate}
+\item[1)] 
+$D = \bigcup\limits_{i = 1}^{\infty} D_i$
+
+\item[2)]
+$int D_i \cap int D_j = \emptyset$ при $i \neq j$ 
+
+\item[3)] 
+$D_i$ - квадрируемая, $i = \overline{1,n}$
+\end{enumerate}
+
+\underline{Определение:} Диаметром разбиения $R = \left\{D_1, ..., D_n\right\}$ называется число $d(R) = \underset{i = \overline{1,n}}{max diam (D_i)}$. 
+
+Пусть D - квадрируемая замкнутая область на плоскости Oxy \\
+$f: D \rightarrow \mathbb{R}$ \\
+(f является функцией двух переменных, т.к. D - область на плоскости). \\
+
+\underline{Определение:} Двойным интегралом функции f по области D называется число \\
+$\iint\limits_{D} f(x,y)dxdy = \lim\limits_{d(R) \rightarrow 0} \sum f(M_i)\Delta S_i$, где \\
+$R = \left\{D_1, ... , D_n\right\}$ - разбиение области D, \\
+$M_i \in D_i$, $i = \overline{1,n}$ - ...
+
+\underline{Замечание:} В определении подразумевается, что указанный предел $\exists$, конечен и не зависит от разбиения R области D и ...
+
+
+\underline{Свойства двойного интеграла} \\
+\begin{enumerate}
+\item[$1^o$]
+$\iint\limits_{D} 1 dxdy = S(D)$
+
+\item[$2^o$] 
+Линейность \\
+Если $f,g$ - интегрируемы в D ..., то
+	\begin{enumerate}
+	\item[а)] 
+	$f \pm g$ также интегрирума в D, причем \\
+	$\iint\limits_{D} (f \pm g) dxdy = \iint\limits_{D} fdxdy \pm \iint\limits_{D} gdxdy$
+	
+	\item[б)]
+	$c \cdot f$, $c = const$, также интегрируема в D, причем \\
+	$\iint\limits_{D} c \cdot f dxdy = c \iint\limits_{D} f dxdy$
+	\end{enumerate}
+	
+\item[$3^o$] 
+Аддитивность \\
+Пусть 
+	\begin{enumerate}
+	\item[1)] 
+	$D_1, D_2$ - плоские квадрируемые области
+	
+	\item[2)]
+	f интегрируема в $D_1$ и в $D_2$
+	
+	\item[3)]
+	$int D_i \cap int D_j = \emptyset$
+	\end{enumerate}
+	
+Тогда f интегрируема в $D = D_1 \cup D_2$, \\
+$\iint\limits_{D} fdxdy = \iint\limits_{D_1} fdxdy + \iint\limits_{D_2} fdxdy$ 
+
+\item[$4^o$] 
+О сохранении интегралом знака функции \\
+Пусть 
+	\begin{enumerate}
+	\item[1)]
+	$f(x,y) \geqslant 0$ в D
+	
+	\item[2)]
+	f интегрируема в D
+	\end{enumerate}
+ 
+Тогда $\iint\limits_{D} f(x,y) dxdy \geqslant 0$
+
+
+\item[$5^o$]
+Пусть
+	\begin{enumerate}
+	\item[1)] 
+	$f(x,y) \geqslant f(x,y)$ в D
+	
+	\item[2)]
+	$f, g$ интегрируемы в D
+	\end{enumerate}
+	
+Тогда $\iint\limits_{D} fdxdy \geqslant \iint\limits_{D} gdxdy$
+
+
+\item[$6^o$] 
+th об оценке модуля двойного интеграла. \\
+Пусть f интегрируемы в D. \\
+Тогда $|f|$ также интегрируема в D, причем \\
+$\left| \iint\limits_{D} fdxdy \right| \leqslant \iint\limits_{D} \left|f\right| dxdy$
+
+
+\item[$7^o$]
+th об оценке двойного интеграла (обобщенная th). \\
+Пусть
+	\begin{enumerate}
+	\item[1)] 
+	$f,g$ - интегрируема в D
+	
+	\item[2)] 
+	$m \leqslant f(x,y) \leqslant M$ в D
+	
+	\item[3)]
+	$g(x,y) \geqslant 0$ в D
+	\end{enumerate}
+	
+Тогда $m \iint\limits_{D} g(x,y) dxdy \leqslant \iint\limits_{D} f(x,y) g(x,y) dxdy \leqslant M \iint\limits_{D} g(x,y) dxdy$
+
+\underline{Следствие:} Если $g(x,y) = 1$ в D, то получаем "просто" th об оценке двойного интеграла: \\
+$m \cdot S \leqslant \iint f(x,y) dxdy \leqslant M \cdot S$, \\
+где $S = S(D)$.
+
+
+\item[$8^o$] 
+th о среднем значении. \\
+\underline{Определение:} Средним значением функции f области D называется число \\
+$<f> = \frac{1}{S(D)} \iint\limits_{D} f(x,y) dxdy$
+
+\underline{Свойство:} Пусть \\
+	\begin{enumerate}
+	\item[1)] 
+	D - линейносвязная замкнутая область (т.е. граница D является связным множеством)
+	
+	\item[2)] 
+	f непрерывна в D
+	\end{enumerate}
+
+Тогда $\exists M_0 \in D$ такая, что $f(M_0) = <f>$
+
+
+\item[$9^o$]
+Обобщенная th о среднем значении. \\
+Пусть
+	\begin{enumerate}
+	\item[1)] 
+	f - непрерывна
+	
+	\item[2)]
+	g - интегрируема
+	
+	\item[3)]
+	g знакопостоянна
+	
+	\item[4)]
+	D линейно связное множество
+	\end{enumerate}
+
+Тогда
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

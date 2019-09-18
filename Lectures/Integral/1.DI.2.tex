@@ -1,0 +1,87 @@
+% Задачи, приводящие к понятию двойного интеграла.
+
+$I.$ Задача об объеме цилиндрического тела. \\
+
+Пусть D - область на плоскости Oxy. \\
+$f: D \rightarrow \mathbb{R}$ - функция определенная на множестве D. \\
+$f(x,y) \geqslant 0$, $(x,y) \in D$ \\
+ 
+Рассмотрим тело T, которое ограничено ... 
+
+Разобъем область D на непересекющиеся части \\
+$D = \bigcup\limits_{i=1}^{n} D_i$ \\
+$int D_i \cap int D_j = \emptyset$ при $i \neq j$ $(*)$ \\
+$int D_i$ - множество внутренних точек области $D_i$. \\
+
+Условие $(*)$ означает, что различные элементы имеют общи.. внутренние точек.
+
+
+\begin{enumerate}
+\item[2)] 
+Выберем точку $M_i \in D_i$, $i = \overline{1,m}$
+
+\item[3)] 
+Считая, что размеры подобласти $D_i$ малы, причем \\
+$\Delta V_i \approx f(M_i) \Delta S_i$, \\
+где $\Delta S_i = S(D_i)$. \\
+$\Delta V_i$ - объем той части тела, которая ... под $D_i$.
+\end{enumerate}
+
+
+Тогда объем тела T \\
+$V = \sum\limits_{i=1}^{n} \Delta V_i \approx \sum\limits_{i=1}^{n} f(M_i) \Delta S_i$ \\
+Эта формула тем точнее, чем меньше размеры $D_i$, поэтому естественно перейти к пределу: \\
+$ V = \lim\limits_{\underset{i = \overline{1,m}}{max diam (D_i) \rightarrow 0}} \sum\limits_{i = 1}^{n} f(M_i) \Delta S_i$. \\
+Обозначим $(D) = \sup\limits_{M,N \in D} \left| \underline{MN} \right|$ - диаметр множества D.
+
+
+
+
+$II.$ Задача о вычислении массы пластины. \\ \\
+
+Пусть
+\begin{enumerate}
+\item[1)] 
+пластина занимает область D на плоскости;
+
+\item[2)] 
+$f(x,y) \geqslant 0$ - плотность (поверхностного) материала пластины в точке $M(x,y)$.
+\end{enumerate}
+
+
+\begin{enumerate}
+\item[1)]
+Разобъем область D на непересекающиеся части $D_i$: \\
+$D = \bigcup\limits_{i = 1}^{n} D_i$ \\
+$int D_i \cap int D_j = \emptyset$ при $i \neq j$;
+
+\item[2)]
+В пределах $D_i$ выберем точку $M_i, i = \overline{1,n}$
+
+\item[3)] 
+Считая, что размеры $D_i$ малы, можно принять, что в пределах каждой из областей $D_i$ плотность пластины меняется незначительно, поэтому во всех точках области $D_i$ плотность $\approx f(M_i)$.
+
+Тогда масса части $D_i$: \\
+$\Delta m_i \approx f(M_i) \Delta S_i$, где $\Delta S_i = S(D_i), i = \overline{1,m}$
+
+\item[4)]
+Тогда масса всей пластины: \\
+$m = \sum\limits_{i = 1}^{n} \Delta m_i \approx \sum\limits_{i = 1}^{n} f(M_i) \Delta S_i$ \\
+Получается формула тем точнее, чем меньше размеры $D_i$, \\
+$m = \lim\limits_{\underset{i = \overline{1,n}}{max diam D_i \rightarrow 0}} \sum\limits_{i = 1}^{n} f(M_i) \Delta S_i$
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
