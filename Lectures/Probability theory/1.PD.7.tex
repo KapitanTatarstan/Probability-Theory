@@ -1,0 +1,169 @@
+% Аксиоматическое определение вероятности.
+
+Пусть
+\begin{enumerate}
+	\item[1)]
+	$\Omega$ - пространство элементарных исходов некоторого случайного эксперимента.
+	
+	\item[2)]
+	$\beta$ - $\sigma$-алгебра на $\Omega$
+\end{enumerate}
+
+\underline{Определение}: Вероятностью (вероятностной мерой) называется отображение \\
+$P : \beta \rightarrow \mathbb{R}$, \\
+обладающее свойствами: 
+\begin{enumerate}
+	\item[$1^o$]
+	$\forall A \in \beta$ $P(A) \geqslant 0$ (аксиома неотрицательности)
+	
+	\item[$2^o$]
+	$P(\Omega) = 1$ (аксиома нормированности)
+	
+	\item[$3^o$]
+	если $A_1, \ldots , A_n, \ldots \in \beta$ попарно-несовместные события, то $P(A_1 + \ldots + A_n + \ldots) = P(A_1) + \ldots + P(A_n) + \ldots$ (расширенная аксиома сложения).
+\end{enumerate}
+
+\underline{Определение}: Тройка $(\Omega, \beta, P)$ называется вероятностным пространством.
+
+\underline{Свойства вероятности} (следствия из аксиоматического определения.
+\begin{enumerate}
+	\item[$1^o$]
+	$P(\overline{A}) = 1 - P(A)$
+	
+	\item[$2^o$]
+	$P(\emptyset) = 0$
+	
+	\item[$3^o$]
+	Если $A \subseteq B$, то $P(A) \subseteq P(B)$
+	
+	\item[$4^o$]
+	$\forall A \in \beta$ $0 \leqslant P(A) \leqslant 1$
+	
+	\item[$5^o$]
+	$P(A+B) = P(A) + P(B) - P(AB)$
+	
+	\item[$6^o$]
+	Для любого \underline{конечного} набора событий $A_1, \ldots , A_n \in \beta$ справедливо $P(A_1 + \ldots + A_n) = \sum\limits_{1 \leqslant i \leqslant n} P(A_i) - 
+	\sum\limits_{i \leqslant i_1 < i_2 \leqslant n} P(A_{i_1} A_{i_2}) + 
+	\sum\limits_{i \leqslant i_1 < i_2 < i_3 \leqslant n} P(A_1 A_2 A_3) - 
+	\ldots (-1)^{n+1} P(A_1 \cdot \ldots \cdot A_n)$
+\end{enumerate}
+
+\underline{Доказательство}
+\begin{enumerate}
+	\item[$1^o$]
+	\begin{enumerate}
+		\item[а)]
+		$A + \overline{A} = \Omega$
+		
+		\item[б)]
+		$A \overline{A} = \emptyset \Rightarrow (\text{акс } 3^o) \Rightarrow P(A + \overline{A}) = P(A) + P(\overline{A})$
+		
+		\item[в)]
+		б) $\Rightarrow P(\overline{A}) = 1 - P(A)$
+	\end{enumerate}
+	
+	\item[$2^o$]
+	$P(\emptyset) = P(\overline{\Omega}) = (\text{свойство} 1^o) = 1 - \underbrace{P(\Omega)}_{1} = 0$
+	
+	\item[$3^o$]
+	$A \subseteq B$ \\
+	$B = A + (B \backslash A) \Rightarrow P(B) = P(A) + \underbrace{P(B \backslash A)}_{\geqslant 0} \Rightarrow P(B) \geqslant P(A)$
+	
+	\item[$4^o$]
+	\begin{enumerate}
+		\item[а)]
+		$P(A) \geqslant 0$ вытекает из аксиомы $1^o$
+		
+		\item[б)] 
+		Покажем, что $P(A) \leqslant 1$ $A \subseteq \Omega \Rightarrow (\text{по свойству} 3^o) \Rightarrow P(A) \leqslant \underbrace{P(\Omega}_{1}$
+	\end{enumerate}
+	
+	\item[$5^o$]
+	\begin{enumerate}
+		\item[a)]
+		%РИСУНОК
+		$A + B = A + (B \backslash A) \Rightarrow (\text{аксиома} 3^o) \Rightarrow P(A + B) = P(A) + P(B \backslash A)$
+		
+		\item[б)]
+		%РИСУНОК
+		$B = (B \backslash A) + (AB)$ \\
+		(аксиома $3^o$) $\Rightarrow P(B) = P(B \backslash A) + P(AB) \Rightarrow$ \fbox{$P(B \backslash A) P(B) - P(AB)$} 
+		
+		\item[в)] 
+		Подставляем выражение для $P(B \backslash A)$ из пункта б) в пункт а): $P(A+B) = P(A) + P(B) - P(AB)$
+	\end{enumerate}
+	
+	\item[$6^o$]
+	Является обобщение свойства $5^o$ на случай n событий.
+\end{enumerate}
+
+Пусть $\Omega$ - пространство элементарных исходов исходов $\beta$ - $\sigma$-алгебра на $\Omega$.
+
+\underline{Определение}: Вероятностью называется отображение $P: \beta \rightarrow \mathbb{R}$, обладающее следующими свойствами:
+\begin{enumerate}
+	\item[$1^o$]
+	$P(A) \geqslant 0$ (аксиома неотрицательности)
+	
+	\item[$2^o$]
+	$P(\Omega) = 1$ (аксиома нормированности)
+	
+	\item[$3^o$]
+	любых попарно-несовместных событий $A_1, A_2, \ldots$ \\
+	$P(A_1 + A_2 + \ldots) = P(A_1) + P(A_2) + \ldots$ (расширенная аксиома сложения)
+\end{enumerate}
+
+\underline{Замечание}: Иногда вместо расширенной аксиомы сложения $3^o$ рассматривают аксиому 
+\begin{enumerate}
+	\item[$3')$] 
+	для любых попарно несовместных событий $A_1, \ldots , A_n$ \\
+	$P(A_1 + \ldots + A_n) = P(A_1) + \ldots + P(A_n)$
+	
+	\item[$3)$]
+	для любой неубывающей последовательности событий $A_1 \subseteq A_2 \subseteq \ldots \subseteq A_n \subseteq \ldots$ справедливо $\lim\limits_{n \rightarrow \infty} P(A_n) = P(A)$, где $A = A_1 + \ldots + A_n + \ldots$ (аксиома непрерывности).
+\end{enumerate}
+
+Можно показать, что \\
+$3^o \Leftrightarrow
+\begin{cases}
+	3' \\
+	3'' \\
+\end{cases}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

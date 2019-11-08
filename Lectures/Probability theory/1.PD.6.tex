@@ -1,0 +1,109 @@
+% Сигма-алгебра событий
+
+Для аксиоматического определения вероятности необходимо уточнить понятие события. \\
+Заметим, что: \\
+\begin{enumerate}
+	\item[-]
+	данные ранее нестрогое определение события как произвольного подмножества в $\Omega$ использовать нельзя, так как ... в этом случае теория будет противоречивой (см. парадокс Рассела)
+	
+	\item[-]
+	по этой причине событиями мы будем называть лишь те подмножества множества $\Omega$, которые $\in$ заранее оговоренному набору подмножеств.
+	
+	\item[-]
+	с точи зрения здравого смысла понятно, что если событий A и B известно, наступили они в данном эксперименте или нет, то также должно быть известно, наступили ли в этом эксперименте события $\overline{A}, \ A+B, \ AB, \ldots$ \\
+\end{enumerate}
+
+по этой причине указанный набор подмножества должен быть замкнуто относительно операций $-, +, \cdot, \backslash, \ldots$. \\
+
+Эти соображения приводят к следующему определению: \\
+Пусть \\
+\begin{enumerate}
+	\item[1)] 
+	$\Omega$ - пространство элементарных исходов некоторого случайного эксперимента.
+	
+	\item[2)]
+	$\beta$ - набор подмножества множества $\Omega$.
+\end{enumerate}
+
+\underline{Определение}: $\beta$ называется $\sigma$-алгеброй событий, если:
+\begin{enumerate}
+	\item[1)]
+	$\beta \neq \emptyset$
+	
+	\item[2)]
+	$A \in \beta \Rightarrow \overline{A} \in \beta$
+	
+	\item[3)]
+	если $A_1, \ldots, A_n, \ldots \in \beta$ \\
+	то $A_1 + \ldots + A_n + \ldots \in \beta$ \\
+\end{enumerate}
+
+\underline{Простейшие свойства $\sigma$-алгебры событий}
+\begin{enumerate}
+	\item[$1^o$]
+	$\Omega \in \beta$ 
+	
+	\item[$2^o$]
+	$\emptyset \in \beta$
+	
+	\item[$3^o$]
+	если $A_1, \ldots, A_n, \ldots \in \beta$, то $A_1 \cdot \ldots \cdot A_n \cdot \ldots \in \beta$
+	
+	\item[$4^o$] 
+	если $A,B \in \beta$, то $A \backslash B \in \beta$
+\end{enumerate}
+
+\underline{Доказательство}:
+\begin{enumerate}
+	\item[$1^o$]
+	\begin{enumerate}
+		\item[а)]
+		$\beta \neq \emptyset \Rightarrow \exists A \in \beta$
+		\item[б)] 
+		в соответствии с аксиомой 2) $\overline{A} \in \beta$
+		\item[в)]
+		в соответствии с 3) $\underbrace{A + \overline{A}}_{\Omega} \in \beta$
+	\end{enumerate}
+	
+	\item[$2^o$]
+	$\Omega \in \beta \Rightarrow \underbrace{\overline{\Omega}}_{= \emptyset} \in \beta$
+	
+	\item[$3^o$]
+	$A_1, \ldots, A_n, \ldots \in \beta \Rightarrow \overline{A_1}, \ldots , \overline{A_n}, \ldots \in \beta \Rightarrow 
+	\overline{A_1} + \ldots + \overline{A_n} \in \beta \Rightarrow
+	\overline{\overline{A_1} + \ldots + \overline{A_n} + \ldots} \int \beta \Rightarrow 
+	A_1 \cdot \ldots \cdot A_n \cdot \ldots \in \beta$
+	
+	\item[$4^o$]
+	$A \backslash B = A \overline{B}$ \\
+	$A, B \in \beta \Rightarrow A, \overline{B} \in \beta \Rightarrow A \overline{B} \in \beta$
+\end{enumerate}
+
+\underline{Замечание}: 
+\begin{enumerate}
+	\item[1)]
+	В дальнейшем, говоря о вероятности, всегда будем предполагать, что задана некоторая $\sigma$-алгебра событий. При этом слово "событие" всегда будет обозначать элемент этой $\sigma$-алгебры.
+	
+	\item[2)]
+	Если множество $\Omega$ конечно, то в количестве $\sigma$-алгебры событий на $\Omega$ всегда будем рассматривать ...
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
