@@ -1,0 +1,87 @@
+% Формула умножения вероятностей.
+
+\underline{Th 1}: формула умножения вероятностей для 2-х событий.
+Пусть
+\begin{enumerate}
+	\item[1)] 
+	$A_1, A_2$ - события, связанные с некоторым случайным экспериментом.
+	
+	\item[2)]
+	$P(A_1) > 0$
+	Тогда
+	\fbox{$P(A_1 A_2) = P(A_1) P(A_2|A_1)$} - формула умножения вероятностей для 2-х событий.
+\end{enumerate}
+
+\underline{Доказательство}.
+\begin{enumerate}
+	\item[1)]
+	Так как $P(A_1) \neq 0$, то определена условная вероятность \\
+	$P(A_2|A_1) = \frac{P(A_1 A_2)}{P(A_1)} \Rightarrow P(A_1 A_2) = P(A_1) P(A_2|A_1)$
+\end{enumerate}
+
+\underline{Th 2}: формула умножения вероятностей для n событий.
+Пусть
+\begin{enumerate}
+	\item[1)]
+	$A_1, \ldots , A_n$ - события, связанные с некоторым случайным экспериментом.
+	
+	\item[2)]
+	$P(A_1 \cdot \ldots \cdot A_{n-1}) > 0$ \\
+	Тогда \\
+	\fbox{$P(A_1 \cdot A_2 \cdot \ldots \cdot A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 A_2) \cdot \ldots \cdot P(A_n|A_1 \cdot \ldots \cdot A_{n-1})$} - формула умножения вероятностей для n событий.
+\end{enumerate}
+
+\underline{Доказательство}.
+\begin{enumerate}
+	\item[1)]
+	$A_1 \cdot \ldots \cdot A_{n-1} \subseteq A_1 \cdot \ldots \cdot A_k$, если $k \leqslant n-1$ \\
+	$\Rightarrow P(A_1 \cdot \ldots \cdot A_k) \supseteq P(A_1 \cdot \ldots \cdot A_{n-1}) > 0$, $k = \overline{1, n-1}$ \\
+	То есть все входящие в правую часть формулы умножения условной вероятности определены.
+	
+	\item[2)]
+	$P(\underbrace{A_1 \cdot \ldots \cdot A_{n-1}}_{A} \cdot \underbrace{A_n}_{B}) =$ (из th умножения для 2-х событий $P(AB) = P(A) P(B|A)$) $ = P(\underbrace{A_1 \cdot \ldots}_{A}  \cdot \underbrace{A_{n-1}}_{B}) P(A_n | A_1 \cdot \ldots \cdot A_{n-1}) = P(A_1 \cdot \ldots \cdot A_{n-2}) \cdot P(A_{n-1}|A_1 \cdot \ldots \cdot A_{n-2}) \cdot P(A_n | A_1 \cdot \ldots \cdot A_n) = P(A_1) \cdot P(A_2 |A_1) \cdot P(A_3 |A_1 A_2) \cdot \ldots \cdot P(A_n |A_1 \cdot \ldots \cdot A_{n-1})$
+\end{enumerate}
+
+\underline{Пример}: На 7 карточках написаны буквы, составляющие слово "шоколад". Карточки перемешивают и случайным образом извлекают последовательно 3 карточки (без возвращения). \\
+A = \{в порядке извлечения эти карточки образуют слово "код"\}.
+
+\underline{Решение}:
+\begin{enumerate}
+	\item[1)] 
+	Обозначение:
+	$A_1$ = \{при 1-ом извлечении появилось "к"\} \\
+	$A_2$ = \{при 2-ом извлечении появилось "о"\} \\
+	$A_3$ = \{при 3-ем извлечении появилось "д"\} \\
+	Тогда \\
+	$A = A_1 A_2 A_3$
+	
+	\item[2)]
+	$\displaystyle P(A) = P(A_1 A_2 A_3) = (\text{th умножения}) = \underbrace{P(A_1)}_{\frac{1}{7}} \cdot \underbrace{P(A_2 |A_1)}_{\frac{2}{6} = \frac{1}{3}} \cdot \underbrace{P(A_3 |A_1 A_2)}_{\frac{1}{5}} = \frac{1}{7} \cdot \frac{1}{3} \cdot \frac{1}{5} = \frac{1}{105}$
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

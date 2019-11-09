@@ -1,0 +1,149 @@
+% Независимые события.
+
+Пусть A,B - события, связанные со случайным экспериментом.
+
+\underline{Определение}: События A и B называются независимыми, если: \\
+$P(AB) = P(A) P(B)$ \\
+
+\underline{Th} 
+\begin{enumerate}
+	\item[1)]
+	Пусть $P(B) > 0$ \\
+	Тогда A,B - независимы $\Leftrightarrow P(A|B) = P(A)$
+	
+	\item[2)]
+	Пусть $P(A) > 0$ \\
+	Тогда A,B - независимы $\Leftrightarrow P(B|A) = P(B)$
+\end{enumerate}
+
+\underline{Доказательство}
+Докажем 1).
+\begin{enumerate}
+	\item[а)]
+	$\Rightarrow$ необходимость \\
+	$P(B) > 0 \Rightarrow P(A|B) = \frac{P(BA)}{P(B)} = (\text{A,B - независимы}) = \frac{P(A) P(B)}{P(B)} = P(A)$
+	
+	\item[б)] 
+	$\Leftarrow$ достаточность \\
+	$P(AB) = (P(B) > 0 \Rightarrow \text{используем th умножения вероятностей}) = P(B) P(A|B) = (\text{по условию P(A|B) = P(A)}) = P(A) P(B) \Rightarrow$ A и B  независимы.
+\end{enumerate}
+
+\underline{Замечание}: В качестве определения независимых событий кажется более логичным выбрать условие $P(A|B) = P(A)$ или $P(B|A) = P(B)$, а не условие $P(AB) = P(A) P(B)$. Однако последнее условие работает всегда, в то время как первые два условия работают лишь при $P(B) > 0 (P(A) > 0)$.
+
+\underline{Пример}: из колоды в 36 карт случайным образом извлекают одну карту. \\
+A = \{извлечен туз\} \\
+B = \{извлечена карта красной масти\}. \\
+Выяснить,являются ли события A и B  независимыми. \\
+Решение? \\
+\begin{enumerate}
+	\item[1)] 
+	$P(A) = \frac{4}{36} = \frac{1}{9}$ \\
+	
+	\item[2)]
+	$P(B) = \frac{18}{36} = \frac{1}{2}$ \\
+	P(AB) = (AB = \{извлечен туз красной масти\} = $\frac{2}{36} = \frac{1}{18}$
+	
+	\item[3)]
+	$P(AB) \stackrel{?}{=} P(A) P(B)$ \\
+	$\frac{1}{18} = \frac{1}{9} \cdot \frac{1}{2}$ верно $\Rightarrow$ A,B - независимы.
+\end{enumerate}
+
+\underline{Th} Пусть A, B - независимы. Тогда независимыми являются события: \\
+\begin{enumerate}
+	\item[1)] 
+	$\overline{A} \text{и} B$ \\
+	
+	\item[2)]
+	$A \text{и} \overline{B}$
+	
+	\item[3)]
+	$\overline{A} \text{и} \overline{B}$
+\end{enumerate}
+
+\underline{Доказательство}:
+\begin{enumerate}
+	\item[1)]
+	Проверим равенство $P(\overline{A}B) = P(\overline{A}) P(B)$
+	\begin{enumerate}
+		\item[а)]
+		если $\underbrace{P(B)}_{\overline{A}B \subseteq B \Rightarrow P(\overline{A}B) \leqslant P(B) = 0} = 0 \Rightarrow$ правая часть = 0 
+		
+		\item[б)]
+		если $P(B) > 0$, то $P(\overline{A} B) = (\text{th умножения}) = P(B) \underbrace{P(\overline{A} | B}_{1 - P(A|B)} = (\text{условная вероятность обладает всеми свойствами вероятности}) = P(B) (1 - P(A|B) = (\text{A,B - независимы} \Rightarrow P(A|B) = P(A)) = P(B) \underbrace{1 - P(A)}_{P(\overline{A})} = P(\overline{A}) P(B)$. \\
+		Левая часть = правая часть $\Rightarrow$ верно.
+	\end{enumerate}
+\end{enumerate}
+
+2), 3) доказываются аналогично (доказать самостоятельно)
+
+\underline{Пример}: События $A_1, \ldots , A_n$ называются независимыми попарно, если \\
+$\forall \forall i,j \in \{1, \ldots , n\} \ \ i \neq j$ \\
+$A_i$ и $A_j$ - независимы.
+
+\underline{Определение}: События $A_1, \ldots , A_n$ называются независимыми в совокупности, если \\ 
+$\forall K \in \{2, \ldots , n \}$ $\forall \forall i_1, \ldots , i_k: \ \ 1 \leqslant i_1 < i_2 < \ldots < i_k \leqslant n$ \\
+$P(A_1 \cdot \ldots \cdot A_n) = P(A_{i_1}) \cdot \ldots \cdot P(A_{i_k})$.
+
+\underline{Замечание}: Это определение означает, что $A_1, \ldots , A_n$ - независимые в совокупности, если:
+\begin{enumerate}
+	\item[1)] 
+	$P(A_{i_1}, A_{i_2}) = P(A_{i_1}) P(A_{i_2}), \ \ i_1 < i_2. (k = 2)$ \\
+	
+	\item[2)]
+	$P(A_{i_1} \cdot A_{i_2} \cdot A_{i_3}) = P(A_{i_1}) \cdot P(A_{i_2}) \cdot P(A_{i_3}). (k = 3)$
+	
+	\item[...]
+	......
+	
+	\item[k-1)]
+	$P(A_i \cdot \ldots \cdot A_n) = P(A_i) \cdot \ldots \cdot P(A_n). (k = n)$
+\end{enumerate}
+
+\underline{Замечание}:
+\begin{enumerate}
+	\item[1)]
+	Очевидно, что \\
+	$A_1, \ldots , A_n$ независимы в совокупности $\Rightarrow$ $A_1, \ldots , A_n$ независимы попарно. \\
+	Обратное неверно.
+
+\end{enumerate}
+
+\underline{Пример}: Бернштейна.
+Рассмотрим правильный тетраэдр на сторонах которого написаны цифры 1, 2, 3. \\
+%Рисунок
+Тетраэдр подбрасывают. \\
+$A_1$ = \{на нижней грани есть 1\}
+$A_2$ = \{на нижней грани есть 2\}
+$A_3$ = \{на нижней грани есть 3\}
+	
+\begin{enumerate}
+	\item[1)]
+	$P(A_1) = \cfrac{2}{4} = \cfrac{1}{2}$\\
+	$P(A_2) = \cfrac{1}{2}$ \\
+	$P(A_3) = \cfrac{1}{2}$ \\
+
+	\item[2)]
+	$P(A_1 A_2) = (\text{на нижней грани есть 1 и 2}) = \cfrac{1}{4} = P(A_2 A_3) = P(A_3 A_1)$
+	Таким образом \\
+	$P(A_1 A_2) = P(A_1) P(A_2)$ \\
+	$P(A_1 A_3) = P(A_1) P(A_3)$ \\
+	$P(A_2 A_3) = P(A_2) P(A_3)$ \\
+	$\Rightarrow A_1 A_2 A_3$ - независимы попарно.
+	
+	\item[3)]
+	$P(A_1 A_2 A_3) = (\text{на нижней грани присутствуют 1, 2, 3}) = \cfrac{1}{4} \neq \cfrac{1}{8} = P(A_1) P(A_2) P(A_3)$ \\
+	Таким образом $A_1 , A_2 , A_3$ не являются независимыми в совокупности.
+\end{enumerate}	
+
+
+
+
+
+
+
+
+
+
+
+
+
