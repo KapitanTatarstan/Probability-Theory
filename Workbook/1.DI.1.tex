@@ -1,0 +1,112 @@
+% Вычисление двойного интеграла
+
+\underline{Определение:} Двойным интегралом функции f по области D называется число
+$ \iint\limits_{D} f(x,y) dxdy = \lim\limits_{d(R) \rightarrow 0} \sum\limits_{i=1}^{n} f(M_i) \Delta S_i$, где $R\{D_1, ... , D_n\}$ - разбиение области D, i \\
+i, $i = \overline{1,n}$
+
+\underline{Определение:} Область D на плоскости Oxy называется  y-правильной, если любая прямая $\parallel$-ая Oy, пересекает границу D не более чем в 2-х точках, либо содержит участок границы целиком.
+
+y-правильная область D может быть задана в виде:
+$D = \left\{ (x,y): \ a \leqslant x \leqslant b, \ \varphi_1(x) \leqslant y \leqslant \varphi_2(x) \right\}$ $(*)$
+
+Для y-правильной области D, заданной $(*)$, справедливо:
+\fbox{
+$\iint\limits_{D} f(x,y) dxdy = \int\limits_{a}^{b} dx \int\limits_{\varphi_1(x)}^{\varphi_2(x)} f(x,y) dy$}
+
+
+\underline{Замечание:}
+\begin{enumerate}
+	\item[1)] 
+	в правой части этой формулы стоит так называемый повторный интеграл, под которым понимают число
+	$\int\limits_{a}^{b} dx \int\limits_{\varphi_1(x)}^{\varphi_2(x)} f(x,y) dy = $
+	
+	\item[2)]
+\end{enumerate}
+
+
+\underline{Пример:} Вычислить $I = \iint\limits_{D} (x + 3y^2) dxdy$
+$a = 1$ \\
+$b = 2$ \\
+$\varphi_1(x) = 2$ \\
+$\varphi_2(x) = \frac{4}{x}$ \\
+
+$I = 
+\int\limits_{1}^{2} dx \int\limits_{2}^{4 \slash x} (x+3y^2)dy = 
+\int\limits_{1}^{2} \left[ xy + y^3 \right] \bigg|_{y=2}^{y=4\slash x} dx =
+\int\limits_{1}^{2} \left( 4 + \frac{64}{x^3} - (2x + 8) \right) dx = 
+\int\limits_{1}^{2} \left( -4 + \frac{64}{x^3} - 2x \right) dx = $
+\fbox{$\int\limits_{a}^{b} cdx = c(b-a)$} $= 
+-4 \left( -\frac{32}{x^2} + x^2 \right) \bigg|_{x=1}^{x=2} = 
+\underbrace{-4 - (8+4)}_{-16} + \underbrace{32+1}_{33} = 17$
+
+
+\underline{Замечание:} Совершенно аналогично вышеизложенному: 
+\underline{Определение:} Область D называется x-правильной, если любая прямая, $\parallel$-ая Ox, пересекает границу D не более чем в двух точках, либо содержит участок границы целиком.
+
+x-правильная область D можно задать в виде:
+$D = \left\{ (x,y): \  c \leqslant y \leqslant d, \ \psi(y) \leqslant x \leqslant \psi_2(y) \right\}$ $(**)$
+
+
+Для x-правильной области D, заданной $(**)$, справедливо: 
+\fbox{
+$\iint\limits_{D} f(x,y) dxdy = \int\limits_{c}^{d} dy \int\limits_{\psi_1(y)}^{\psi_2(y)} f(x,y) dx$}
+
+
+\underline{Пример:}
+(см выше)
+$I = \iint\limits_{D} (x + 3y^2) dxdy$ \\
+
+$c = 2$ \\
+$d = 4$ \\
+$\psi_1(y) = 1$ \\
+$\psi_2(y) = \frac{4}{y}$ \\
+
+
+$\iint\limits_{D} (x+ 3y^2)dxdy = 
+\int\limits_{2}^{4} dy \int\limits_{1}^{4 \slash y} (x + 3y^2)dx = 
+\int\limits_{2}^{4} dy \left[ \frac{x^2}{2} + 3y^2x \right] \bigg|_{x=1}^{x= 4 \slash y} = 
+\int\limits_{2}^{4} \left[ \frac{8}{y^2} - \frac{1}{2} + 12y - 3y^2 \right] dy = 
+\int\limits_{2}^{4} \left[ \frac{8}{y^2} + 12y - 3y^2 - \frac{1}{2} \right] dy = 
+\left( -\frac{8}{y} + 6y^2 - y^3 \right) \bigg|_{2}^{4} - 1 = 
+(-2 + 6 \cdot 16 - 4 \cdot 16) - (-4 +24 - 8) - 1 = 30 - 12 - 1 = 17$
+
+\underline{Пример:} В двойном интеграле $I = \iint\limits_{D} f(x,y) dxdy$ расставить пределы интегрирования в том и другом порядке.
+\begin{enumerate}
+	\item[а)]
+	
+	\underline{Решение:} 
+	$I = \int\limits_{0}^{1} dx \int\limits_{0}^{y} f dy$
+	$I = \int\limits_{0}^{1} dy \int\limits_{x}^{1} f(x,y) dx$
+	
+	\item[б)]
+	$y = 2x^2$
+	$x^2 = \frac{y}{2}$
+	$x = $
+	
+	$I = \int\limits_{0}^{2} dy \int\limits_{-\sqrt{y \slash 2}}^{\sqrt{y \slash 2}} f(x,y) dx$
+	$I = \int\limits_{-1}^{1} dx \int\limits_{2x^2}^{2} f(x,y) dy$
+	
+	\item[в)]
+	$y = $
+	$I = \int\limits_{-1}^{1} dx \int\limits_{|x|}^{\sqrt{2 - x^2}} f(x,y) dy$
+	$I = \int\limits_{0}^{1} dy \int\limits_{-y}^{y} f(x,y) dx + \int\limits_{1}^{\sqrt{2}} dy \int \limits_{-\sqrt{2-y^2}}^{\sqrt{2 - y^2}} f(x,y) dx$
+\end{enumerate}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
