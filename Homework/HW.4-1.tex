@@ -1,0 +1,98 @@
+%Теория вероятностей. ДЗ-М1
+\documentclass[a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}	
+
+\usepackage[english, russian]{babel}
+\usepackage{misccorr}
+\usepackage{amsmath}
+\usepackage{tipa}
+
+\begin{document}
+
+1. Изменить порядок интегрирования в двойном интеграле и сделать поясняющий рисунок:
+$\int\limits_{0}^{2} dx \int\limits_{-\sqrt{4 - x^2}}^{\sqrt{2x-x^2}} f(x,y) dy$
+
+\underline{Решение:}
+$D : \left\{ (x,y): \ 0 \leqslant x \leqslant 2, \ -\sqrt{4 - x^2} \leqslant y \leqslant \sqrt{2x - x^2} \right\}$
+
+$y = -\sqrt{4 - x^2}$ \\
+$y^2 = 4 - x^2$ \\
+$x^2 + y^2 = 4$ \\
+
+$y = \sqrt{2x - x^2}$ \\
+$y^2 = 2x - x^2$ \\ 
+$x^2 - 2x - 1 + y^2 = 1$ \\ 
+$(x-1)^2 + y^2 = 1$ \\
+
+$I = \int\limits_{-2}^{0} dy \int\limits_{0}^{4 - y^2} f(x,y) dy + \int\limits_{0}^{1} dy \int\limits_{1 - \sqrt{1 - y^2}}^{1 + \sqrt{1 - y^2}} f(x,y) dy$
+
+
+2. Найти объем тела, ограниченного поверхностями:
+$x^2 = 4y$ \\
+$y + z = 4$ \\
+$y + 2z = 4$ \\
+
+$z_1 = \frac{4 - y}{2}$ \\
+$z_2 = 4 - y$ \\ 
+
+$ I = 
+\iint\limits_{D_{xy}} \left[ z_2(x,y) - z_1(x,y) \right] dxdy = 
+\int\limits_{-4}^{4} dx \int\limits_{\frac{x^2}{4}}^{4} \left[4 - y - \frac{4 - y}{2} \right] dy =
+\frac{1}{2} \int\limits_{-4}^{4} dx \int\limits_{\frac{x^2}{4}}^{4} \left[ 8 - 2y - 4 - y \right] dy = 
+\frac{1}{2} \int\limits_{-4}^{4} \left[ \frac{x^4}{32} - x^2 + 8 \right] dx = 
+\frac{1}{2} \left[ \frac{x^5}{160} - \frac{x^3}{3} + 8x \right] \bigg|_{-4}^{4} = 
+\frac{1}{2} \left( \frac{2048}{160} - \frac{128}{3} + 664 \right) = 
+\frac{1}{2} \left( \frac{64}{5} - \frac{128}{3} + 64\right) = 
+\frac{256}{15}$
+
+Ответ: $V = \frac{256}{15}$
+ 
+
+3. Найти объем тела, ограниченного поверхностями:
+$x^2 + y^2 = 1$
+$x^2 + y^2 = 4$
+$z = 0$
+$x + y + z = 4$ 
+
+$z_1 = 0$ 
+$z_2 = 4 - x - y$
+
+$I = \iint\limits_{D_{xy}} \left[ z_2(x,y) - z_1(x,y) \right] dxdy = 
+((\text{Перейдем в полярную С.К.})) = 
+\iint\limits_{D_{\rho \varphi}} \left[z_2(\rho, \varphi) - z_1(\rho, \varphi)\right] \rho \ d\rho d\varphi = 
+\int\limits_{0}^{2 \pi} d\varphi \int\limits_{1}^{2} 4\rho \ d\rho - 
+\int\limits_{0}^{2 \pi} d\varphi \int\limits_{1}^{2} \rho^2 \cos{\varphi} d\rho - 
+\int\limits_{0}^{2 \pi} d\varphi \int\limits_{1}^{2} \rho^2 \sin{\varphi} d\varphi = 
+2 \pi \cdot 4 \cdot \frac{\rho^2}{2} \bigg|_{1}^{2} - 
+\frac{7}{3} \int\limits_{0}^{2 \pi} \cos{\varphi} d\varphi - 
+\frac{7}{3} \int\limits_{0}^{2 \pi} \sin{\varphi} d\varphi = 
+12 \pi - 
+\frac{7}{3} \cdot \sin{\varphi} \bigg|_{0}^{2 \pi} + 
+\frac{7}{3} \cos{\varphi} \bigg|_{0}^{2 \pi} = 
+12 \pi.$
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
