@@ -1,0 +1,112 @@
+% Функции распределения случайной величины.
+
+Пусть x - случайная величина.
+%Рисунок
+
+\underline{Определение}: Функция распределения случайной величины X называется отображение \\
+$F: \mathbb{R} \rightarrow \mathbb{R}$, \\
+определенное правилом $F(x) = P\{X > x\}$
+
+\underline{Замечание:} \\
+%Рисунок
+
+Свойства функции распределения. \\
+\begin{enumerate}
+	\item[$1^o$]
+	$0 \leqslant F(x) \leqslant 1$ \\
+	
+	\item[$2^o$]
+	если $x1 \leqslant x_2$, то $F(x_1) \leqslant F(x_2)$ \\
+	
+	\item[$3^o$]
+	$ \lim\limits_{x \to -\infty} F(x) = 0$ \\
+	$\lim\limits_{x \to +\infty} F(x) = 1$ \\
+	
+	\item[$4^o$]
+	$P\{x_1 \leqslant x < x_2\} = F(x_2) - F(x_1)$ \\
+	
+	\item[$5^o$]
+	$\forall x_0 \in \mathbb{R} \ \ \lim\limits_{x \to +\infty} - F(x_0)$ то есть f(x) непрерывна слева в ...
+\end{enumerate}
+
+\underline{Доказательство}
+\begin{enumerate}
+	\item[$3^o$]
+	%Добавить пункт а) и б)
+	Докажем, что $\lim\limits_{x \to +\infty} F(x) = 1$ \\
+	Рассмотрим последовательности чисел $x_1, x_2, \ldots , x_n , \ldots$ такую, что
+	\begin{enumerate}
+		\item[1)] 
+		$x_1 \leqslant x_2 \leqslant \ldots \leqslant x_n \leqslant \ldots$ - неубывающая последовательность.
+			
+		\item[2)]
+		$\lim\limits_{n \to +\infty} F(x_n) = +\infty$
+		%Рисунок
+	\end{enumerate}
+	Пусть $A_n = \{X < x_n\}$ - событие. \\
+	Тогда
+	\begin{enumerate}
+		\item[а)]
+		$A_1, A_2, \ldots , A_n, \ldots$ - неубывающая последовательность событий. \\
+		%Рисунок
+		
+		\item[б)]
+		$\bigcup\limits_{n = 1}^{\infty} A_n = \left\{X < +\infty \right\}$ \\
+		Согласно аксиоме \\
+		$\lim\limits_{n \to \infty} P(A_n) = \underbrace{\lim\limits_{n \to \infty} P\left(\bigcup\limits_{n = 1}^{\infty} A)n \right)}_{\lim\limits_{n \to \infty} P(X < x_n) = P\{X < +\infty\}}$ \\
+		$\{X < +\infty\} \Rightarrow P\{X < +\infty\} = 1$ \\
+		\fbox{$\lim\limits_{n \to \infty} F(x_n) = 1$} \\
+		так как $x_1, X_2, \ldots, x_n$ - ...
+	\end{enumerate}
+	
+	\item[$5^o$]
+	\begin{enumerate}
+		\item[1)]
+		%Рисунок
+		Рассмотрим последовательность: \\
+		\begin{enumerate}
+			\item[а)]
+			$x_1 \leqslant x_2 \leqslant \ldots \leqslant x_n < x_0$ \\
+			
+			\item[б)]
+			$\lim\limits_{x \to \infty} x_n = x_0$ \\
+		\end{enumerate}
+		Очевидно, что $x_n \underset{n \to \infty}{\rightarrow} x_0$ - (стремится к $x_0$ слева).
+		\begin{enumerate}
+			\item[а)] 
+			Пусть $A_n\{X < x_n\}$ \\
+		\end{enumerate}
+		Тогда $A_1, A_2, \ldots$ - неубывающая последовательность событий $\bigcup\limits_{n = 1}^{\infty} A_n = \{X < x_0\}$ \\
+		%Добавить 3 сноски для формулы под этим комментарием
+		$F(x_0) = P\{X<X_0\} = P\left(\bigcup\limits_{n = 1}^{\infty} A_n\right) = \lim\limits_{n \to \infty} P(A_n) = \lim\limits_{n \to \infty} F(x_0)$
+	\end{enumerate}		
+	
+\end{enumerate}
+
+%Добавитть замечание
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
