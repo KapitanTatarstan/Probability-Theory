@@ -25,26 +25,128 @@ $P\left\{X = \cfrac{1}{\lambda}\right\} = \cfrac{\lambda^k}{k!} \exp^{-\lambda},
 
 \underline{Замечание}:
 \begin{enumerate}
-	\item[1)]
-	Проверим условие нормировки \\
-	$\displaystyle \sum\limits_{k = 0}^{\infty} P\left\{X = \cfrac{1}{\lambda} \right\} \sum\limits_{k = 0}^{\infty} \cfrac{\lambda^k}{k!} \exp^{-\lambda} = \exp^{-\lambda} \sum\limits_{k = 0}^{\infty} \cfrac{\lambda^k}{k!} = 1$
+\item[1)] Проверим условие нормировки \\
+$\displaystyle \sum\limits_{k = 0}^{\infty} P\left\{X = \cfrac{1}{\lambda} \right\} \sum\limits_{k = 0}^{\infty} \cfrac{\lambda^k}{k!} \exp^{-\lambda} = \exp^{-\lambda} \sum\limits_{k = 0}^{\infty} \cfrac{\lambda^k}{k!} = 1$
 	
-	\item[2)]
-	Распределение Пуассона называется законом редких событий, так как оно проявляется там, где происходит большое число испытаний с малой вероятностью успеха.
+\item[2)] Распределение Пуассона называется законом редких событий, так как оно проявляется там, где происходит большое число испытаний с малой вероятностью успеха.
 \end{enumerate}
 
 III. Геометрическое распределение.
 \underline{Определение}: Говорят, что случайная величина X имеет геометрическое распределение с параметрами p, если X принимает целое геометрическое значения. \\
 $P\{X = k\} = pq^k, \ \ k \in \{0, 1, 2, \ldots\}$, где $p \in(0,1), \ \ q = 1 - p$ \\
+
+
 \underline{Замечание}:
 \begin{enumerate}
-	\item[1)] 
-	Проверим условие нормировки \\
-	$\displaystyle \sum\limits_{k = 0}^{\infty} P\{X = k\} = \sum\limits_{i = 0}^{\infty} pq^k = p \sum\limits_{k = 0}^{\infty} pq^k = p \sum\limits_{k = 0}^{\infty} q^k = \left((q^0 - q^1 + q^2 + \ldots)) = (\text{сумма бесконечной геометрической прогрессии} = \cfrac{1}{1-q}\right) = p \cdot \cfrac{1}{1-p} = 1$
+\item[1)] Проверим условие нормировки \\
+$\displaystyle \sum\limits_{k = 0}^{\infty} P\{X = k\} = \sum\limits_{i = 0}^{\infty} pq^k = p \sum\limits_{k = 0}^{\infty} pq^k = p \sum\limits_{k = 0}^{\infty} q^k = \left((q^0 - q^1 + q^2 + \ldots)) = (\text{сумма бесконечной геометрической прогрессии} = \cfrac{1}{1-q}\right) = p \cdot \cfrac{1}{1-p} = 1$
 	
-	\item[2)]
-	С содержательной точки зрения случайная величина X, имеющая геометрическое распределение с параметром p - количество экспериментов в схеме Бернулли, которое нужно произвести \underline{\underline{до}} 1-го появления "успеха" (то есть если первый успех произошел в (n+1)-м испытании, то X = n). \\
+\item[2)] С содержательной точки зрения случайная величина X, имеющая геометрическое распределение с параметром p - количество экспериментов в схеме Бернулли, которое нужно произвести \underline{\underline{до}} 1-го появления "успеха" (то есть если первый успех произошел в (n+1)-м испытании, то X = n). \\
 	В самом, деле, если в серии было n+1 испытаний ...
+	
+	$P\{X = n\}$ = P\{ \{в 1-м испытании - неудача\} $\cdot$ \{во 2-м - неудача\} $\cdot \ldots \cdot$ \{в n-с - неудача\} $\cdot$ \{в (n+1)-м - успех\}\} = (в схеме испытании Бернулли отдельные испытания независимы) = 
+	
+\item[4)] График функции распределения случайной величины X равномерно распределена на $[a,b]$ \\
+$F(x) = \int\limits_{-\infty}^{x} f(t) dt$ \\
+%Рисунок
+
+$F(x) = 
+\begin{cases}
+	0, x \leqslant a \\
+	\cfrac{x-a}{b-a} , \ \ a < x \leq b \\
+	1 \\
+\end{cases}$
+% Рисунок
+\end{enumerate}
+
+
+V. Экспоненциальное распределение. \\
+\underline{Определение}: Говорят, что случайная величина X распределена по экспоненциальному закону с параметром $\lambda > 0$, если X является некоторой случайной величиной, функция плотности распределения которой имеет вид \\
+$f(x) = 
+\begin{cases}
+	2 \exp^{-\lambda x}, \ \ x > 0 \\
+	0, \ \ x < 0 \\
+\end{cases}$
+
+
+\underline{Замечание}:
+\begin{enumerate}
+\item[1)] Обозначение: $X \sim Exp(\lambda)$ 
+
+\item[4)] График функции распределения: \\
+$F(x) = \int\limits_{-\infty}^{x} f(t) dt = 
+\begin{cases}
+	0, \ x \leqslant 0 \\
+	1 - e^{-\lambda x} , \ x > 0 \\
+\end{cases}$
+
+\item[5)] Для многих технических устройств время X не будет ... работы распределена по экспоненциальному закону с подходящим значением параметра $\lambda$. Так, если некоторое устройство начинает работать в момент времени t = 0, а момент времени ...
+\end{enumerate}
+
+
+VI. Нормальная случайная величина. \\
+\underline{Определение}: Говорят, что случайная величина X имеет нормальное (гауссовское) распределение с параметрами m и $\sigma^2$, если X является геометрической величиной, функция плотности которой имеет вид: \\
+$f(x) = \cfrac{1}{\sqrt{2\pi} \sigma}\  e^{- \cfrac{(x-m)^2}{2\sigma^2}}, \ x \in \mathbb{R} \ m \in \mathbb{R}, \ \sigma > 0$
+
+\underline{Замечание}:
+\begin{enumerate}
+\item[1)] $X \sim N(m, \sigma^2)$ - обозначение. \\
+
+\item[2)]%Рисунок 
+Параметр m "отвечает"\ за смещение графика вдоль оси Ox. \\
+Параметр $\sigma$ "отвечает"\ за "концентрацию"\ графика в районе точки x = m: чем меньше значение $\sigma$? тем выше концентрация.\\
+
+\item[3)] Функция распределения случайной величины $X \sim N(m, \sigma^2)$ \\
+$F(x) = \int\limits_{-\infty}^{x} \ e^{- \cfrac{(x-m)^2}{2 \sigma^2}} dt$ \\
+Доказывается, что F не является элементарной функцией (соответствующий интеграл является "неберущимся"\ ). \\
+
+\item[4)] Говорят, что случайная величина $X \sim N(0,1)$ имеет стандартное $(m = 0, \sigma^2 = 1)$ нормальное распределение. Функция распределения такой случайной величины: \\
+$\Phi(x) = F(x) \bigg|_{\begin{matrix} n = 0 \\ \sigma^2 = 1 \\ \end{matrix}} = \cfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{x} e^{-\cfrac{t^2}{2}} dt$ \\
+Значения функции $\Phi$ за табулированы (то есть составлены таблицы значений функции $\Phi$). \\
+
+\item[5)] Вместо функции $\Phi$ часто рассматривают функцию \\
+$\Phi_0 (x) = \cfrac{1}{\sqrt{2\pi}} \int\limits_{0}^{x} e^{- \cfrac{t^2}{2}} dt$
+\underline{Свойства функции $\Phi_0$}:
+	\begin{enumerate}
+	\item[$1^o$] $\Phi(x) = \cfrac{1}{2} + \Phi_0(x)$ \\
+
+	\item[$2^o$] $\Phi_0(-x) = -\Phi_0(x)$ (нечетная функция) \\
+
+	\item[$3^o$] $\lim\limits_{x \to -\infty} \Phi_0(x) = -\cfrac{1}{2}$ \\
+	$\lim\limits_{x \to +\infty} \Phi_0(x) = \cfrac{1}{2}$ \\
+
+	\item[$4^o$] $\Phi_0(0) = 0$
+	\end{enumerate}
+
+\item[6)] Пусть $X \sim N(m, \sigma^2)$ \\
+$\displaystyle P\{ a \leqslant X \leqslant b\}$ = (свойство непрерывной случайной величины) = $\int\limits_{a}^{b} f(t)dt = \cfrac{1}{\sqrt{2\pi} \sigma} \int\limits_{a}^{b} e^{-\cfrac{(t-m)^2}{2 \sigma^2}} dt = \left(\text{Замена переменных}
+\begin{matrix}
+	y = \cfrac{t-m}{\sigma} \Leftrightarrow t = \sigma y + m \\
+	dt = \sigma dy \\
+	t = a \Rightarrow y = \cfrac{a-m}{\sigma} \\
+	t = b \Rightarrow y = \cfrac{b-m}{\sigma} \\
+\end{matrix} \right) = 
+\cfrac{\sigma}{\sqrt{2\pi} \sigma} \int\limits_{\tfrac{a-m}{\sigma}}^{\tfrac{b-m}{\sigma}} e^{- \cfrac{y^2}{2}} dy = \underbrace{f_{0,1}(y) = \cfrac{1}{\sqrt{2\pi}} e^{-\cfrac{y^2}{2}}}_{\text{функция плотности } N(0,1)} = \int\limits_{\cfrac{a-m}{\sigma}}^{\cfrac{b-m}{\sigma}} f_{0,1} (y)dy = \Phi\left(\cfrac{b-m}{\sigma}\right) - \Phi \left(\cfrac{a-m}{\sigma}\right)$ \\
+%Вставить текстовый комментарий в формулу
+
+Таким образом
+\fbox{$
+\begin{array}{lll}
+	\text{Если} \ X \sim N(m, \sigma^2) \\
+	\text{то} \ P\{a \leqslant X \leqslant b\} = \Phi\left(\cfrac{b-m}{\sigma}\right) - \Phi\left(\cfrac{a-m}{\sigma}\right)
+\end{array}$} \\
+
+Так как $\Phi(x) = \cfrac{1}{2} + \Phi_0(x)$, то справедливо \\
+\fbox{$
+\begin{array}{lll}
+	\text{Если} \ X \sim M(m, \sigma^2) \\
+	\text{то} \ P\{a \leqslant X \leqslant b\} = \Phi_0 \left(\cfrac{b-m}{\sigma}\right) - \Phi_0 \left(\cfrac{a-m}{\sigma}\right)
+\end{array}
+$}
+\end{enumerate}
+
+\begin{enumerate}
+\item[2)] Нормальное распределение играет особую роль в теории вероятностей и математической статистике. Большинство случайных величин, описывающих естественные процессы, протекание которых зависит от большого числа случайных факторов, имеет нормальное распределение.
 \end{enumerate}
 
 

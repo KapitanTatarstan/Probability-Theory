@@ -8,8 +8,22 @@ $I = \int\limits_{0}^{3} dx \int\limits_{0}^{\sqrt{25-x^2}} f(x,y)dy$
 \underline{Решение:} 
 $D = \left\{ (x,y): \ 0 \leqslant x \leqslant 3, \ 0 \leqslant y \leqslant \sqrt{25 - x^2} \right\}$
 
-$I = \underbrace{\int\limits_{0}^{4} dy \int\limits_{0}^{3} f(x,y) dx}_{D_1} + \underbrace{\int\limits_{4}^{5} dy \int\limits_{0}^{\sqrt{25 - x^2}} dx}_{D_2}$
+$I = \underbrace{\int\limits_{0}^{4} dy \int\limits_{0}^{3} f(x,y) dx}_{D_1} + \underbrace{\int\limits_{4}^{5} dy \int\limits_{0}^{\sqrt{25 - x^2}} dx}_{D_2}$ \\
 
+\underline{Пример}: \\
+$I = \int\limits_{0}^{1} dy \int\limits_{2y}^{3y} fdx$ \\
+\underline{Решение}: \\
+$D = \{(x, y): 0 \leqslant y \leqslant 1, \ 2y \leqslant x \leqslant 3y\}$ \\
+%Вставить график
+$\displaystyle I = \int\limits_{0}^{2} dx \int\limits_{\tfrac{x}{3}}^{\tfrac{x}{2}} fdy + \int\limits_{2}^{3} dx \int \limits_{\tfrac{x}{3}}^{1} fdxy$ \\
+
+
+\underline{Пример}: Изменить порядок интегрирования в двойном интеграле \\
+$\displaystyle  I = \int\limits_{0}^{1} dy \int\limits_{-\sqrt{1 - y^2}}^{1 - y} f(x, y) dx$ \\
+\underline{Решение}: 
+$D = \{(x, y): 0 \leqslant y \leqslant 1, \ -\sqrt{1 - y^2} \leqslant x \leqslant 1 - y\}$ \\
+%Вставить график
+$\displaystyle  I = \int\limits_{-1}^{0} dx \int\limits_{0}^{\sqrt{1 - x^2}} f(x, y) dy + \int\limits_{0}^{1} dx \int\limits_{0}^{1 - x} f(x, y) dy$ \\
 
 
 

@@ -1,0 +1,73 @@
+% 3. Вычисление объемов тела с использованием тройных интегралов.
+
+Пусть тело занимает область G в пространстве Oxyz. Тогда объем этого тела \\
+$\displaystyle  V(G) = \iiint\limits_{G} dxdydz$ \\
+%Рисунок
+
+
+\underline{Пример}: Найти объем тела, ограниченного поверхностями \\
+$x^2 + y^2 = z^2$ \\
+$x^2 + y^2 + z^2 = a^2$ \\
+(внешнего по отношению конуса) \\
+\underline{Решение}:  \\
+%Вставить график
+$y^2 = z^2$ \\
+$y^2 - z^2 = 0$ \\
+$(y - z)(y + z) = 0$ \\
+$y = z) \\ (y = -z)$ \\
+$\displaystyle  V = 2V(G_1) = 2 \iiint\limits_{G_{xyz}} dxdydz$
+Перейдем к сферической системе координат
+$\begin{cases}
+	x = r \cdot \cos{\theta} \cdot \cos{\varphi} \\
+	y = r \cdot \cos{\theta} \cdot \sin{\varphi} \\
+	z = r \cdot \sin{\theta} \\
+\end{cases}$
+$\displaystyle  2 \iiint\limits_{G_{r \rho \varphi}}  r^2 \cos{\theta} \ dr d\varphi d\theta = 
+2 \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{\tfrac{\pi}{4}} d\theta \int\limits_{0}^{a} r^2 \cos{\theta} \ dt = 
+2 \cdot 2 \pi \int\limits_{0}^{\tfrac{\pi}{4}} \left( \cos{\theta} \left[ \cfrac{r^3}{3} \bigg|_{0}^{a} \right] \right) d\theta = 
+2 \cdot 2 \pi \cdot \cfrac{a^3}{a} \int\limits_{0}^{\tfrac{\pi}{4}} \cos{\theta} d\theta = 
+\cfrac{2}{3} \pi a^3 \sin{\theta} \bigg|_{0}^{\tfrac{\pi}{a}} = 
+2 \cdot \cfrac{2}{3} \pi a^3 \cdot \cfrac{\sqrt{2}}{2} - \cfrac{4\sqrt{2}}{6} \pi a^3 = \cfrac{2\sqrt{2}}{3} \pi a^3$ \\
+
+
+\underline{Пример}: Вычислить объем тела, ограниченного следующими поверхностями: \\
+$\cfrac{y^2}{b^2} + \cfrac{z^2}{c^2} = 2 \cfrac{x}{a}$ \\
+$x = a$ \\
+\underline{Решение}: \\
+%Вставить график
+$\displaystyle  V = \iiint_{G_{xyz}} dxdydz$ \\
+Перейдем в обобщенную цилиндрическую систему координат \\
+$\begin{cases}
+	x = x \\
+	y = \rho \cdot b \cdot \cos{\varphi} \\
+	z = \rho \cdot c \cdot \sin{\varphi} \\
+\end{cases}$  \\
+$|J| = \rho bc$ \\
+$\displaystyle  V = bc \iint\limits_{\rho \varphi} \rho d\rho d\varphi = 
+bc \iint\limits_{D{\rho \varphi}} \left( a - \cfrac{a\rho^2}{2} \right) \rho d\rho d\varphi = 
+abc \iint\limits_{D_{\rho \varphi}} \left( 1 - \cfrac{\rho^2}{2} \right) \rho d\rho d\varphi = 
+\cfrac{abc}{2} \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{\sqrt{2}} \left( 2\rho - \rho^3 \right) d\rho = 
+\cfrac{1bc}{2} 2 \pi \left[ \rho^2 - \cfrac{\rho^4}{4} \right] \bigg|_{0}^{\sqrt{2}} = 
+abc \pi (2 - 1) = \pi abc$ \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

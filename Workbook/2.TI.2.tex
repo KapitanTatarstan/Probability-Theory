@@ -1,0 +1,90 @@
+% 3. Замена переменных в тройном интеграле.
+
+Пусть
+\begin{enumerate}
+\item[1)] $\Phi: \ G_{uvw} \to G_{xyz}$ \\
+
+\item[2)] $G_{xyz} = \Phi (G_{uvw})$ \\
+
+\item[3)] $\Phi$ биективна, ...
+\end{enumerate}
+Тогда \\
+$\displaystyle   \iiint\limits_{G_{xyz}} f(x,y,z) dxdydz = 
+\iiint\limits_{G_{uvw}} \sphereFunction \cdot \left| J_\Phi (u,v,w) \right| \cdot dudvdw$ \\
+
+
+\underline{Замечание}: \\
+\begin{enumerate}
+\item[1)] Цилиндрическая система координат \\
+$\begin{cases} 
+	x = \rho \cdot \cos{\varphi} \\
+	y = \rho \cdot \sin{\varphi} \\
+	z = z \\
+\end{cases}$ \\
+$J_\text{цил.} = \rho$ \\
+
+\item[2)] Сферическая система координат \\
+$\begin{cases}
+	x = r \cdot \cos{\theta} \cdot \cos{\varphi} \\
+	y = r \cdot \cos{\theta} \cdot \sin{\varphi} \\
+	z = r \cdot \sin{\theta} \\
+\end{cases}$ \\
+$J_\text{сфер.} = r^2 \cdot \cos{\theta}$ \\
+%Вставить график
+\end{enumerate}
+
+
+\underline{Пример}: Вычислить \\
+$\displaystyle   I = \int\limits_{0}^{2} dx \int\limits_{0}^{\sqrt{2x - x^2}} dy \int\limits_{0}^{a} \underbrace{z \sqrt{x^2 + y^2}}_{f(x,y,z)} dx$ \\
+\underline{Решение}:
+$G: \left\{(x,y,z): \ 0 \leqslant x \leqslant 2, \ \ 0 \leqslant y \leqslant \sqrt{2x - x^2}, \ \ 0 \leqslant z \leqslant a \right\}$ \\
+%Вставить график
+$y = \sqrt{2x - x^2}$ \\
+$(x-1)^2 + y^2 = 1$ \\
+Перейдем в полярную систему координат.
+%Вставить график
+$f(x,y,z) = z\rho$ \\
+$\displaystyle   I = \iiint\limits_{G} z \rho \rho \ d\rho d\varphi dz = 
+\iint\limits_{D_{\rho \varphi}} \rho^2 \ d\rho d\varphi \int\limits_{z_1(\rho, \varphi)}^{z_2(\rho, \varphi)} z dz = 
+\cfrac{a^2}{2} \iint\limits_{D_{\rho \varphi}} \rho^2 \ d\rho d\varphi = 
+\cfrac{a^2}{2} \int\limits_{0}^{\tfrac{\pi}{2}} d\varphi \int\limits_{0}^{2\cos{\varphi}} \rho^2 \ d\rho = 
+\cfrac{8 a^2}{6} \int\limits_{0}^{\tfrac{\pi}{2}} \cos^3{\varphi} d\varphi = 
+\cfrac{4 a^3}{3} \int\limits_{0}^{1} (1 - t^2) dt = 
+\cfrac{4a^2}{3} \left(a - \cfrac{1}{3} \right) = \cfrac{8a^2}{9}$ \\
+$\displaystyle  \int \cos^3{\varphi} d\varphi = \int \cos^2{\varphi} d\sin{\varphi} = \int (1 - \sin^2{\varphi}) d\sin{\varphi}$ \\
+
+
+\underline{Пример}: Вычислить \\
+$\displaystyle  I = \int\limits_{-R}^{R} dx \int\limits_{-\sqrt{R^2 - x^2}}^{\sqrt{R^2 - x^2}} dy \int\limits_{0}^{\sqrt{R^2 - x^2 - y^2}} (x^2 + y^2) dz$ \\
+$G: \ \left\{(x,y,z): \ -R \leqslant x \leqslant R, \ -\sqrt{R^2 - x^2} \leqslant y \leqslant \sqrt{R^2 - x^2}, \ 0 \leqslant z \leqslant \sqrt{R^2 - x^2 - y^2} \right\}$ \\
+%Вставить график
+Перейдем в сферическую систему координат. \\
+$f(x,y,z) = r^2 \cdot \cos^2{\theta} (\cos^2{\varphi} + \sin^2{\varphi}) = r^2 \cos^2{\theta}$ \\
+$\displaystyle  I = \iiint\limits_{G_{r \varphi \theta}} r^2 \cdot \cos^2{\theta} \cdot r^2 \cdot \cos{\theta} \ dr d\varphi d\theta = 
+\iiint\limits_{G_{r \varphi \theta}} r^4 \cos^3{\theta} \ dr d\varphi d\theta = 
+\int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{\tfrac{\pi}{2}} d\theta \int\limits_{0}^{R} r^4 \cos^3{\theta} \ dr = 
+2\pi \cdot \int\limits_{0}^{\tfrac{\pi}{2}} \left( \cos^3{\theta} d\theta\right) \cfrac{r^5}{5} \bigg|_{0}^{R} = 
+\cfrac{2R^5 \pi}{5} \int\limits_{0}^{\tfrac{\pi}{2}} (1 - \sin^2{\theta}) d\sin{\theta} = 
+\cfrac{4 \pi R^5}{15}$ \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+% 1. Вычисление тройного интеграла.
+
+\underline{Определение}: Область G называется z-правильной, если любая прямая $\parallel$-ая Oz пересекает границу G не более двух раз, либо содержит границу целиком. \\
+
+z-правильную область можно задать в виде: \\
+$G \left\{ (x,y,z): \ (x,y) \in D_{xy}, \ z_1(x,y) \leqslant z \leqslant z_2(x,y) \right\}$ \\
+При выполнение некоторых условий для такой области G \\
+$\displaystyle  \iiint\limits_{G} f(x,y,z) dxdydz = \iint\limits_{D_{xy}} dxdy \int\limits_{z_1(x,y)}^{z_2(x,y)} f(x,y,z) dz$ \\
+
+
+\underline{Пример}: Расставить пределы в \\
+$\displaystyle  I = \iiint\limits_{G} f dxdydz$, \\
+если G ограничена на следующими поверхностями \\
+$x + y + z = 1$ \\
+$x = 0, \ y = 0$ \\
+$z = 0$ \\
+%Вставить график 
+%Вставить график
+$\displaystyle   I = \iint\limits_{D_{xy}} dxdy \int\limits_{z_1(x,y)}^{z_2(x,y)} f dz = 
+\iint\limits_{D_{xy}} dxdy \int\limits_{0}^{1 - x -y} fdz = 
+\int\limits_{0}^{1} dx \int\limits_{0}^{1 - x} dy \int\limits_{0}^{1 - x -y} dz$ \\
+
+
+\underline{Пример}: \\
+$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} = \cfrac{z^2}{c^2}$ \\
+$z = c$ \\
+$(c > 0, \ z \geqslant 0)$ \\
+%Вставить график
+$z = 0$ \\
+$\cfrac{y^2}{b^2} = \cfrac{z^2}{c^2}$ \\
+$\cfrac{y^2}{b^2} - \cfrac{z^2}{c^2} = 0$ \\
+$\left( \cfrac{y}{b} - \cfrac{z}{c} \right) \left( \cfrac{y}{b} + \cfrac{z}{c} \right) = 0$ \\
+%Вставить формулу
+%Вставить график эллипса
+$\displaystyle   I = \iiint\limits_{G} f dxdydz = 
+\iint\limits_{D_{xy}} dxdy \int\limits_{z_1 = c \sqrt{\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2}}}^{z_2 = c} f dz = 
+\int\limits_{-a}^{a} dx \int\limits_{-b \sqrt{1 - \tfrac{x^2}{a^2}}}^{b \sqrt{1 - \tfrac{x^2}{a^2}}} dy \int\limits_{c \sqrt{\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2}}}^{c} f dz $ \\
+
+
+\underline{Пример}: Вычислить \\
+$\displaystyle  I = \iiint\limits_{G} z dxdydz$ \\
+где G - область, ограниченная \\
+$\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} + \cfrac{z^2}{c^2} = 1$ \\
+и $z = 0 \ (z \geqslant 0)$ 
+% Вставить график
+$\displaystyle   I = \iint\limits_{D_{xy}} dxdy \int\limits_{z_1 = 0}^{z_2 = 
+c \sqrt{1 - \tfrac{x^2}{a^2} - \tfrac{y^2}{b^2}}} = 
+\iint\limits_{D_{xy}} dxdy \cfrac{z^2}{2} \bigg|_{0}^{c \sqrt{1 - \tfrac{x^2}{a^2} - \tfrac{y^2}{b^2}}} = 
+\iint\limits_{D_{xy}} \left[ \cfrac{c^2}{2} \left( 1 - \cfrac{x^2}{a^2} - \cfrac{y^2}{b^2} \right) \right] dxdy = 
+\cfrac{c^2}{2} \iint\limits_{D_{xy}} \left[ 1 -\cfrac{x^2}{a^2} - \cfrac{y^2}{b^2} \right] dxdy = 
+(\text{Перейдем в полярную систему координат}) = \\
+\cfrac{c^2}{2} \iint\limits_{D_{xy}} \left[ 1 - \rho^2 \right] ab \rho \ d\rho d\varphi = 
+\cfrac{abc^2}{2} \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{1} \left[ \rho - \rho^3 \right] d\rho = 
+\cfrac{abc^2}{2} \cdot 2\pi \cdot \left[ \cfrac{\rho^2}{2} - \cfrac{\rho^4}{4} \right] \bigg|_{0}^{1} = 
+\cfrac{abc^2}{2} \cdot 2\pi \cdot \cfrac{1}{4} = \cfrac{1}{4} \cdot abc^2 \pi$ \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

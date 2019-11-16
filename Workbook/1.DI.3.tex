@@ -1,0 +1,152 @@
+% 3. Замена переменных в двойном интеграле.
+
+
+
+
+Пусть 
+\begin{enumerate}
+\item[1)] $\displaystyle  I = \iint\limits_{D_{xy}} f(x, y) dxdy$
+%Вставить график
+
+\item[2)] $\Phi: D_{uv} \to D_{xy}$ \\
+$\Phi: 
+\begin{cases}
+	x = x(u, v) \\
+	y = y(u, v) \\
+\end{cases}$ \\
+\end{enumerate}
+Тогда при вычислении некоторые условия \\
+$\displaystyle  I = \iint\limits_{D_{uv}} f \left( x(u, v), y(u,v) \right) \left|J_\Phi (u,v) \right| cdot dudv$ \\
+где $J_\Phi (u,v) = 
+\begin{vmatrix}
+	x'_u & x'_v \\
+	y'_u & y'_v \\
+\end{vmatrix}$ \\
+
+
+\underline{Замечание}: Для нас основное значение будет иметь переход к полярным координатам: \\
+$\begin{cases}
+	x = \rho \cdot \cos{\varphi} \\
+	y = \rho \cdot \sin{\varphi} \\
+\end{cases}$ \\
+$J_{\text{пол.}} = \rho$ \\
+\fbox{$\displaystyle  \iint\limits_{D_{xy}} f(x,y) dxdy = \iint\limits_{D{\rho \varphi}} f(\rho \cdot \cos{\varphi}, \sin{\varphi}) \rho \ d\rho d\varphi$} %Проверить правильность формулы.
+
+\underline{Пример}: В двойном интеграле \\
+$\displaystyle  I = \iint\limits_{D_{xy}} f(x,y) dxdy$ \\
+перейти к полярным координатам и расставить пределы по новым переменным. \\
+\begin{enumerate}
+\item[а)] 
+%Вставить график 
+
+$\displaystyle  I = \iint\limits_{D_{\rho \varphi}} f (\rho \cdot \cos{\varphi}, \rho \cdot \sin{\varphi}) \  \rho \ d\rho \ d\varphi = \left(
+\begin{array}{lll}
+	\int d\varphi \int f(\rho \cdot \cos{\varphi}, \rho \cdot \sin{\varphi}) \rho d\rho \\
+	\int d\rho \int (\rho \cdot \cos{\varphi}, \rho \cdot \sin{\varphi}) \rho d\varphi \\
+\end{array} \right) = 
+\int\limits_{0}^{\tfrac{\pi}{4}} d\varphi \int\limits_{0}^{\tfrac{1}{\cos{\varphi}}} f (\rho \cdot \cos{\varphi}, \rho \cdot \sin{\varphi}) \rho \ d\rho$ \\
+$x = 1 \Leftrightarrow \rho \cdot \cos{\varphi} = 1 \Leftrightarrow \rho \cfrac{1}{\cos{\varphi}}$ \\
+
+
+
+\item[б)] 
+%Вставить график 
+
+$\displaystyle  I = \iint\limits_{D_{\rho \varphi}} \polarFunction $ \\
+\underline{Решение}: 
+$\displaystyle  I = \int\limits_{0}^{\tfrac{\pi}{4}} d\varphi \int\limits_{0}^{\tfrac{1}{\cos{\varphi}}} \polarFunction \rho \ d\rho + \int\limits_{\tfrac{\pi}{4}}^{\tfrac{\pi}{2}} d\varphi \int\limits_{0}^{\tfrac{1}{\sin{\varphi}}} \polarFunction \rho \ d\rho$ \\
+
+\item[в)] $D_{xy}$ ограничена лемнискатой \\
+$(x^2 + y^2)^2 = a^2 (x^2 - y^2)$ \\
+$x = \rho \cdot \cos{\varphi}$ \\
+$y = \rho \cdot \sin{\varphi}$ \\
+$\left(\rho^2 \cdot \cos^2{\varphi} + \rho^2 \cdot \sin^2{\varphi} \right)^2 = a^2 \left(\rho^2 (\cos^2{\varphi} - \sin^2{\varphi}) \right)$ \\
+$\rho^4 = a^2 \rho^2 (\cos^2{\varphi} - \sin^2{\varphi})$ \\
+$\rho^2 = a^2 (\cos^2{\varphi} - \sin^2{\varphi})$ \\
+$\rho^2 = a^2 \cdot \cos{2\varphi}$ \\
+$\rho = a \cdot \sqrt{\cos{2\varphi}}$ \\
+$\cos{2\varphi} \geqslant 0$ \\
+$2 \varphi \in \left[ -\cfrac{\pi}{2} ; \cfrac{\pi}{2} \right] \cup \left[ \cfrac{3}{2}\pi ; \cfrac{5}{2} \pi \right] \Rightarrow 
+\varphi \left[- \cfrac{\pi}{4} ; \cfrac{\pi}{4}\right] \cup \left[ \cfrac{3}{4} \pi ; \cfrac{5}{4} \pi \right]$ \\
+% Вставить график
+$\displaystyle  I = \iint\limits_{D_{\rho \varphi}} \polarFunction \polarJacobian = \int\limits_{-\tfrac{\pi}{4}}^{\tfrac{\pi}{4}} d\varphi \int\limits_{0}^{a \sqrt{\cos{2\varphi}}} \polarFunction \rho \ d\rho + \int\limits_{\tfrac{3\pi}{4}}^{\tfrac{5\pi}{4}} d\varphi \int\limits_{0}^{a \sqrt{\cos{2\varphi}}} \polarFunction \rho \ d\rho$ \\
+\end{enumerate}
+
+\underline{Пример}: Вычислить \\
+$\displaystyle  I = \iint\limits_{D_{xy}} (x^2 + y^2) dxdy$ \\
+где $D_{xy}$, ограниченна кривой \\
+$x^2 + y^2 = 2ax$ \\
+$x^2 - 2ax + a^2 + y^2 = 1^2$ \\
+$(x-a)^2 + y^2 = a^2$ \\
+%Вставить график
+Перейдем в полярную систему координат: \\
+$\begin{cases}
+	x = \rho \cdot \cos{\varphi} \\
+	y = \rho \cdot \sin{\varphi} \\
+\end{cases}$  \\
+$f(x,y) = x^2 + y^2$ \\
+$\polarFunction = \rho^2$ \\
+Уравнение границы области $D_{xy}$ \\
+$x^2 + y^2 = 2ax$ \\
+$\rho^2 \cos^2{\varphi} + \rho^2 \sin^2{\varphi} = 2 a \rho \cos{\varphi}$ \\
+$\rho^2 = 2 a \rho \cos{\varphi}$ \\ 
+$\rho = 2 a \cos{\varphi}$ \\
+$\displaystyle   I = \iint\limits_{D_{\rho \varphi}} \polarFunction \polarJacobian = \int\limits_{-\tfrac{\pi}{2}}^{\tfrac{\pi}{2}} \int\limits_{0}^{2 a \cos{\varphi}} \rho^2 \cdot \rho \ d\rho = \int\limits_{-\tfrac{\pi}{2}}^{\tfrac{\pi}{2}} \cos^4{\varphi} d\varphi = 
+	\left( \int\limits_{-a}^{a} f_\text{четн} (x)dx = 2\int\limits_{0}^{a} f_\text{четн} (x)dx \right) 
+= 8a^4 \int\limits_{0}^{\tfrac{\pi}{2}} \cos^4{\varphi} d\varphi = 
+	\left(\cos^2{\alpha} = \cfrac{1 + \cos{2\alpha}}{2} \right) 
+= 8 a^4 \int\limits_{0}^{\tfrac{\pi}{2}} \left(\cfrac{1 + \cos{2\varphi}}{2}\right)^2 d\varphi = 
+2 a^4 \int\limits_{0}^{\tfrac{\pi}{2}} \left( 1 + 2\cos{2\varphi} + \cos^2{2\varphi}\right) d\varphi = 
+2 a^4 \int\limits_{0}^{\tfrac{\pi}{2}} \left( 1 + \cfrac{1 + \cos{4\varphi}}{2}\right) d\varphi = 
+2 a^4 \int\limits_{0}^{\tfrac{\pi}{2}} \left( \cfrac{3}{2} + \cfrac{\cos{4\varphi}}{2} \right) d\varphi = 
+2  a^4 \cdot \cfrac{3}{2} \cdot \cfrac{\pi}{2} = \cfrac{3}{2} \cdot a^4 \pi$ \\
+
+
+\underline{Пример}: Вычислить \\
+$\displaystyle  I = \iint\limits_{D_{xy}} \left( \cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} \right) dxdy$, \\
+где область $D_{xy}$ ограниченна эллипсом с полуосями 2a и 2b ($\parallel$-ны Ox и Oy соответственно) и центром в точке 0. \\
+\underline{Решение}: \\
+Перейдем в полярную систему координат. \\
+$\polarFunction = \cfrac{\rho^2 \cos^2{\varphi}}{a^2} + \cfrac{\rho^2 \sin^2{\varphi}}{b^2} = \rho^2 \left( \cfrac{cos^2{\varphi}}{a^2} + \cfrac{sin^2{\varphi}}{b^2} \right)$ \\
+В декартовой системе координат \\
+%Вставить график
+$y = \pm 2b \sqrt{1 - \cfrac{x^2}{4a^2}}$ \\
+$\displaystyle  I = \int\limits_{-2a}^{2a} dx \int\limits_{-2b \sqrt{1 - \tfrac{x^2}{4a^2}}}^{2b \sqrt{1 - \tfrac{x^2}{4a^2}}} \left(\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} \right) dy = 
+4 \int\limits_{0}^{2a} \left[ \cfrac{x^2}{a^2} \cdot 2b \sqrt{1 - \cfrac{x^2}{a^2}} + \cfrac{8b^3}{3b^2} \left(1 - \cfrac{x^2}{4a^2} \right) \right]^{\tfrac{3}{2}} dx$ - все сложно \\
+Перейдем в обобщенную полярную систему координат \\
+$\begin{cases}
+	x = a \rho \cos{\varphi} \\
+	y = b \rho \sin{\varphi} \\
+\end{cases}$ \\
+
+$ J_{\text{обоб. пол. с.к.}} = 
+\begin{vmatrix}
+	x'_\rho & x'_\varphi \\
+	y'_\rho & y'_\varphi \\
+\end{vmatrix} 
+= ab \rho $ \\
+$f \left( a \rho \cos{\varphi}, b \rho \sin{\varphi} \right) = \rho^2$ \\
+Уравнение границы области $D_{xy}$:
+$\cfrac{x^2}{4a^2} + \cfrac{y^2}{4b^2} = 1$ \\
+Перейдем в обобщенную полярную систему координат \\
+$\cfrac{\rho^2 \cos^2{\varphi}}{4} + \cfrac{\rho^2 \sin^2{\varphi}}{4} = 1$ \\
+$\rho^2 = 4$ \\
+$\rho = 2$ \\
+$\displaystyle  I = \iint\limits_{D_\text{обю пол. с.к.}} f\left(a \cdot \rho \cdot \cos{\varphi}, b \cdot \rho \cdot \sin{\varphi} \right) a b \rho \ d\rho \ d\varphi = 
+a b \int\limits_{0}^{2\pi} d\varphi \int\limits_{0}^{2} \rho \cdot \rho^2 \ d\rho = 
+a b \int\limits_{0}^{2\pi} \cfrac{\rho^2}{4} \bigg|_{0}^{2} d\varphi = 
+4 a b \int\limits_{0}^{2\pi} d\varphi = 8 a b \pi$\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
