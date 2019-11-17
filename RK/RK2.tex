@@ -1,0 +1,419 @@
+\documentclass[a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}	
+
+\usepackage[english, russian]{babel}
+\usepackage{misccorr}
+\usepackage{amsmath}
+\usepackage{tipa}
+\usepackage[left=1cm,right=1cm, top=2cm,bottom=2cm]{geometry}
+
+
+
+
+
+\begin{document}
+
+\begin{center}
+\Large
+\textbf{1. Теоретическое вопросы, оцениваемые в 3 балла.} \\
+\normalsize
+\end{center}
+
+
+
+\begin{enumerate}
+\item[1.] Сформулировать определение несовместных событий. Как связаны свойства несовместности и независимости событий? \\
+\begin{itemize}
+\item События A и B называются несовместными, если их пересечение является невозможным 		событием, то есть $AB = \emptyset$. \\
+	
+\item Если A и B несовместны события, (а также $P(A) \neq 0)$, то они обязательно зависимы. Если A и B - совместны, то они могут быть как зависимы, так и независимы; если A и B - зависимы, то они могут быть как совместны,так и несовместны. \\
+\end{itemize}
+
+
+
+\item[2.] Сформулировать геометрическое определение вероятности. \\
+Пусть
+\begin{enumerate}
+\item[1)] $\Omega \subseteq \mathbb{R}^n$ \\
+
+\item[2)] $\mu (\Omega) < \infty$, где $\mu$ - мера множества (длина для n=1, площадь для n=2, объем для n=3, ...) \\
+
+\item[3)] возможность принадлежности исхода эксперимента множеству $A \subseteq \Omega$ пропорциональна мере множества A и не зависит от его формы и расположения внутри $\Omega$. \\
+\end{enumerate}
+Тогда вероятностью осуществления события A называют число $P(A) = \cfrac{\mu(A)}{\mu(\Omega)}$. \\
+
+
+
+\item[3.] Сформулировать определение сигма-алгебры событий. Сформулировать её основные свойства. \\
+\begin{itemize}
+\item Сигма-алгеброй событий на множестве элементарных исходов $\Omega$ называют такой набор подмножеств $\beta \subseteq \Omega$, что:
+	\begin{enumerate}
+	\item[1)] $A \subseteq \beta \Rightarrow \overline{A} \subseteq \beta$; \\
+	\item[2)] $A_1, \ldots, A_n \in \beta \Rightarrow A_1 + \ldots + A_n \subseteq \beta$. \\
+	\end{enumerate}
+	
+\item Основные следствия из определения сигма-алгебры:
+	\begin{enumerate}
+	\item[1)] $\Omega \subseteq \beta$; 
+	\item[2)] $\emptyset \in \beta$; 
+	\item[3)] $A_1, \ldots, A_n \in \beta \Rightarrow A_1 \cdot \ldots \cdot A_n \in \beta$; 
+	\item[4)] $A,B \in \beta \Rightarrow A \backslash B \in \beta$. 
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[4.] Сформулировать аксиоматическое определение вероятности. Сформулировать основные свойства вероятности. \\
+\begin{itemize}
+\item Пусть $\Omega$ - пространство элементарных исходов, $\beta$ - сигма-алгебра. Вероятностью называется отображение $P: \ \beta \to \mathbb{R}$, для которого выполняются условия: \\
+$P\{A\} \geqslant 0$ \\
+$P\{\Omega\} = 1$ \\
+для попарно несовместных событий $A_1, \ldots, A_n, \ldots$ $P\{A_1 + \ldots + A_n + \ldots \} = P\{A_1\} + \ldots + P\{A_n\} + \ldots$
+
+\item Свойства вероятности:
+	\begin{enumerate}
+	\item[1)] $P(\overline{A}) = 1 - P(A)$;
+	\item[2)] $P(\emptyset) = 0$ ;
+	\item[3)] $A \subseteq \Rightarrow P(A) \leqslant P(B)$ ;
+	\item[4)] $\forall A \in \beta$ \ $0 \leqslant P(A) \leqslant 1$ ;
+	\item[5)] $P(A+B) = P(A) + P(B) - P(AB)$ ;
+	\item[6)] $\forall$ конечного набора событий \\
+	$A_1, \ldots, A_n$, $P(A_1 + \ldots + A_n) = \sum\limits_{i = 1}^{n} P(A_i) - \sum\limits_{i \leqslant i < j \leqslant n}^{n} P(A_i A_j) + \ldots + (-1)^{n+1} \sum\limits_{1 \leqslant i < j \leqslant n}^{n} P(A_i \ldots A_n)$.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[5.] Записать аксиому сложения вероятностей, расширенную аксиому сложения вероятностей и аксиому непрерывности вероятностей. Как они связаны между собой? \\
+\begin{itemize}
+\item Аксиома сложения: для попарно непересекающихся событий $A_1, \ldots, A_n$ справедливо $P(A_1 + \ldots + A_n) = P(A_1) + \ldots  P(A_n)$;
+\item Расширенная аксиома сложения: для попарно несовместных событий $A_1, \ldots, A_n$ справедливо $P(A_1 + \ldots + A_n + \ldots) = P(A_1) + \ldots P(A_n) + \ldots$;
+\item Аксиома непрерывности: Для любой неубывающей последовательности событий $A_1, \ldots, A_n, \ldots,$ где $A_i \subseteq A_{i+1} \ \forall i \in \mathbb{N}$ справедливо $P(A_1 + \ldots + A_n + \ldots) = \lim\limits_{n \to \infty} P(A_n)$.
+\item Расширенная аксиома сложения эквивалентна аксиоме сложения и аксиоме непрерывности.
+\end{itemize}
+
+
+
+\item[6.] Сформулировать определение условной вероятности и её основные свойства. \\
+Пусть A и B - события, $P(B) \neq 0$. Условной вероятностью осуществления A при условии произошедшего B называют число $P(A|B) = \cfrac{P(AB)}{P(B)}$. \\
+Условная вероятность $P(A|B)$ удовлетворяет аксиомам безусловной вероятности: \\
+	\begin{enumerate}
+	\item[$1^o$] $P(A|B) \geqslant 0$;
+	\item[$2^o$] $P(\Omega|B) = 1$;
+	\item[$3^o$] $\forall$ попарно непересекающихся $A_1, \ldots, A_n, \ldots$,  $P(A_1 + \ldots + A_n + \ldots|B) = P(A_1|B) + \ldots +P(A_n|B) + \ldots$
+	\end{enumerate}
+
+
+
+\item[7.] Сформулировать теоремы о формулах умножения вероятностей для двух событий и для произвольного числа событий. \\
+\textbf{Теорема 1}: Пусть $P(A) > 0$. Тогда $P(AB) = P(A) \cdot P(B|A)$. \\
+\textbf{Теорема 2}: Пусть события $A_1, \ldots, A_n$ таковы, что $P(A_1 \cdot \ldots \cdot A_n) > 0$. Тогда $P(A_1 \cdot \ldots \cdot A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 A_2) \cdot \ldots \cdot P(A_n|A_1 \cdot \ldots \cdot A_{n-1})$. 
+
+
+
+\item[8.]Сформулировать определение пары независимых событий. Как независимость двух событий связана с условными вероятностями их осуществления? \\
+\begin{itemize}
+\item Пусть A и B - события, связанные с одним и тем же экспериментом. A и B называются независимыми, если $P(AB) = P(A) \cdot P(B)$. 
+\item Если $P(B) > 0$, то A и B независимы тогда и только тогда, когда $P(A|B) = P(A)$. Аналогично, если $P(A) > 0$, то A и B независимы тогда и только тогда, когда $P(B|A) = P(B)$
+\end{itemize}
+
+
+
+\item[9.] Сформулировать определение попарно независимых событий и событий, независимых в совокупности. Как эти свойства связаны между собой? \\
+\begin{itemize}
+\item События $A_1, \ldots, A_n$ называются попарно независимыми, если $\forall i \neq j \ \ O(A_i A_j) = P(A_i) \cdot P(A_j)$; независимы в совокупности, если для любого набора $i_1 < \ldots < i_k, \ k \in \{1, \ldots, n\} \ P(A_{i_1} \cdot \ldots \cdot A_{i_k}) = P(A_{i_1}) \cdot \ldots \cdot P(A_{i_k})$.
+\item Если A - независимы в совокупности, то они независимы попарно. При этом обратное неверно.
+\end{itemize}
+
+
+
+\item[10.] Сформулировать определение полной группы событий. Верно ли, что некоторые события из полной группы могут быть независимыми? \\
+\begin{itemize}
+\item Говорят, что H образует полную группу событий, если $H_i \bigcap H_j = \emptyset, \ \bigcup\limits_{i = 1}^{n} H_i = \Omega$.
+\item Так как $H_i, \ H_j \ \forall i \neq j$ являются несовместными событиями и их вероятность не равна нулю, то они могут быть только зависимыми.
+\end{itemize}
+
+
+
+\item[11.] Сформулировать теорему о формуле полной вероятности. \\
+\textbf{Теорема:} Пусть $H_1, \ldots, H_n$ - полная группа событий, A - некоторое событие и $P(H_i) > 0, \ i = \overline{1,n}$ Тогда $P(A) = P(A|H_1) \cdot P(H_1) + \ldots + P(A|H_n) \cdot P(H_n)$.
+
+
+
+\item[12.] Сформулировать теорему о формуле Байеса. \\
+\textbf{Теорема:} Пусть выполняются все условия теоремы о полной вероятности и $P(A) > 0$. Тогда \\ 
+$P(H_i|A) = \cfrac{P(A|H_i) \cdot P(H_i)}{P(A|H_1) \cdot P(H_1) + \ldots + P(A|H_n) \cdot P(H_n)}$.
+
+
+
+\item[13.] Дать определение схему испытании Бернулли. Записать формулу для вычисления вероятности осуществления ровно k успехов в серии из n испытаний. \\
+\begin{itemize}
+\item Рассмотрим случайный эксперимент, в результате которого возможна реализация одного из двух элементарных исходов. Первым будем называть "успех"\ , второй - "неудача"\ . Вероятность успеха: p; вероятность неудачи: q = 1 -p. Схемой испытаний Бернулли называется серия последовательных экспериментов такого вида, в которых также: вероятность успеха неизменна во всех испытаниях; испытания - независимы, то есть вероятность исхода i-го испытания не зависит от исходов испытаний $1, \ldots, i-1$.
+\item Обозначим $P_n(k)$ - вероятность реализации k успехов в серии из n испытаний Бернулли. Тогда $P_n(k) = C^k_n p^k q^{n - k}$.
+\end{itemize}
+
+
+
+\item[14.] Записать формулы для вычисления вероятности осуществления в серии из n испытаний а) ровно k успехов, б) хотя бы одного успеха, в) от $k_1$ до $k_2$ успехов.
+\begin{itemize}
+\item Пусть $P_n(k)$ - вероятность реализации k успехов в серии из n испытаний Бернулли. Тогда $P_n(k) = C^k_n p^k q^{n - k}$.
+\item Пусть $P_n (k \geqslant 1)$ - вероятность реализации хотя бы одного успеха. Тогда $P_n(k \geqslant 1) = 1 - q^n$.
+\item Пусть $P_n(k_1 \leqslant k \leqslant k_2)$ - вероятность реализации от $k_1$ до $k_2$ успехов. Тогда $P_n(k_1 \leqslant k \leqslant k_2) = \sum\limits_{i = k_1}^{k_2} C^i_n p^i q^{n - i}$.
+\end{itemize}
+s
+\end{enumerate}
+
+
+
+
+
+\begin{center}
+\Large
+\textbf{2. Теоретическое вопросы, оцениваемые в 5 баллов.} \\
+\normalsize 
+\end{center}
+
+\begin{enumerate}
+\item[15.] Сформулировать определение элементарного исхода случайного эксперимента и пространства элементарных исходов. Сформулировать классическое определение вероятности. Привести пример. \\
+\begin{itemize}
+\item Элементарный исход эксперимента - такой его исход, который в рамках данного эксперимента:
+	\begin{enumerate}
+	\item[1)] количество элементарных исходов эксперимента $|\Omega| = N \neq \infty$;
+	\item[2)] по условиям эксперимента все элементарные исходы равно-возможны;
+	\item[3)] событие A состоит из $N_A$ элементов $(|A| = N_A)$. 
+	\end{enumerate}
+Тогда вероятностью осуществления события A называется $P(A) = \cfrac{N_A}{N}$.
+\item Пример: 2 раза бросают игральную кость, A = \{сумма выпавших очков $\geqslant 11$\}. \\
+$\Omega = \left\{ (x_1, x_2), \ x_i \in \{1, \ldots, 6\} \right\}$, $|\Omega| = 36$. $A = \left\{ (5,6), \ (6,5), \ (6,6) \right\} \Rightarrow P(A) = \cfrac{3}{36} = \cfrac{1}{12}$.
+\end{itemize}
+
+
+
+\item[16.] Сформулировать классическое определение вероятности. Опираясь на него, доказать основные свойства вероятности. \\
+\begin{itemize}
+\item Пусть
+	\begin{enumerate}
+	\item[1)] Количество элементарных исходов эксперимента $|\Omega| = N \neq \infty$;
+	\item[2)] по условиям эксперимента все элементарные исходы равно-возможны;
+	\item[3)] событие A состоит из $N_A$ элементов $(|A| = N_A)$.
+	\end{enumerate}
+Тогда вероятностью осуществления события A называется $P(A) = \cfrac{N_A}{N}$.
+\item \textbf{Свойства:} 
+	\begin{enumerate}
+	\item[$1^o$] $\forall A \subseteq \Omega$  $P(A) \geqslant 0$; 
+	\item[$2^o$] $P(\Omega) = 1$; \\
+	\item[$3^o$] Если A и B несовместны, то $P(A+B) = P(A) + P(B)$.
+	\end{enumerate}
+\textbf{Доказательство:} \\
+	\begin{enumerate}
+	\item[$1^o$] $P(A) = \cfrac{N_A}{N}$ \\
+	$N_A \geqslant 0, \ N > 0$ $\Rightarrow P(A) \geqslant 0$. 
+	\item[$2^o$] $P(\Omega) = \cfrac{N_{\Omega}}{N} = \cfrac{N}{N} = 1$.
+	\item[$3^o$] $|A+B| = |A| + |B| - |AB$ по формуле включений и исключений. $|AB| = 0$, следовательно $N_{A+B} = N_A + N_B \Rightarrow P(A+B) = \cfrac{N_A + N_B}{B} = \cfrac{N_A}{N} + \cfrac{N_B}{N} = P(A) + P(B)$.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[17.] Сформулировать статистическое определение вероятности. Указать его основные недостатки. \\
+\begin{itemize}
+\item Пусть \\
+	\begin{enumerate}
+	\item[1)] Эксперимент проведен n раз;
+	\item[2)] событие A при этом произошло $N_A$ раз.
+	\end{enumerate}
+Тогда вероятностью осуществления события A называют число $P(A) = \lim\limits_{n \to \infty} \cfrac{N_A}{N}$.
+\item Недостатки: \\
+	\begin{enumerate}
+	\item[а)] на практике невозможно провести эксперимент бесконечное число раз; для конечных N отношение может изменяться при разных N.
+	\item[б)] с позиции современной математики, статистическое определение является архаизмом, так как не дает достаточной базы для дальнейшего развития теории.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[18.] Сформулировать определение сигма-алгебры событий. Доказать её основные свойства. \\
+\begin{itemize}
+\item Сигма-алгеброй событий на множестве элементарных исходов $\Omega$ называют набор подмножеств $\beta \subseteq \Omega$, что:
+	\begin{enumerate}
+	\item[1)] $A \subseteq \beta \Rightarrow \overline{A} \subseteq \beta$;
+	\item[2)] $A_1, \ldots, A_n \in \beta \Rightarrow A_1 + \ldots + A_n \subseteq \beta$.
+	\end{enumerate}
+\item \textbf{Свойства:}
+	\begin{enumerate}
+	\item[$1^o$] $\Omega \subseteq \beta$; 
+	\item[$2^o$] $\emptyset \in \beta$;
+	\item[$3^o$] $A_1, \ldots, A_n, \ldots \in \beta \Rightarrow A_1 \cdot \ldots \cdot A_n \in \beta$;
+	\item[$4^o$] $A, B \in \beta \Rightarrow A \backslash B \in \beta$.
+	\end{enumerate}
+\item \textbf{Доказательство:}
+	\begin{enumerate}
+	\item[$1^o$] $\beta =neq \emptyset$, следовательно $A \in \beta \Rightarrow \overline{A} \in \beta \Rightarrow A + \overline{A} \in \beta, \ A + \overline{A} = \Omega$.
+	\item[$2^o$] $\Omega \in \beta \Rightarrow \overline{\Omega} \in \beta, \ \overline{\Omega} = \emptyset$.
+	\item[$3^o$] $A_1, \ldots, A_n \int \beta \Rightarrow$ (1 св.) $\overline{A_1}, \ldots, \overline{A_n} \in \beta \Rightarrow$ (1 св.) $\overline{\overline{A_1} + \ldots + \overline{A_n}} \in \beta \Rightarrow A_1 \cdot \ldots \cdot A_n \in \beta$.
+	%Не хватает доказательство свойства 4.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[19.] Сформулировать аксиоматическое определение вероятности. Доказать свойства вероятности для дополнения события, для невозможного события, для следствия события. \\
+\begin{itemize}
+\item Пусть $\Omega$ - пространство элементарных исходов, $\beta$ - сигма-алгебра. Вероятностью называется отображение $P: \ \beta \to \mathbb{R}$, для которого выполняются условия:
+	\begin{enumerate}
+	\item[1)] $P(A) \geqslant 0$
+	\item[2)] $P(\Omega) = 1$ 
+	\item[3)] для попарно несовместных событий $A_1, \ldots, A_n, \ldots$  $P(A_1 + \ldots + A_n + \ldots) = P(A_1) + \ldots + P(A_n) + \ldots$.
+	\end{enumerate}
+\item \textbf{Свойства:}
+	\begin{enumerate}
+	\item[1)] $P(\overline{A}) = 1 - P(A)$;
+	\item[2)] $P(\emptyset) = 0$;
+	\item[3)] $A \subseteq B \Rightarrow P(A) \leqslant P(B)$.
+	\end{enumerate}
+\item \textbf{Доказательство:}
+	\begin{enumerate}
+	\item[1)] $\Omega = A + \overline{A}$, 1 = (акс. 2) $P(\Omega) = P(A + \overline{A})$ = (акс. 3)$P(A) + P(\overline{A}) \Rightarrow P(\overline{A}) = 1 - P(A)$.
+	\item[2)] $\emptyset = \overline{\Omega} \Rightarrow P(\emptyset)$ = (п.1) $1 - P(\Omega)$ = (акс. 2) $1 - 1 = 0$.
+	\item[3)] $B = A + B \backslash A$, причем $A(B \backslash A) = \emptyset \Rightarrow$ (акс. 3) $P(B) = P(A) + P(B \backslash A)$. По аксиоме 1, $P(B \backslash A) \geqslant 0$, следовательно $P(B) > 0$.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[20.] Сформулировать аксиоматическое определение вероятности. Сформулировать свойства вероятности для суммы двух событий и для суммы произвольного числа событий. Доказать первое из этих свойств.
+\begin{itemize}
+\item \textbf{Свойства:} 
+	\begin{enumerate}
+	\item[1)] $P(A+B) = P(A) + P(B) - P(AB)$.
+	\item[2)] Для любого конечного набора событий $A_1, \ldots, A_n$ $P(A_1 + \ldots + A_n) = \sum\limits_{i = 1}^{n} P(A_i) - \sum\limits_{1 \leqslant i < j \leqslant n}^{n} P(A_i A_j) + \ldots + (-1)^{n+1} \sum\limits_{1 \leqslant i < j \leqslant n}^{n} P(A_i \ldots A_n)$.
+	\end{enumerate}
+\item \textbf{Доказательство:} 
+	\begin{enumerate}
+	\item[а)] $A + B = A + B \backslash A$, причем $A(B \backslash A) = \emptyset$. Следовательно $P(A+B) = P(A) + P(B \backslash A)$.
+	\item[б)] $B = B \backslash A + AB \Rightarrow P(B) = P(B \backslash A) + P(AB)$.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[21.] Сформулировать определение условной вероятности. Доказать, что она удовлетворяет трем основным свойствам безусловной вероятности. \\
+\begin{itemize}
+\item Пусть A и B - события, $P(B) \neq 0$. Условной вероятностью осуществления A при условии произошедшего B называют число $P(A|B) = \cfrac{P(AB)}{P(B)}$.
+\item Условная вероятность $P(A|B)$ удовлетворяет трем аксиомам безусловной вероятности: 
+	\begin{enumerate}
+	\item[$1^o$] $P(A|B) \geqslant 0$;
+	\item[$2^o$] $P(\Omega|B) = 1$;
+	\item[$3^o$] $\forall$ попарно непересекающихся $A_1, \ldots, A_m, \ldots$ $P(A_1 + \ldots + A_n + \ldots |B) = P(A_1|B) + \ldots + P(A_n|B) + \ldots$.
+	\end{enumerate}
+\item \textbf{Доказательство:} 
+	\begin{enumerate}
+	\item[$1^o$] $P(A|B) = \cfrac{P(AB) \geqslant 0}{P(B) \geqslant 0} \geqslant 0$.
+	\item[$2^o$] $P(\Omega|B) = \cfrac{P(\Omega B)}{P(B)} = \cfrac{P(B)}{P(B)} = 1$.
+	\item[$3^o$] $P(A_1 + \ldots + A_n + \ldots |B) = \cfrac{P((A_1 + \ldots + A_n + \ldots)|B)}{P(B)}$ = $\cfrac{P(A_1B + \ldots + A_nB + \ldots)}{P(B)}$ = (акс. 3) \\ = $\cfrac{P(A_1B) + \ldots + P(A_nB) + \ldots}{P(B)}$ (лин. свойство рядов) = $\cfrac{P(A_1B)}{P(B)} + \ldots + \cfrac{P(A_nB)}{P(B)} + \ldots = P(A_1|B) + \ldots + P(A_n|B) + \ldots$.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[22.] Доказать теоремы о формулах умножения вероятностей для двух событий и для произвольного числа событий. \\
+\begin{itemize}
+\item \textbf{Теорема 1:} Пусть $P(A) > 0$. Тогда $P(AB) = P(A) \cdot P(B|A)$.
+\item \textbf{Доказательство:} $P(A) \geqslant 0 \Rightarrow$ по определению условной вероятности, $P(B|A) = \cfrac{P(AB)}{P(A)} \Rightarrow P(AB) = P(A) \cdot P(B|A)$.
+\item \textbf{Теорема 2:} Пусть события $A_1, \ldots, A_n$ таковы, что $P(A_1 \cdot \ldots \cdot A_n) > 0$. Тогда $P(A_1 \cdot \ldots \cdot A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 A_2) \cdot \ldots \cdot P(A_n|A_1 \cdot \ldots \cdot A_{n-1})$.
+\item \textbf{Доказательство:} $P(A_1 \cdot \ldots \cdot A_{n-1} A_n) = P(A_1 \cdot \ldots \cdot A_{n-1}) P(A_n|A_1 \cdot \ldots \cdot A_{n-1}) = (*)$. \\
+$A_1 \ldots A_{n-2} A_{n-1} \subseteq A_1 \ldots A_{n-2} \Rightarrow P(A_1 \ldots A_{n-2}) \geqslant P(A_1 \ldots A_{n-1}) > 0$. \\
+Следовательно, $(*) = P(A_1 \ldots A_{n-2}) P(A_{n-1}|A_1 \ldots A_{n-2}) \cdot P(A_n|A_1 \ldots A_{n-1})$. Повторяя это утверждение, получаем требуемую формулу $P(A_1 \cdot \ldots \cdot A_n) = P(A_1) \cdot P(A_2|A_1) \cdot P(A_3|A_1 A_2) \cdot \ldots \cdot P(A_n|A_1 \cdot \ldots \cdot A_n)$.
+\end{itemize}
+
+
+
+\item[23.] Сформулировать определение пары независимых событий. Сформулировать и доказать теорему  связи независимости двух событий с условными вероятностями их осуществления. \\
+\textbf{Теорема:} 
+	\begin{enumerate}
+	\item[1)] Если $P(B) > 0$, то A и B независимы тогда и только тогда, когда $P(A|B) = P(A)$.
+	\item[2)] Аналогично, если $P(A) > 0$, то A и B независимы тогда и только тогда, когда $P(B|A) = P(B)$.
+	\end{enumerate}
+\textbf{Доказательство:} 
+	\begin{enumerate}
+	\item[1)] Необходимость. \\
+	$P(A|B) = P(A) P(B)$. По определению условной вероятности: $P(A|B) = \cfrac{P(AB)}{P(B)} = \cfrac{P(A)P(B)}{P(B)} = P(A)$. \\
+	Достаточность. \\
+	$P(AB) = P(B) \cdot P(A|B) = P(A)P(B)$. Следовательно, A и B независимы.
+	\item[2)] Доказывается аналогично.
+	\end{enumerate}
+
+
+
+\item[24.] Сформулировать определение попарно независимых событий и событий, независимых в совокупности. Показать на примере, что из первого не следует второе. \\
+\begin{itemize}
+\item События $A_1, \ldots, A_n$ называются попарно независимыми, если $\forall i \neq j \ P(A_i A_j) = P(A_i)P(A_j)$; независимы в совокупности, если для любого набора $i_1 < \ldots M i_k, \ k \in \{1, \ldots, n\} \ P(A_{i_1} \cdot \ldots \cdot A_{i_k}) = P(A_{i_1}) \cdot \ldots \cdot P(A_{i_k})$.
+\item Если A - независим попарно, то из этого не следует, что они независимы в совокупности. Это подтверждает пример Бернштейна: рассмотрим правильный тетраэдр, на трех гранях которого записаны числа 1, 2, 3, а на 4-й грани все три числа. Тетраэдр кидают на плоскость и рассматривают три события: \\
+$A_1$ = \{на нижней грани 1\} \\
+$A_2$ = \{на нижней грани 2\} \\
+$A_3$ = \{на нижней грани 3\} \\
+A независимы попарно, не не в совокупности:
+	\begin{enumerate}
+	\item[а)] $P(A_1) = \cfrac24 = \cfrac12$; $P(A_2) = \cfrac12$; $P(A_3) = \cfrac12$;
+	\item[б)] $P(A_1 A_2)$ = P\{на нижней грани 1 и 2\} = $\cfrac14 = P(A_1 A_3) = P(A_2 A_3)$. $(A_i A_j) = P(A_i) P(A_j) \Rightarrow A$ - попарно независимые. \\
+	Для независимости в совокупности: $P(A_1 A_2 A_3) \stackrel{?}{=} P(A_1) P(A_2) P(A_3)$; $\cfrac14 \neq \cfrac18$. Следовательно, A не является независимыми в совокупности.
+	\end{enumerate}
+\end{itemize}
+
+
+
+\item[25.] Доказать теорему о формуле полной вероятности. \\
+Говорят, что H образует полную группу событий, если $H_i \bigcap H_j = \emptyset, \ \bigcup\limits_{i = 1}^{n} H_i = \Omega$. \\
+\textbf{Теорема:} Пусть $H_1, \ldots, H_n$ - полная группа событий, A - некоторое событие и $P(H_i) > 0, \ i = \overline{1,n}$. Тогда 
+$P(A) = P(A|H_1) \cdot P(H_1) + \ldots + P(A|H_n) \cdot P(H_n)$. \\
+\textbf{Доказательство:} $P(A) = P(A\Omega) = P(A (H_1 + \ldots + H_n)) = P(AH_1 + \ldots + AH_n) = P(AH_1) + \ldots + P(AH_n)$, поскольку $(AH_i)(AH_j) = \emptyset$ при $i \neq j$. Далее, поскольку $P(H_i) \geqslant 0 \Rightarrow P(AH_i) = P(H_i) \cdot P(A|H_i)$, то $P(A) = P(AH_1) + \ldots + P(AH_n) = P(A|H_1) \cdot P(H_1) + \ldots + P(A|H_n) \cdot P(H_n)$.
+
+
+
+\item[26.] Доказать теорему о формуле Байеса. \\
+\textbf{Теорема:} Пусть выполняются все условия теоремы о полной вероятности и $P(A) > 0$. Тогда \\
+$P(H_i|A) = \cfrac{P(A|H_i) \cdot P(H_i)}{P(A|H_1) \cdot P(H_1) \cdot \ldots \cdot P(A|H_n) \cdot P(H_n)}$. \\
+\textbf{Доказательство:} $P(H_i|A) = \cfrac{P(AH_i)}{P(A)}$. По формуле полной вероятности, можно представить $P(A) = P(A|H_1) \cdot P(H_1) + \ldots + P(A|H_n) \cdot P(H_n)$; тогда $P(H_i|A) = \cfrac{P(A|H_i) \cdot P(H_i)}{P(A|H_1) \cdot P(H_1) \cdot \ldots \cdot P(A|H_n) \cdot P(H_n)}$
+
+
+
+\item[27.] Доказать формулу для вычисления вероятности осуществления ровно k успехов в серии из n испытаний по схеме Бернулли.
+Обозначим $P_n(k)$ - вероятность реализации k успехов в серии из n испытаний Бернулли. \\
+\textbf{Теорема:} Тогда $P_n(k) = ^k_n p^k q^{n-k}$. \\
+\textbf{Доказательство:} опишем результаты испытаний кортежами $(x_1, \ldots, x_n)$, где \\
+$x_i =
+\begin{cases}
+	\text{1, если в i испытании произошел успех} \\
+	\text{0, иначе} \\
+\end{cases}$. \\
+Исходов, в которых произошло ровно k успехов, $C^k_n$ штук. Вероятность осуществления ровно одного такого исхода: $P((x_1, \ldots , x_n)) = P\{ \{x_1\} \cdot \{x_2\} \cdot \ldots \cdot \{x_n\} \}$ = (испытания независимы) = $P(\{x_1\}) \cdot \ldots \cdot P(\{x_n\})$. В случае k успехов, имеем p=k раз и q=n-k раз; следовательно, $P((x_1, \ldots, x_n)) = p^k q^{n-k}$. Постольку различные исходы, на которых происходит ровно k успехов, являются несовместными, то $P_n(k) = C^k_n \cdot P = C^k_n \cdot p^k \cdot q^{n-k}$.
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
