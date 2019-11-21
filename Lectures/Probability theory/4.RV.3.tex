@@ -1,0 +1,132 @@
+% 3. Непрерывные случайные векторы.
+
+\underline{Определение:} Случайный вектор $(X_1, \ldots, X_n)$ называется непрерывный, если $\exists$ функция: \\
+$f: \ \mathbb{R}^n \to \mathbb{R}$ \\
+такая, что для любой точки $(x_1, \ldots, x_n) \in \mathbb{R}^n$ \\
+$\displaystyle  F(x_1, \ldots, x_n) = \int\limits_{-\infty}^{x_1} d t_1 \int\limits_{-\infty}^{x_2} dt_2 \ldots \int\limits_{-\infty}^{x_n} f(t_1, \ldots, t_n) dt_n$ - функция распределения вектора $(X_1, \ldots, X_n)$. \\
+При этом предполагается, что для любой точки $(x_1, \ldots, x_n)$ этот несобственный интеграл сходится.
+
+\underline{Замечание:} 
+\begin{enumerate}
+\item[1)] функция f из определения непрерывного случайного вектора называется функцией распределения вероятностей случайного вектора $(X_1, \ldots, X_n)$. 
+
+\item[2)] для n = 2: \\
+$\displaystyle F(x_1, x_2) = \int\limits_{-\infty}^{x_1} dt_1 \int\limits_{-\infty}^{x_2} f(t_1, t_2) dt_2$
+%Вставить рисунок 
+
+\item[3)] Всюду в дальнейшем будем предполагать, что функция $f(x_1, \ldots, x_n)$ определена и непрерывна всюду, кроме, быть может, множеств меры нуль. \\
+Для n = 2 это означает, что $f(x_1, x_2)$ непрерывна всюду, роме быть может, отдельных точек или линий.
+
+\item[4)] По th о производной интеграла с переменным верхним пределом: \\
+$f(x_1, x_2) = \cfrac{\partial^2 F(x_1, x_2)}{\partial x_1 \partial x_2}$ - для всех $(x_1, x_2)$, в которых f непрерывна.
+
+\item[5)] Таким образом \\
+	\begin{enumerate}
+	\item[-] зная f, можно найти F
+	\item[-] зная F, можно найти f
+	\end{enumerate}
+\end{enumerate}
+
+
+Это означает, что функция плотности, как и функция ... , содержит всю информацию о законе распределения непрерывного случайного вектора. Для задания закона распределения непрерывного случайного вектора можно использовать любую из этих функций. %Вставить недостающий фрагмент в ...
+
+
+\underline{Свойства двумерного непрерывных случайных векторов n = 2} 
+\begin{enumerate}
+\item[$1^o$] $f(x_1, x_2) \geqslant 0$ 
+
+\item[$2^o$] $\displaystyle  P\{a_1 \leqslant X_1 < b, \ a_2 \leqslant X_2 < b_2 \} = \int\limits_{a_1}^{b_1} dx_1 \int\limits_{a_2}^{b_2} f(x_1, x_2) dx_2$
+
+\item[$3^o$] $\displaystyle  P\left\{ (X_1, X_2) \in D \right\} = \iint\limits_{D} f(x_1, x_2) dx_1 dx_2$, где D - область на плоскости $O_{x_1 x_2}$ 
+
+\item[$4^o$] $\displaystyle  \iint\limits_{\mathbb{R}^2} f(x_1, x_2) dx_1, dx_2 = 1$ (условие нормировки)
+
+\item[$5^o$]  $P\{ x_1 \leqslant X_1 < x_1 + \triangle x_1, \ x_2 \leqslant X_2 < x_2 + \triangle x_2 \} \approx f(x_1, x_2) \triangle x_1 \triangle x_2$, где $\triangle x_1 \triangle x_2$ ... \\%Найти недостающий фрагмент 
+а $(x_1, x_2)$ - точка непрерывности функции $f(x_1, x_2)$.
+
+\item[$6^o$] Если $(X_1, X_2)$ - непрерывный случайный вектор, то для любого наперед заданного значения $(x^o_1, x^o_2)$: $P\left\{ (X_1, X_2) = (x^o_1, x^o_2) \right\} = 0$
+
+\item[$7^o$] 
+	\begin{enumerate}
+	\item[а)] $\displaystyle  \int\limits_{-\infty}^{+\infty} f(x_1, x_2) dx_2 = f_{X_1} (x_1)$ 
+	\item[б)] $\displaystyle  \int\limits_{-\infty}^{+\infty}  f(x_1, x_2) dx_1 = f_{X_2} (x_2)$
+	\end{enumerate}
+\end{enumerate}
+
+
+\underline{Доказательство:} 
+\begin{enumerate}
+\item[1)] свойства $1^o, 2^o, 4^o, 5^o, 6^o$ доказываются аналогично одномерному случаю.
+
+\item[2)] свойство $3^o$ является обобщением свойства $2^o$
+
+\item[3)] докажем $7^o$ а) ($7^o$ б) доказывается аналогично) \\
+$F_{X_1} (x_1) = \lim\limits_{x_2 \to +\infty} F(x_1, x_2)$ = (в случае непрерывного случайного вектора) = $\displaystyle \int\limits_{-\infty}^{x_1} dt_1 \int\limits_{-\infty}^{+\infty} f(t_1, t_2) dt_2$ \\
+$\displaystyle f_(X_1) (x_1) = \cfrac{d F_{X_1} (x_1)}{dx_1} = \cfrac{d}{dx_1} \left[ \int\limits_{-\infty}^{x_1} \int\limits_{-\infty}^{+\infty} f(t_1 t_2) dt_2 \right]$ = (th о производной интеграла с переменным верхним пределом) = $\displaystyle \int\limits_{-\infty}^{+\infty} f(X_1, t_2) dt_2$. \\
+$t_2 = x_2$
+\end{enumerate}
+
+
+\underline{Замечание:} 
+функция $f(x_1, x_2)$ - плотность распределения случайного вектора $(X_1, X_2)$ - также называется двумерной плотностью или совместной плотностью распределения случайных величин $X_1, X_2$. \\
+Функция $f_{X_1}, f_{X_2}$ называется одномерными (частными, маргинальными) плотностями. \\
+
+
+\underline{Пример:} случайным вектор плотности $(X_1, X_2)$ имеет функцию \\
+$f(x_1, x_2) = 
+\begin{cases}
+	c \cdot x_1 \cdot x_2, \ (x_1, x_2) \in k \\
+	0, \text{иначе} \\
+\end{cases}$ \\
+где k - квадрат с вершинами (0,0), (0,1), (1,0), (1,1). \\
+Найти одномерные плотности распределения случайных величин $X_1$ и $X_2$. \\
+\underline{Решение:} 
+%Вставить рисунок
+\begin{enumerate}
+\item[1)] Найдем $c$. \\
+Условие нормировки \\
+$\displaystyle  1 = \iint\limits_{\mathbb{R}^2} f(x_1, x_2) dx_1 dx_2 = \left( f(x_1,x_2) = 0 \text{вне} k \right) = \iint\limits_{K} c \cdot x_1 \cdot x_2 \cdot dx_1 dx_2 = c \int\limits_{0}^{1} dx_1 \int\limits_{0}^{1} x_1 x_2 dx_2 = c \int\limits_{0}^{1} x_1 dx_1 \cdot \int\limits_{0}^{1} x_2 dx_2 = c \cdot \cfrac{1}{2} \cdot \cfrac{1}{2} = \cfrac{c}{4}$ 
+
+\item[2)] Найдем $f_{X_1} (x_1)$ \\
+$\displaystyle f_{X_1} (x_1) = \int\limits_{-\infty}^{+\infty} f(x_1, x_2) dx_2 = \left\{ 
+\begin{array}{lll}
+	\int\limits_{-\infty}^{+\infty} 0 dx_2, \ \text{если }  x_1 \not\in [0;1] \\
+	c \int\limits_{0}^{1} x_1 x_2 dx_2, \ \text{если } x_1 \in [0;1] \\
+\end{array} \right\} = \left\{
+\begin{array}{lll}
+	0, \ x_1 \not\in [0;1] \\
+	4 x_1 \underbrace{\int\limits_{0}^{1} x_2 dx_2}_{= \cfrac{1}{2}}, \ x_1 \in [0;1] \\
+\end{array} \right\} = 
+\begin{cases}
+	2x_1, \ x_1 \in [0;1] \\
+	0, \text{иначе} \\
+\end{cases}$ \\
+
+б) Аналогично \\
+$f_{X_2} (x_2) = 
+\begin{cases}
+	2x_2, \ x_2 \in [0;1] \\
+	0, \text{иначе} \\
+\end{cases}$ \\
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
