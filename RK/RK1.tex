@@ -1,0 +1,210 @@
+\documentclass[a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}	
+
+\usepackage[english, russian]{babel}
+\usepackage{misccorr}
+\usepackage{amsmath}
+\usepackage{tipa}
+\usepackage[left=1cm,right=1cm, top=2cm,bottom=2cm]{geometry}
+
+
+
+
+
+\begin{document}
+\begin{enumerate}
+\item[1.] Сформулировать  определение плоской квадрируемой фигуры. Сформулировать определение площади плоской фигуры. Сформулировать критерий квадрируемости плоской фигуры ( в терминах ее границы). \\
+
+Пусть дана некоторая плоская фигура D. Обозначим через $S_* = \sup{S(m)}$ и $S^* = \inf{S(M)}$ (S площадь фигуры), где m - всевозможные многоугольники, целиком содержащиеся в фигуре D, а M - многоугольники, целиком содержащие в себе фигуру D. Тогда область D называют квадрируемой, если $S^* = S_* = S$, при этом S - площадь фигуры. \\
+Пусть D - плоская область. D квадрируема тогда и только тогда, когда её граница имеет площадь нуль. \\
+
+
+\item[2.] Задача о вычислении объема z-цилиндрического тела. Сформулировать определение двойного интеграла. \\
+
+Пусть тело Q ограниченно плоскостью Oxy, графиком функции $z = f(x,y) \ (x,y \in D \subseteq Oxy)$; цилиндрической поверхностью, образующие которой параллельны оси Z и пересекают D. \\
+Разобъем D на непересекающиеся участки $D_i$, так чтобы $\bigcup D_i = D$, $int D_i \cap int D_j = \emptyset$. Внутри $D_i$ выберем точку $M_i$. Тогда объем части $\triangle V_i \cong f(M_i) * S(D_i)$, а весь объем $V(Q) = \sum\limits_{i = 1}^{n} \triangle V_i \cong \sum\limits_{i = 1}^{n} f(M_i) \triangle S_i$. Чем меньше $\triangle S_i$, тем точнее формула - переходя к пределу, получаем $V(Q) = \lim\limits_{\underset{i}{max diam D_i \to 0}} \sum f(M_i) \triangle S_i$. \\
+
+Пусть D - квадрируемая замкнутая плоская область. Двойным интегралом функции f по области D называется число $\displaystyle  \iint\limits_{D} f dxdy = \lim\limits_{d(T) \to 0} \sum f(M_i) \triangle S_i$, где $M_i \in D_i$, $\triangle S_i = S(D_i)$, а $d(T)$ - диаметр разбиения T области D. \\
+
+
+\item[3.] Задача о вычислении массы пластины. Сформулировать определение двойного интеграла. \\
+
+Пусть
+\begin{enumerate}
+\item[1)] Пластина занимает область D на плоскости.
+\item[2)] f(x,y) - значение плотности (поверхностной) материала в точке $(x,y) \in D$.
+\end{enumerate}
+Разобьем область D на непересекающиеся части $D = \bigcup D_i$. Выберем $M_i \in D$. Масса отдельной части $\triangle m_i = m(D_i) \approx f(M_i) \triangle S_i$. Тогда масса пластины $m = \sum m_i \approx \sum f(M_i) \triangle S_i$. Переходя к пределу, $m = \lim\limits_{\underset{i}{max diam D_i \to 0}} \sum f(M_i) \triangle S_i$. \\
+
+Пусть D - квадрируемая замкнутая плоская область. Двойным интегралом функции f по области D называется число $\displaystyle  \iint\limits_{D} f dxdy = \lim\limits_{d(T) \to 0} \sum f(M_i) \triangle S_i$, где $M_i \in D_i$, $\triangle S_i = S(D_i)$, а $d(T)$ - диаметр разбиения T области D. \\
+
+
+\item[4.] Сформулировать свойства линейности и аддитивности двойного интеграла, сохранения двойным интегралом знака функции. \\
+
+\begin{itemize}
+\item Линейность: $\displaystyle  \iint\limits_{D} (f_1 + f_2) dxdy = \iint\limits_{D} f_1 dxdy + \iint\limits_{D} f_2 dxdy$;
+\item Аддитивность: Пусть $D = D_1 \cup D_2$, $int D_1 \cap int D_2 = \emptyset$; $f(x,y)$ интегрируема в каждой из областей $D_1, D_2$. Тогда f интегрируема и в D, причем $\displaystyle  \iint\limits_{D} f dxdy = \iint\limits_{D_1} f dxdy + \iint\limits_{D_2} f dxdy$;
+\item Пусть $f(x,y) \geqslant 0$ в D и интегрируема в D. Тогда и $\displaystyle  \iint\limits_{D} f dxdy \geqslant 0$.
+\end{itemize}
+
+
+
+\item[5.] Сформулировать теоремы об оценке модуля двойного интеграла, об оценке двойного интеграла и следствие из нее, теорему о среднем значении для двойного интеграла. \\
+
+\textbf{Теорема} об оценке модуля: Пусть f интегрируема в D. Тогда модуль этой функции $|f|$ интегрируема в D, причем $\displaystyle  \left| \iint\limits_{D} f dxdy \right| \leqslant \iint\limits_{D} |f| dxdy$. \\
+\textbf{Теорема} об оценке интеграла: Пусть функции f и g интегрируемы в D, причем $m \leqslant f(x,y) \leqslant M$ и $g(x,y) \geqslant 0$ $\forall (x,y) \in D$. Тогда $\displaystyle  m \iint\limits_{D} g dxdy \leqslant \iint\limits_{D} f \cdot g dxdy \leqslant M \iint\limits_{D} g dxdy$. \\
+\textbf{Следствие} из теоремы об оценке: если f интегрируема в D и $m \leqslant f(x,y) \leqslant M$, то $\displaystyle  m \cdot S \leqslant \iint\limits_D f dxdy \leqslant M \cdot S$. \\
+\textbf{Теорема} о среднем значении: Пусть f непрерывна в D, и D - линейно связная квадрируемая область (то есть любые 2 точки можно соединить кривой, лежащей в области). Тогда $\displaystyle  \exists M_0 \in D: \ f(M_0) = \cfrac{1}{S} \cdot \iint\limits_D f dxdy, \ S = S(D)$. \\ %Проверить содержание теоремы о среднем значении на корректность.
+
+
+\item[6.] Сформулировать определение y-правильной области и теоремы о вычислении двойного интеграла по произвольной y-правильной области. \\
+
+Область D на Oxy называют y-правильной, если её можно задать в виде: $D =  
+\begin{cases}
+	a \leqslant x \leqslant b \\
+	\phi_1(x) \leqslant y \leqslant \phi_2(x) \\
+\end{cases}$ \\
+\textbf{Теорема:} Пусть D - у-правильная, $\displaystyle  \exists \iint\limits_{D} f dxdy = I$ и $\forall x \in [a,b]$ $\displaystyle  \exists F(x) = \int\limits_{\phi_1(x)}^{\phi_2(x)} f dy$. Тогда существует повторный интеграл $\displaystyle  I_\text{П} = \int\limits_{a}^{b} dx \int\limits_{\phi_1(x)}^{\phi_2(x)} f dy$ и $I = I_\text{П}$ \\
+
+
+\item[7.] Сформулировать теорему о замене переменных в двойном интеграле. Записать формулы перехода в двойном интеграле от декартовых координат к полярным и обобщенным полярным координатам. Дать геометрическую интерпретацию полярных координат. \\
+
+\textbf{Теорема:} Пусть $D_{xy} = \Phi(D_{uv})$; $\Phi$ - биективна, непрерывна и непрерывно дифференцируема в $D_{uv}$; якобиан $J_{\Phi} (u,v) = 
+\begin{vmatrix}
+	x'_u & x'_v \\
+	y'_u & y'_v \\
+\end{vmatrix} \neq 0$.
+Тогда $\displaystyle   \iint\limits_{D_{xy}} f(x,y) dxdy = \iint\limits_{D_{uv}} f \left( x(u,v), \ y(u,v) \right) \cdot  J_\Phi (u,v) dudv$ \\
+Формула для перехода в полярную систему координат из декартовой системы координат: \\
+$x = \rho \cdot \cos{\varphi}$ \\
+$y = \rho \cdot \sin{\varphi}$ \\
+$|J| = 
+\begin{vmatrix}
+	\cos{\varphi} & -\rho \cdot \sin{\varphi} \\
+	\sin{\varphi} & \rho \cdot \cos{\varphi} \\
+\end{vmatrix} = \rho \cdot 
+\begin{vmatrix}
+	\cos{\varphi} & -\sin{\varphi} \\
+	\sin{\varphi} & \cos{\varphi} \\
+\end{vmatrix} = \rho$ \\
+$\displaystyle  \iint\limits_{D_{xy}} f dxdy = \iint\limits_{D_{\rho \varphi}} f ( \rho \cdot \cos{\varphi}, \ \rho \cdot \sin{\varphi} ) \ \rho d\rho d\varphi$ \\
+
+
+\item[8.] Приложения двойного интеграла: записать формулы для вычисления площади плоской фигуры, объема z-цилиндрического тела, массы пластины с использованием двойного интеграла. \\
+
+Вычисление массы пластины D. Если плотность определяется как $f(x,y)$, то масса пластины $\displaystyle  m = \iint\limits_D f dxdy$. \\
+Вычисление объема z-цилиндрического тела Q, ограниченного функцией $z = f(x,y)$, плоскостью $Oxy$ и цилиндрической поверхностью, образующие которой параллельны $Oz$ и пересекают границу $\displaystyle  D: \ V(Q) = \iint\limits_D f(x,y) dxdy$. \\
+Вычисление площади фигуры. Если фигура занимает область D, то её площадь $\displaystyle  S(D) = \iint\limits_D 1 dxdy$. \\
+
+
+\item[9.] Сформулировать определение кубируемого тела и объема кубируемого тела. Сформулировать критерий кубируемости тела (в терминах границы). \\
+
+Рассмотрим область $G \subseteq \mathbb{R}^3$. Пусть $q$ - множество многогранников, которые целиком содержатся в $G$, $V_* = \sup{V(q)}$, а $Q$ - множество многогранников, целиком содержащих в себе $G$, $V^* = \inf{V(Q)}$. Область G называется кубируемой, если $V^* - V_* = V$, при этом V называют объемом области G. \\
+
+
+\item[10.] Задача о вычислении массы тела. Сформулировать определение тройного интеграла. \\
+
+Пусть тело занимает область $G$, а $f(x,y,z)$ - значение плотности материала тела в точке $(x,y,z)$. Разобьем тело на непересекающиеся области $G_i$ и в каждой выберем точку $M_i$. Тогда масса части $G_i \triangle m_i = m(G_i) \cong f(M_i) \cdot \triangle V(G_i) = f(M_i) dV$, а масса всего тела $m(G) = \sum \triangle m_i \cong \sum f(M_i) \triangle V_i$. Чем меньше $\triangle V_i$, тем точнее формула. Переходя к пределу имеем: $m(G) = \lim_{max diam G_i \to 0} \sum\limits_{i = 1}^{n} f(M_i) \triangle V_i$. \\
+Тройным интегралом функции $f(x,y,z)$ по области G называют число $\displaystyle  \iiint\limits_G f(x,y,z) dxdydz = \lim_{d(T) \to 0} \sum\limits_{i = 1}^{n} f(M_i) \triangle V_i$, где $d(T)$ - диаметр разбиения T области G. \\
+
+
+\item[11.] Сформулировать свойства линейности и аддитивности тройного интеграла, сохранения тройным интегралом знака функции. \\
+
+\begin{itemize}
+\item Линейность: $\displaystyle  \iiint\limits_V (f_1 + f_2) dxdydz = \iiint\limits_V f_1 dxdydz + \iiint\limits_V f_2 dxdydz$; \\
+\item Аддитивность: Пусть $V = V_1 \cup V_2$, $int V_1 \cap int V_2 = \emptyset$; $f(x,y,z)$ интегрируема в каждой из объемом в $V_1, V_2$. Тогда f интегрируема и в V, причем $\displaystyle  \iint\limits_D f dxdydz = \iint\limits_{D_1} f dxdydz + \iint\limits_{D_2} f dxdydz$; \\
+\item Пусть $f(x,y,z) \geqslant 0$ в V и интегрируема в V. Тогда и $\displaystyle  \iiint\limits_V f dxdydz \geqslant 0$.
+\end{itemize}
+
+
+\item[12.] Сформулировать теоремы об оценке модуля тройного интеграла, об оценке тройного интеграла и следствие из неё, обобщенную теорему о среднем значении для тройного интеграла. \\
+
+\textbf{Теорема} об оценке модуля. \\
+Пусть f интегрируема в V. Тогда модуль этой функции $|f|$ интегрируема в V, причем $\displaystyle  \left| \iiint\limits_V f dxdydz \right| \leqslant \iiint\limits_V |f| dxdydz$. \\
+\textbf{Теорема} об оценке интеграла. \\
+Пусть функции f и g интегрируемы в D, причем $m \leqslant f(x,y,z) \leqslant M$ и $g(x,y) \geqslant 0$ $\forall (x,y,z) \in V$. Тогда $\displaystyle  m \iiint\limits_V g dxdydz \leqslant \iiint\limits_V f \cdot g dxdydz \leqslant M \iiint\limits_V g dxdydz$. \\
+\textbf{Теорема} о среднем значении. \\
+Если функция f непрерывна в области $V$, то $\exists P_0 \in V$, такая что $\displaystyle  \iiint\limits_V f(P) dv = f(P_0) \cdot v(V)$. \\
+
+
+\item[13.] Сформулировать определение тройного интеграла и теорему о сведении тройного интеграла к повторному для z-правильной области. \\
+
+Тройным интегралом функции $f(x,y,z)$ по области G называют число $\displaystyle  \iiint\limits_G f(x,y,z) dxdydz = \lim_{d(T) \to 0} \sum\limits_{i = 1}^{n} f(M_i) \triangle V_i$, где $d(T)$ - диаметр разбиения T области G. \\
+Область G называют z-правильной, если её можно задать в виде $G: 
+\begin{cases}
+	(x,y) \in D_{xy} \\
+	z_1(x,y) \leqslant z \leqslant z_2(x,y) \\
+\end{cases} (*)$ \\
+\textbf{Теорема:} Пусть $\displaystyle  \exists \iiint\limits_G f dxdydz = I$; G задана в виде $(*)$; для каждой фиксированной точки $(x,y) \in D_{xy}$ $\displaystyle  \exists F(x,y) \int\limits_{z_1(x,y)}^{z_2(x,y)} f dz$. Тогда существует повторный интеграл $\displaystyle  I_\text{П} = \iint\limits_D f(x,y) dxdy$ и $I = I_\text{П}$. \\
+
+
+
+\item[14.] Сформулировать теорему о замене переменных в тройном интеграле. Записать формулы перехода в тройном интеграле от декартовых координат к цилиндрических и сферических координат. \\
+
+\textbf{Теорема:} Пусть $G_{xzy} = \Phi(G_{uvw})$, где $\Phi: 
+\begin{cases}
+	x = x(u,v,w) \\
+	y = y(y,v,w) \\
+	z = z(u,v,w) \\
+\end{cases}$;
+$\Phi$ - биективна, непрерывна и непрерывно дифференцируема в $G_{uvw}$; якобиан $J_\Phi \neq 0$ в $G_{uvw}$; f интегрируема в $G_{uvw}$. Тогда $\displaystyle  \iiint\limits_{G_{uvw}} f \left( x(u,v,w), \ y(u,v,w), \ z(u,v,w) \right) \cdot J_\Phi (u,v,w) dudvdw$. \\
+Связь декартовой системы координат с цилиндрической: \\
+$\begin{cases}
+	x = \rho \cdot \cos{\varphi} \\
+	y = \rho \cdot \sin{\varphi} \\
+	z = z \\
+\end{cases}$ \\
+$J_\Phi = 
+\begin{vmatrix}
+	\cos{\varphi} & -\rho \sin{\varphi} & 0 \\
+	\sin{\varphi} & \rho \cos{\varphi} & 0 \\
+	0 & 0 & 1 \\
+\end{vmatrix} = \rho$ \\
+
+Связь декартовой системы координат со сферической системой координат: \\
+$r \geqslant 0$ \\
+$\varphi \in [0, 2\pi)$ \\
+$\theta \in \left[ -\cfrac{\pi}{2}; \cfrac{pi}{2} \right]$ \\
+$\begin{cases}
+	x = r \cdot \cos{\theta} \cdot \cos{\varphi} \\
+	y = r \cdot \cos{\theta} \cdot \sin{\varphi} \\
+	z = r \cdot \sin{\theta} \\
+\end{cases}$ \\
+$J = 
+\begin{vmatrix}
+	\cfrac{dx}{dr} & \cfrac{dx}{d\varphi} & \cfrac{dx}{d\theta} \\
+	\cfrac{dy}{dr} & \cfrac{dy}{d\varphi} & \cfrac{dy}{d\theta} \\
+	\cfrac{dz}{dr} & \cfrac{dz}{d\varphi} & \cfrac{dz}{d\theta} \\
+\end{vmatrix} = r^2 \cdot \cos{\theta}$
+
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
