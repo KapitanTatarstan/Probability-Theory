@@ -1,0 +1,72 @@
+% 4. Нормальное распределение.
+
+\underline{Определение:} Говорят, что случайная величина X распределена по нормальному закону с параметрами m и $\sigma^2$, если её функция плотности имеет вид \\
+Обозначение: $f(x) = \cfrac{1}{\sqrt{2\pi} \sigma} \cdot e^{- \cfrac{(x-m)^2}{2 \sigma^2}}, \ x \in \mathbb{R}$ \\
+$X \sim N(m, \sigma^2)$ \\
+
+\underline{Замечание:} 
+\begin{enumerate}
+	\item[1)]
+	% Вставить график
+	
+	\item[2)] \underline{Определение:} Нормальным распределением называется стандартным нормальным, если $m = 0, \sigma = 1$ то есть функция плотности этого распределения имеет вид \\
+	$f_{0,1} (x) = \cfrac{1}{\sqrt{2\pi}} \cdot e^{- \tfrac{x^2}{2}}, \ x \in \mathbb{R}$
+	
+	\item[3)] Функция распределения стандартной нормальной случайной величины \\
+	$\displaystyle  \Phi(x) = \int\limits_{-\infty}^{x} f_{0,1} (t)dt = \cfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}{x} e^{- \tfrac{t^2}{2}} dt, \ x \in \mathbb{R}$ \\
+	% Вставить график
+	$\Phi(x)$ - эта функция не является элементарной, для нее составлена таблица значений. 
+	
+	\item[4)] Вместо $\Phi(x)$ часто используется функция \\
+	$\displaystyle  \Phi_0(x) = \int\limits_{0}^{x} f_{0,1} (t)dt = \cfrac{1}{\sqrt{2\pi}} \int\limits_{0}^{x} e_{- \frac{t^2}{2}} dt$. \\
+	% Вставить график
+\end{enumerate}
+
+
+\underline{Свойства $\Phi_0$} \\
+\begin{enumerate}
+	\item[$1^o$] $\Phi(x) = \cfrac12 + \Phi_0(x)$ 
+	\item[$2^o$] $\Phi_0(-x) \equiv - \Phi_0(x)$ 
+	\item[$3^o$] $\lim\limits_{x \to + \infty} \Phi_0(x) = \cfrac12$ \\
+	$\lim\limits_{x \to - \infty} \Phi_0(x) = - \cfrac12$ 
+	\item[$4^o$] $\Phi_0(0) = 0$ 
+	\item[$5^o$] Если $X \sim N(m, \sigma^2)$, то $
+	\begin{array}{lll}
+		P\{a < X < b\} \\
+		P\{a < X \leqslant b\} \\
+		P\{a \leqslant X < b\} \\
+		P\{a \leqslant X \leqslant b\} \\
+	\end{array}= \Phi \left(\cfrac{b - m}{\sigma}\right) - \Phi \left(\cfrac{a - m}{\sigma}\right) = \Phi_0 \left(\cfrac{b - m}{\sigma}\right) - \Phi_0 \left(\cfrac{a - m}{\sigma}\right)$.
+\end{enumerate}
+
+
+\underline{Пример:} 
+$X \sim N(2,1)$ \\
+$P\{1 < X < 5\} - ?$ \\
+\underline{Решение:} \\
+$P\{1 < X < 5\} = \Phi_0 \left(\cfrac{5 - 2}{1}\right) - \Phi_0 \left(\cfrac{1 - 2}{1}\right) = \Phi_0(3) + \Phi_0(1) = 0.49865 + 0.34134 \approx ...$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
