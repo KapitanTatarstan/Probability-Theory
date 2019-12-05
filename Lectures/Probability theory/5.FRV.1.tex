@@ -32,9 +32,100 @@ $\left( \sum\limits_{i = 1}^{n} p_i = 1 \right)$ \\
 %Вставить таблицы
 
 
+\underline{Th} Пусть
+\begin{enumerate}
+\item[1)] X - непрерывная случайная величина
+\item[2)] $\varphi: \ \mathbb{R} \to \mathbb{R}$ - монотонная функция \\
+($\Rightarrow \exists \varphi^{-1} = \psi$ - обратная к $\varphi$ функция) 
+\item[3)] $\varphi$ - непрерывная и непрерывно дифференцируема 
+\item[4)] $\varphi = \varphi(X)$
+\end{enumerate}
+Тогда случайная величина Y также является непрерывной, причем \\
+$f_Y(y) = f_X \left(\psi(y)\right) \left|\psi'(y)\right|$, \\
+где $f_X, f_Y$ - функции плотности случайных величин X и Y соответственно. \\
 
 
+\underline{Доказательство} 
+\begin{enumerate}
+\item[1)] $F_Y(y) = P\{Y < y\} = \left(Y = \varphi(X)\right) = P\{\varphi(X) < y\}$ \\
+$F_Y$ - функция распределения случайной величины Y. \\
+Рассмотрим 2 случая:
+	\begin{enumerate}
+	\item[А.] $\varphi$ - монотонная возрастающая функция $\Rightarrow \varphi(X) < y \Leftrightarrow X < \varphi^{-1}(y) = \psi(y)$.
+	\item[Б.] $\varphi$ - монотонная убывающая функция $\Rightarrow \varphi(X) < y \Leftrightarrow X > \psi(y)$.
+	\end{enumerate}
+Тогда
+	\begin{enumerate}
+	\item[А.] $F_Y(y) = P\left(X < \psi(y)\right) = F_X \left(\psi(y)\right)$.
+	\item[Б.] $F_Y(y) = P\left(X > \psi(y)\right) = 1 - P\{X \leqslant \psi(y)\}$ = (X - непрерывная случайная величина) = $1 - P\{X < \psi(y)\} = 1 - F_X\left(\psi(y)\right)$.
+	\end{enumerate}
 
+\item[2)] Так как $f_Y(y) = \cfrac{d}{dy} F_Y(y)$, то 
+	\begin{enumerate}
+	\item[А.] $f_Y(y) = \cfrac{d}{dy} \left[F_X \left(\psi(y)\right) \right]$ = (th о произведении случайных функций) = $\underbrace{F_X'}_{f_X} \left(\psi(y)\right) \cdot \psi'(y) = f_X \left(\psi(y)\right) \cdot \varphi(y)$.
+	\item[Б.] $f_Y(y) = \cfrac{d}{dy} \left[ 1 - F_X \left(\psi(y)\right) \right] = \ldots = f_X \left(\psi(y)\right) \cdot \left(- \psi'(y) \right)$
+	\end{enumerate}
+Оба случая описываются общей формулой
+$f_Y(y) = f_X \left(\psi(y)\right) \left|\psi'(y)\right|$
+\end{enumerate}
+
+
+\underline{Пример:} Пусть
+\begin{enumerate}
+\item[1)] X - непрерывная случайная величина
+\item[2)] F(x) - функция распределения случайной величины. X непрерывна.
+\end{enumerate}
+% График
+Найдем закон распределения случайной величины $Y = F(x)$ (то есть $\varphi = F$) \\
+\underline{Решение:}
+Очевидно, что $Y \in [0;1]$ \\
+Это означает, что
+\begin{enumerate}
+	\item[а)] $F_Y(y) = 0$, если $y \leqslant 0$
+	\item[б)] $F_Y(y) = 1$, если $y > 0$
+	\item[в)] $y \in (0;1] \Rightarrow$ (см. доказательство предыдущей th для случая монотонно возрастающей $\varphi$) $\Rightarrow F_Y(y) = \underbrace{F}_{F_X} \left(\underbrace{F^{-1}}_{\varphi^{-1}} (y) \right) = y$
+\end{enumerate}
+Таким образом \\
+$F_Y(y) = 
+\begin{cases}
+	0, \ y \leqslant 0 \\
+	y, 0 < y \leqslant 1 \\
+	1, \ y > 1 \\
+\end{cases}$ \\
+% График
+Тогда \\
+$f_Y(y) = \cfrac{d}{dy} F_Y(y) = 
+\begin{cases}
+	1, \ y \in [0;1] \\
+	0, \text{иначе} \\
+\end{cases}$ \\
+% График
+Таким образом \\
+$Y \sim R[0;1]$ - равномерное распределение на [0;1] случайной величины. \\
+
+
+\underline{Замечание:} Из предыдущего примера следует, что если $Y \sim R[0;1]$, то случайная величина $X = F^{-1}(y)$ будет иметь функцию F своей функции распределения. \\
+Этот факт широко используется при моделировании случайных величин: достаточно иметь генератор случайных чисел для $R[0;1]$, тогда для генерировании значений случайной величины X с непрерывной функцией распределения F(x) достаточно подвинуть выборку из $R[0;1)$, ... \\
+
+
+\underline{Th} Случай немонотонной функции $\varphi$ \\
+Пусть
+\begin{enumerate}
+	\item[1)] X - непрерывная случайная величина.
+	\item[2)] $f_X$ - функция плотности случайной величины X.
+	\item[3)] $\varphi: \ \mathbb{R} \to \mathbb{R}$ имеет n интервалов монотонности (то есть $\varphi$ является кусочно-монотонной).
+	\item[4)] $\varphi$
+	% Рисунок
+	\item[5)] для данного $y \in \mathbb{R}$ \\
+	$x_1 = \psi_1(y), \ldots, x_n = \psi_n(y)$ - все распределения уравнения $\varphi(x) = y$. \\
+	При этом $\psi_1(t), \ldots, \psi_k(t)$ - функции обратные $\varphi$ на интервалах монотонности, которые ...
+	\item[6)] $Y = \varphi(X)$ \\
+	Тогда \\
+	$f_Y(y) = \sum\limits_{j = 1}^{k} f_X \left(\psi_j(y)\right) \cdot \left|\psi'_j(y)\right|$
+\end{enumerate}
+
+
+\underline{Доказательство} (без доказательств).
 
 
 

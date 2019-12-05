@@ -1,0 +1,137 @@
+% 2. Скалярная функция от случайного вектора.
+
+Пусть 
+\begin{enumerate}
+	\item[1)] $\vec{X} = (X_1, \ldots, X_n)$ - случайный вектор.
+	\item[2)] $\varphi: \ \mathbb{R}^n \to \mathbb{R}$
+\end{enumerate}
+Тогда \\
+$Y = \varphi(X_1, \ldots, X_n)$ - скалярная случайная величина. \\
+
+\underline{Вопрос:} Как, зная закон распределения случайного вектора $\vec{X}$ и функцию $\varphi$, найти закон распределения случайной величины Y? \\
+
+\underline{Пример:} Пусть $(X_1, X_2)$ - координаты точки попадания пули при стрельбе по плоской мишени. \\
+%Рисунок
+Тогда \\
+$Y = \sqrt{x^2_1 + x^2_2}$ - расстояние от точки попадания до центра мишени (здесь $\varphi(x_1, x_2) = \sqrt{x^2_1 + x^2_2}$). \\
+
+Далее ограничимся n = 2. \\
+
+\textbf{I.} Если $(X_1, X_2)$ - дискретный случайный вектор, закон распределения которого задан таблицей.\\
+% Таблица
+Тогда $Y = \varphi(X_1, X_2)$ - дискретная случайная величина, принимающее значения $\varphi(x_{1_i}, x_{2_j})$ $i = \overline{1,m}$, $j = \overline{1, n}$. \\
+
+
+\underline{Пример:} Пусть проводится серия из 2-х испытаний по схеме Бернулли. \\
+$x_i = 
+\begin{cases}
+	1, \text{если в i-ом испытании произошел успех} \\
+	0, \text{иначе} \\
+\end{cases}$ \\
+$i = \overline{1,2}$ \\
+Тогда $Y = X_1 + X_2$ - общее число успехов в серии из двух испытаний. \\
+Записать таблицу распределения вероятностей вектора $(x_1, x_2)$ и найти закон распределения случайной величины Y. \\
+% Таблица
+$(q = 1 - p)$ \\
+$Y = X_1 + X_2$ \\
+% Таблица
+% Таблица
+
+
+\textbf{II.} Если $(X_1, X_2)$ - непрерывный случайный вектор, а $\varphi: \ \mathbb{R}^2 \to \mathbb{R}$ - непрерывная функция. \\
+Тогда случайная величина $Y = \varphi(X_1, X_2)$ также будет непрерывной, причем значение функции распределения случайной величины Y можно найти по формуле: \\
+$\displaystyle  F_Y(y_0) = \iint\limits_{D(y_0)} f(x_1, x_2) dx_1 dx_2$ $(*)$ \\
+где f - функция плотности распределения вектора $(x_1, x_2)$ \\
+$D(y_o) = \left\{ (x_1, x_2): \ \varphi(x_1, x_2) < y \right\}$.
+
+
+\underline{Обоснование формулы $(*)$.} \\
+\\
+% График 
+$F_Y(y_0) = P\{Y < y_0\} = \left\{ \varphi(X_1, X_2) < y_0\right\}$ \fbox{=} \\
+События $\varphi(X_1, X_2) < y_0$ и $(X_1, X_2) \in D$ эквивалентны, поэтому \\
+\fbox{=} $P\left\{ (X_1, X_2) \in D(y_0) \right\}$ = (свойство непрерывности случайного вектора) = $\displaystyle  \iint\limits_{D(y_0)} f(x_1, x_2) dx_1 dx_2$ \\
+
+
+\underline{Пример:} Пусть \\
+\begin{enumerate}
+	\item[1)] $(X_1, X_2)$ - координаты точки попадания пули при стрельбе по плоской мишени. 
+	\item[2)] $(X_1, X_2) \sim R(k)$ \\
+	где \\ %График 
+	(k - круг радиуса r) 
+	\item[3)] $Y = \sqrt{x^2_1 + x^2_2}$ - расстояние от точки попадания пули до центра мишени. 
+\end{enumerate}
+Найти закон распределения случайной величины Y.
+
+\underline{Решение:} \\
+\begin{enumerate}
+	\item[1)] $f(x_1, x_2) = \left\{
+	\begin{matrix}
+		c, \  (x_1, x_2) \in k \\
+		0, \ \text{иначе} \\
+	\end{matrix} \right\}$ \\
+	Из условия нормировки: \\
+	$\displaystyle  1 = \iint\limits_{R^2} f(x_1, x_2) dx_1 dx_2 = \iint\limits_k c dx_1 dx_2 = c \cdot \text{Площадь}(k) = c \cdot \pi r^2$ \\
+	$\Rightarrow \cfrac{1}{\pi r^2}$ \\
+	$f(x_1, x_2) = 
+	\begin{cases}
+		\tfrac{1}{\pi r^2}, \ (x_1, x_2) \in k \\
+		0, \ \text{иначе} \\
+	\end{cases}$ \\
+	
+	\item[2)] $\varphi(x_1, x_2) = \sqrt{x_1^2 + x_2^2}$. График функции 
+	$\varphi$: $y = \sqrt{x^2_1 + x^2_2} \Leftrightarrow 
+	\begin{cases}
+		x_1^2 + x_2^2 = y^2 \\
+		y \geqslant 0 \\
+	\end{cases}$ \\
+	% График
+	
+	\item[3)] $\displaystyle  F_Y(y_0) = \iint\limits_{D(y_o)} f(x_1, x_2) dx_1 dx_2$ \\
+	\begin{enumerate}
+		\item[а)] $y_0 \leqslant 0 \Rightarrow D(y_0) = \emptyset$ или состоит из одной точки $\Rightarrow F_Y(y_0) = 0$
+		\item[б)] $0 < y_1 \leqslant r$ \\
+		$D(y_1) = \left\{ (x_1, x_2): \ x_1^2 + x_2^2 \leqslant y_1^2 \right\}$ \\
+		$\displaystyle  F_Y(y_1) = \iint\limits_{D(y_1)} f(x_1, x_2) dx_1 dx_2 = c \cdot \text{Площадь}(D(y_1)) = \cfrac{\pi y_1^2}{\pi r^2} = \cfrac{y_1^2}{r^2}$ 
+		\item[в)] Если  $\displaystyle  y_2 > r \Rightarrow F_Y(y) = \iint\limits_{D(y_0)} f(x_1, x_2) dx_1 dx_2 = (\text{Вставить график} = \iint\limits_k dx_1 dx_2 = 1$ \\
+		$F_Y(y) = 
+		\begin{cases}
+			0, \ y \leqslant 0 \\
+			\cfrac{y^2}{r^2}, \ 0 < y \leqslant r \\
+			1, \ y > r \\
+		\end{cases}$ \\
+		$f_Y(y) = \cfrac{d}{dy} F_Y(y) = 
+		\begin{cases}
+			\cfrac{2y}{r^2}, \ y \in (0, r) \\
+			0, \ \text{иначе} \\
+		\end{cases}$ \\
+		% График
+		% График
+	\end{enumerate}
+\end{enumerate} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

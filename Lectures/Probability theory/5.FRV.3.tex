@@ -1,0 +1,56 @@
+% 3. Формула свертки.
+
+Рассмотрим частный случай функционального преобразования случайного вектора $(X_1, X_2)$. \\
+
+
+\underline{Th} о формуле свертки. \\
+Пусть 
+\begin{enumerate}
+	\item[1)] $X_1, X_2$ - непрерывные случайные величины.
+	\item[2)] $X_1, X_2$ - независимы. 
+	\item[3)] $Y = X_1 + X_2$ (то есть $\varphi(X_1, X_2) = X_1 + X_2$)
+\end{enumerate}
+Тогда \\
+$\displaystyle  F_Y(y) = \int\limits_{-\infty}^{+\infty} f_{X_1} (y - x) f_{X_2} (x) dx$ \\
+
+\underline{Доказательство:} \\
+\begin{enumerate}
+	\item[1)] $\displaystyle  F_Y(y) = \iint\limits_{D(y)} f(x_1, x_2) dx_1 dx_2$ \fbox{=} \\
+	$D(y) = \left\{ (x_1, x_2): \ \underbrace{x_1 + x_2}_{\varphi(x_1, x_2)} < y\right\}$ \\
+	% Вставить график 
+	\fbox{=} $\displaystyle  \int\limits_{-\infty}^{+\infty} dx_2 \int\limits_{-\infty}^{y - x_2} f(x_1, x_2) dx_1$ \\
+	$f_Y(y) = \cfrac{d}{dy} F_Y(y)$ = (th о производной интеграла с переменным верхним пределом) = $\displaystyle  \int\limits_{-\infty}^{+\infty} f(y - x_2, x_2) dx_2 = \left( X_1, X_2 - \text{независимы} \Rightarrow f(X_1, X_2) = f_{X_1}(x_1) \cdot f_{X_2}(x_2) \right) = \int\limits_{-\infty}^{+\infty} f_{X_1} (y - x_2) f_{X_2} (x_2) dx_2$. \\
+\end{enumerate}
+
+\underline{Замечание:} 
+\begin{enumerate}
+	\item[1)] Пусть $f, g: \ \mathbb{R} \to \mathbb{R}$ \\
+	\underline{Определение:} сверткой функции f и g называется функция \\
+	$\displaystyle  (f * g)(y) = \int\limits_{-\infty}^{+\infty} f(y - x) g(x) dx, \ y \in \mathbb{R}$.
+	\item[2)] Очевидно, что свертки коммутативны, так как: \\
+	$f * g = g * f$ \\
+	$t = y - x$ \\
+	$\displaystyle  \int\limits_{-\infty}^{+\infty} f(t) g(y - t) dt = (g * f)$ \\
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
