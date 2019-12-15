@@ -1,0 +1,52 @@
+% 3. Математические ожидания и дисперсии некоторыз случайных величин.
+
+
+\textbf{I.} Биномиальная случайная величина $X \sim B(n,p)$ \\
+$P\{X = k\} = C^k_n p^k q^{n-k}, \ k = \overline{0,n}$ \\
+Найти MX и DX.\\
+\begin{enumerate}
+	\item[а)] X - число успехов в серии из n испытаний по схеме Бернулли.
+	
+	\item[б)] Введем случайную величину\\
+	$X_i = 
+	\begin{cases}
+		1, \text{если в i-ом испытании произошел успех} \\
+		0, \text{иначе}\\
+	\end{cases}$\\
+	$i = \overline{1,n}$\\
+	Тогда\\
+	% Вставить таблицу
+	$q = 1 - p$\\
+	Ранее $MX_i = p$, $DX_i = pq$, $i = \overline{1,n}$
+	
+	\item[в)] $X = \sum\limits_{i = 1}^n X_i$\\
+	$M[X] = M\left[\sum\limits_{i = 1}^n X_i\right] = \sum\limits_{i = 1}^n MX_i = pn$.\\
+	$D[X] = D\left[\sum\limits_{i = 1}^n X_i\right]$ = (в схеме испытании Бернулли отдельные испытания независимы $\Rightarrow$ все $X_i$ независимы) = $\sum\limits_{i = 1}^n DX_i = npq$.\\
+\end{enumerate}
+
+
+\textbf{II.} Пуассоновская случайная величина $X \sim \Pi(\lambda)$.\\
+$P\{X = k\} = \cfrac{\lambda^k}{k!} e^{-\lambda}, \ k = 0, 1, 2, \ldots$\\
+\begin{enumerate}
+	\item[а)] $MX = \left(\sum p_i x_i\right) = \sum\limits_{k = 0}^\infty \cfrac{\lambda^k}{k!} e^{-\lambda} \cdot k = e^{-\lambda} \sum\limits_{k = 1} \cfrac{\lambda^k}{k!} \cdot k = e^{-\lambda} \sum\limits_{k = 1}^\infty \cfrac{\lambda^k}{(k - 1)!} = e^{-\lambda} \cdot \lambda \cdot \sum\limits_{k = 1}^\infty \cfrac{\lambda^{k - 1}}{(k - 1)!} = \left[j = k - 1; \ k = 1 \Rightarrow j = 0\right]= e^{-\lambda} \cdot \lambda \cdot \underbrace{\sum\limits_{j = 0}^\infty \cfrac{\lambda^j}{j!}}_{= e^\lambda} = e^{-\lambda} \cdot e^\lambda \cdot \lambda = \lambda$\\
+	Аналогично можно показать, что $DX = \lambda$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

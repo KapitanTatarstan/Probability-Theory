@@ -1,0 +1,126 @@
+% 1. Математическое ожидание.
+
+
+Пусть X - дискретная случайная величина. \\
+
+\underline{Определение:} Математическим ожиданием случайной величины X называется число \\
+$M\left[X\right] = \sum\limits_{i} p_ix_i$, $(*)$ \\
+где $x_i$ - все возможные значения случайной величины X, $p_i = P\{X = x_i\}$. \\
+
+
+\underline{Замечание:} 
+\begin{enumerate}
+	\item[1)] Если X принимает счетное множество значений, то предполагается, что ряд $(*)$ сходится абсолютно. В противном случае говорят, что $\nexists M[X]$.
+	\item[2)] Пусть $x_1, \ldots, x_n$ - с..ма математических ожиданий точек на прямой, $m_1, \ldots, m_n$ - масса этих точек. \\
+	% Вставить рисунок
+	$x_\text{ц.м.} = \cfrac{\sum\limits_{i} x_i m_i}{\sum\limits_{i} m_o}$
+	\item[3)] Пусть X - дискретная случайная величина, которая может принимать значения $x_1, \ldots, x_n$ с вероятностями $p_1, \ldots, p_n$ \\
+	$\sum\limits_{i = 1}^{n} p_i = 1$ 
+\end{enumerate}
+
+Будем интерпретировать значения $x_i$, как координаты точек на прямой, а $p_i$ - как массы, сосредоточенными в этих точках. \\
+% Вставить график
+Тогда \\
+$x_\text{ц.м.} = \cfrac{\sum\limits_{i = 1}^n p_i x_i}{\sum\limits_{i = 1}^n p_i} = \sum\limits_{i = 1}^n p_i x_i = M[X]$ \\
+Таким образом $M[X]$ характеризует положение центра тяжести вероятностной массы (1 кг вероятностной массы распределяется по точкам $x_1, \ldots, x_n$ на прямой). \\
+
+
+\underline{Пример:} \\
+% Вставить таблицу
+$p \in (0;1)$ \\
+Найдем MX: \\
+$MX = \sum\limits_i p_i x_i = 0 \cdot (1 - p) + 1 \cdot p = p$\\
+Пусть X - непрерывная случайная величина. \\
+\underline{Определение:} Математическим ожиданием случайной величины X называется число\\
+$\displaystyle MX = \int\limits_{-\infty}^{+\infty} x f(x) dx$, \\
+где f - функция плотности случайной величины X. \\
+
+
+\underline{Замечание:} 
+\begin{enumerate}
+	\item[1)] В этом определении предполагается, что несобственный интеграл в правой части сходится абсолютно, то есть $\exists$ ... \\
+	$\displaystyle  \int\limits_{-\infty}^{+\infty} |x| f(x) dx$. \\
+	Если это не так, то говорят, что $\nexists MX$.
+	
+	\item[2)] Если интегрировать функцию плотности распределения случайной величины X как линейную плотность бесконечного стержня (то есть 1 кг вероятностной массы изготавливают стержень, значение плотности равно f(x)), то MX - координата центра масс этого стержня.
+	% Вставить рисунок
+\end{enumerate}
+
+
+\underline{Пример:} Пусть X - случайная величина, распределенная ... \\
+% Вставить график
+Найдем \\
+$\displaystyle  MX = \int\limits_{-\infty}^{+\infty} x f(x) dx$ $(**)$ \\
+$x f(x) = \cfrac{x}{\pi (1 + x^2)} \sim \cfrac{1}{\pi x}$ при $x \to +\infty$\\
+Так как $\displaystyle \int\limits_x^\infty \cfrac{dx}{x}$ расходится, то интеграл $(**)$ не сходится абсолютно $\Rightarrow \nexists MX$  (хотя ....)
+
+
+\underline{Замечание:}
+\begin{enumerate}
+	\item[1)] Если X - дискретная случайная величина, а $\varphi: \mathbb{R} \to \mathbb{R}$ - некоторая функция, то \\
+	$M\left[\varphi(X)\right] = \sum\limits_i p_i \varphi(x_i)$ 
+	
+	\item[2)] Если X - непрерывная случайная величина, $\varphi: \mathbb{R} \to \mathbb{R}$, \\
+	$\displaystyle  M\left[\varphi(X)\right] = \int\limits_{-\infty}^{+\infty} \varphi(X) f(x) dx$ \\
+	
+	\item[3)] Если $(X_1, X_2)$ - дискретный случайный вектор, $\varphi: \mathbb{R}^2 \to \mathbb{R}$, \\
+	$M\left[\varphi(X_1, X_2)\right] = \sum\limits_{i,j} \varphi(x_{1,i}, x_{2,j}) p_{ij}$, \\
+	где $(x_{1,i}, x_{2,j})$ - всевозможные значения вектора $(X_1, X_2)$, $p_{ij} = P\left\{(X_1, X_2) = (x_{1,i}, x_{2,j})\right\}$.
+	
+	\item[4)] Если $(X_1, X_2)$ - непрерывный случайный вектор, $\varphi: \mathbb{R}^2 \to \mathbb{R}$, то \\
+	$\displaystyle  M\left[\varphi(X_1, X_2)\right] = \int\limits_{\mathbb{R}^2} \varphi(x_1, x_2) f(x_1, x_2) dx_1 dx_2$, \\
+	где f - совместная плотность распределения $X_1$ и $X_2$.
+\end{enumerate}
+
+
+\underline{Свойства математического ожидания}
+\begin{enumerate}
+	\item[$1^o$] Если $P\{X = x_0\} = 1$, то есть \\
+	% Вставить таблицу
+	то $MX = x_0$
+	
+	\item[$2^o$] Если $a,b = const$, то \\
+	$M[aX + b] = aM[X] + b$
+	
+	\item[$3^o$] $M[X_1 + x_2] = MX_1 MX_2$
+	
+	\item[$4^o$] Если $X_1, X_2$ - независимые случайные величины, то $M[X_1 X_2] = (MX_1)(MX_2)$
+\end{enumerate}
+
+
+\underline{Доказательство}
+\begin{enumerate}
+	\item[$1^o$] $MX = \left(\sum x_i p_i\right) = 1 \cdot x_0 = x_0$
+	
+	\item[$2^o$] Докажем для случая непрерывной случайной величины X. \\
+	$\displaystyle  M[aX + b] = \left( M[\varphi(X)], \text{где} \varphi(x) = ax+b\right) =  \int\limits_{-\infty}^{+\infty} \underbrace{(ax+b)}_{\varphi(x)} f(x) dx = a \underbrace{\int\limits_{-\infty}^{+\infty}xf(x) dx}_{= MX} + b \underbrace{\int\limits_{-\infty}^{+\infty} f(x)dx}_{= 1} = aMX + b$
+	
+	\item[$3^o$] Докажем для случая, когда $(X_1, X_2)$ - дискретный случайный вектор. \\
+	$M[X_1 + X_2] = \left( M[\varphi(X_1,X_2)], \text{где} \varphi(x_1, x_2) = x_1 + x_2\right) = \sum\limits_i \sum\limits_j \left(x_{1,i}, x_{2,j}\right) p_{ij} = \sum\limits_i \sum\limits_j x_{1,i} p_{ij} + \sum\limits_i \sum\limits_j x_{2,j} p_{ij} = \sum\limits_i x_{1,i} \underbrace{\sum\limits_j p_{ij}}_{P\{X_1 = x_{1,i}\}} + \sum\limits_j x_{2,j} \underbrace{\sum\limits_i p_{ij}}_{P\{X_2 = x_{2,j}\}} = \underbrace{\sum\limits_i P\{X_1 = x_{1,i}\} \cdot x_{1,i}}_{= MX_1} + \underbrace{\sum\limits_j P\{X_2 = x_{2,j}\} \cdot x_{2,j}}_{= MX_2} = MX_1 + MX_2$
+\end{enumerate}
+
+
+Пусть $\vec{X} = (x_1, \ldots, x_n)$ - n-мерный случайный вектор. \\
+\underline{Определение:} Числовой вектор $M\vec{X} = (MX_1, \ldots, MX_n)$ называется вектором средних (вектором математического ожидания) вектора $\vec{X}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
