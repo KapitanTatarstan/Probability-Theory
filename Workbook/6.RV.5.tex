@@ -1,0 +1,212 @@
+% 5. Условные законы распределения.
+
+
+Пусть
+\begin{enumerate}
+	\item[1)] (X,Y) - двумерный случайный вектор.
+	\item[2)] известно, что $Y = y_o$.
+\end{enumerate}
+Вопросы:\\
+\begin{enumerate}
+	\item[1)] что в этом случае можно сказать о возможных значениях случайной величины X?
+	\item[2)] о распределении вероятностей между этими значениями?
+\end{enumerate}
+
+
+\textbf{I.} Пусть 
+\begin{enumerate}
+	\item[1.] (X,Y) - дискретный случайный вектор
+	\item[2.] $X \in \{x_1, \ldots, x_n\}$, $P\{X = x_i\} = p_{X_i}$
+	\item[3.] $Y \in \{y_1, \ldots, y_n\}$, $P\{Y = y_j\} = p_{Y_j}$
+	\item[4.] $p_{ij} = P\left\{(X,Y) = (x_i, y_j)\right\}$
+\end{enumerate}
+На лекции было показано, что\\
+$P\{X = x_i|Y = y_j\} = \cfrac{p_{ij}}{p_{X_i}}$\\
+
+
+\underline{Определение:} Условным рядом/законом распределения случайной величины X при условии $Y = y_j$ называется набор вероятностей\\
+$\Pi_{ij} = \cfrac{p_{ij}}{p_{Y_j}}, \ i = \overline{1,m}$\\
+(для каждого $j \in \{1, \ldots, n\}$ свой условный закон распределения).\\
+
+
+\underline{Замечание:} Условные законы распределения случайной величины Y при условии $X = x_i$ определяется аналогично - это наборы вероятностей\\
+$\tau_{ij} = \cfrac{P_{ij}}{p_{X_i}}, \ j = \overline{1,n}$\\
+(для каждого $i \in \{1, \ldots, m\}$ свой закон условного закона распределения).\\
+
+
+\underline{Пример:} Двумерный дискретный случайный вектор (X,Y) имеет закон распределения, заданный таблицей\\
+
+% Вставить таблицу
+
+\begin{enumerate}
+	\item[1.] Найти условный закон распределения X и ...
+	\item[2.] Построить графики\\
+	$F_X(x|Y = 1)$\\
+	$F_Y(y|X = 0)$\\
+\end{enumerate}
+\underline{Решение:}
+\begin{enumerate}
+	\item[1)] Пусть $Y = 0$ (то есть $Y = y_1, \ j = 1$).\\
+	Условный закон распределения случайной величины X в этом случае задается набором вероятностей\\
+	$\Pi_{i1} = \cfrac{p_{i1}}{p_{Y_1}}, \ \overline{1,3}$\\
+	
+	\begin{tabular}{|c||c|c|}
+	\hline 
+	 & 0 & 1 \\ 
+	\hline \hline
+	-1 & $\cfrac{0.3}{04} = \cfrac{3}{4}$ & $\cfrac{0.2}{0.6} = \cfrac{2}{6}$ \\ 
+	\hline 
+	0 & $\cfrac{0.1}{0.4} = \cfrac{1}{4}$ & $\cfrac{0.3}{0.6} = \cfrac{3}{6}$ \\ 
+	\hline 
+	2 & $\cfrac{0}{0.4} = 0$ & $\cfrac{0.1}{0.6} = \cfrac{1}{6}$ \\ 
+	\hline \hline
+	 & 1 & 1 \\ 
+	\hline 
+	\end{tabular} \\
+	% Вставить пояснения к таблице
+	
+	\begin{tabular}{|c||c|c|c|}
+	\hline 
+	X & -1 & 0 & 2 \\ 
+	\hline 
+	P & $\cfrac{1}{3}$ & $\cfrac{1}{2}$ & $\cfrac{1}{6}$ \\ 
+	\hline 
+	\end{tabular} \\
+	%Вставить график функции
+	
+	\item[2)] Условные законы распределения случайной величины Y.\\
+
+	\begin{tabular}{|c||c|c|c|}
+	\hline 
+	 & 0 & 1 &  \\ 
+	\hline 
+	\hline
+	-1 & $\cfrac{0.3}{0.5} = \cfrac{3}{5}$ & $\cfrac{0.2}{0.5} = \cfrac{2}{5}$ & 1 \\ 
+	\hline 
+	0 & $\cfrac{1}{4}$ & $\cfrac{3}{4}$ & 1 \\ 
+	\hline 
+	2 & 0 & 1 & 1 \\ 
+	\hline 
+	\end{tabular} 
+
+	Условный закон распределения случайной величины Y при X = -1 (то есть $X = x_i$)\\
+	$\tau_{1j} = \cfrac{p_{ij}}{p_{X_i}}, \ i = \overline{1,2}$\\
+	$F_Y(y|X = 0) = P\{Y < y|X = 0\}$\\
+	
+	\begin{tabular}{|c||c|c|}
+	\hline 
+	Y & 0 & 1 \\ 
+	\hline 
+	P & $\cfrac{1}{4}$ & $\cfrac{3}{4}$ \\ 
+	\hline 
+	\end{tabular}  \\
+	
+	% Вставить график
+\end{enumerate}
+
+
+\textbf{II.} Пусть
+\begin{enumerate}
+	\item[1)] (X,Y) - непрерывный случайный вектор.
+	
+	\item[2)] f(x,y) - совместная плотность распределения X и Y.
+	
+	\item[3)] $f_X(x), f_Y(y)$ - маргинальные плотности X и Y.
+\end{enumerate}
+Рассмотрим условную функцию распределения случайной величины X при условии $Y = y$.\\
+$F_X(x|Y = y) = P\{X < x|Y = y\}$\\
+Производная по x этой функции - условная плотность распределения случайной величины X при условии Y = y.\\
+$f_X(X|Y = y)$ = (можно показать) = $\cfrac{f(x,y)}{f_Y(y)}$\\
+\underline{Замечание:} Аналогично:\\
+$f_Y(y|X = x) = \cfrac{f(x,y)}{f_X(x)}$ - условная плотность распределения случайной величины Y при условии X = x.\\
+
+
+\underline{Пример:} Совместная плотность распределения случайной величины X и Y имеет вид:\\
+$f(x,y) = 
+\begin{cases}
+	10y, \ (x,y) \in D\\
+	0, \ \text{иначе}\\
+\end{cases}$\\
+% Вставить график
+Найти условные плотности распределения случайных величин X и Y.\\
+\underline{Решение:} 
+\begin{enumerate}
+	\item[1)] Найдем маргинальные плотности распределения X и Y.\\
+	% Вставить график
+	$\displaystyle  f_X(x) = \int\limits_{-\infty}^{+\infty} f(x,y) dy = \left\{
+	\begin{array}{lll}
+		0, \ \text{если} \ x \not\in (0;1)\\
+		\int\limits_0^{x^2} 10y dy, \ x \in (0;1)\\
+	\end{array} \right\{ = 
+	\begin{cases}
+		0, \ \text{если} \ x \not\in (0;1)\\
+		5x^4, \ x \in (0;1)\\
+	\end{cases}$\\
+
+	$f_X(x) = 
+	\begin{cases}
+		5x^4, \ x \in (0;1)\\
+		0, \ \text{если} \ x \not\in (0;1)\\
+	\end{cases}$\\
+	
+	$\displaystyle  f_Y(y) = \int\limits_{-\infty}^{+\infty} f(x,y) dx = \left\{
+	\begin{array}{lll}
+		0, \ y \not\in (0;1)\\
+		\int\limits_{\sqrt{y}}^1 10y dx, \ y \in (0;1)\\
+	\end{array} \right\} = 
+	\begin{cases}
+		10y (1 - \sqrt{y}), \ y \in (0;1)\\
+		0, \ \text{иначе}\\
+	\end{cases}$\\
+	
+	$f_Y(y) = 
+	\begin{cases}
+		10y(1 - \sqrt{y}), \ y \in (0;1)\\
+		0, \ \text{иначе}\\
+	\end{cases}$\\
+	
+	\item[2)] Условные плотности\\
+	% Вставить график
+	$f_X(x|Y = y) = \cfrac{x,y}{f_Y(y)} = \left\{
+	\begin{array}{lll}
+		\text{не опр.}, \ y \not\in (0;1)\\
+		0, \ y \in (0;1), \ x \not\in (\sqrt{y}; 1)\\
+		\frac{10y}{10y(1 - \sqrt{y})}, \ y \in (0;1), \ x \in (\sqrt{y}; 1)\\
+	\end{array} \right\} = 
+	\begin{cases}
+		\frac{1}{1 - \sqrt{y}}, \ y \in (0;1), \ x \in (\sqrt{y}; 1)\\
+		0, \ y \in (0;1), \ x \not\in (\sqrt{y}; 1)\\
+		\text{не опр.}, \ y \in (0;1)\\
+	\end{cases}$\\
+	
+	% Вставить график
+	$f_Y(y|X = x) = \cfrac{f(x,y)}{f_X(x)} = \left\{
+	\begin{array}{lll}
+		\text{не опр.}, \ x \not\in (0;1)\\
+		0, \ x \in (0;1), \ y \not\in (0;x^2)\\
+		\frac{10y}{5x^4}, \ x \in (0;1), \ y \in (0; x^2)\\
+	\end{array} \right\} = 
+	\begin{cases}
+		\frac{2y}{x^4}, \ x \in (0;1), \ y \in (0; x^2)\\
+		0, \ x \in (0;1), \ y \not\in (0; x^2)\\
+		\text{не опр.}, \ x \not\in (0;1)\\
+	\end{cases}$\\
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

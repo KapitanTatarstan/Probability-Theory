@@ -1,0 +1,150 @@
+% Непрерывные случайные векторы.
+
+
+\underline{Определение:} Случайный вектор (X,Y) называется непрерывным, если $\exists$ функция\\
+$f: \mathbb{R^2} \to \mathbb{R}$ такая, что\\
+$\forall \forall x,y \in \mathbb{R}$ $\displaystyle  F(x,y) = \int\limits_{-\infty}^x dt_1 \int\limits_{-\infty}^y f(t_1, t_2) dt_2$ $(*)$\\
+
+При этом такая функция f называется функцией плотности распределения вероятностей случайного вектора (X,Y).\\
+
+
+\underline{Замечание:} 
+\begin{enumerate}
+	\item[1)] Если (x,y) - точка непрерывности функции f, то\\
+	$f(x,y) = \cfrac{\partial^2 F(x,y)}{\partial x \partial y}$
+	
+	\item[2)] $f(x,y) \Rightarrow F(x,y)$ (см. $(*)$).\\
+	$F(x,y) \Rightarrow f(x,y)$ (см. часть 1) замечания).\\
+	
+	Это означает, что функция плотности, как и функция распределения содержит всю информацию о законе распределения случайного вектора.
+\end{enumerate}\
+
+
+\underline{Пример:} Функция распределения случайного вектора (X,Y) имеет вид\\
+$F(x,y) = \cfrac{1}{4 \pi^2} \left[ 4 \cdot \arctan(x) \cdot \arctan(y) + 2\pi \cdot \arctan(x) + 2\pi \cdot \arctan(y) + \pi^2 \right]$\\
+Найти:
+\begin{enumerate}
+	\item[1)] Совместную плотность распределения случайных величин X и Y.
+	
+	\item[2)] Маргинальные плотности распределения X и Y.
+	
+	\item[3)] Маргинальные функции распределения случайных величин X и Y.
+	
+	\item[4)] $P\{Y > X, \ X > 0\}$
+\end{enumerate}
+
+\underline{Решение:}\\
+\underline{1 способ}\\
+$\displaystyle  F(x,y) \Rightarrow f(x,y) = \cfrac{\partial^2 F}{\partial x \partial y} \Rightarrow
+\begin{array}{lll}
+	f_X(x) = \int\limits_{-\infty}^{+\infty} f(x,y) dy\\
+	f_Y(y) = \int\limits_{-\infty}^{+\infty} f(x,y) dx\\
+\end{array} \Rightarrow
+\begin{array}{lll}
+	F_X(x) = \int\limits_{-\infty}^{+\infty} f_X(t) dt\\
+	F_Y(y) = \int\limits_{-\infty}^{+\infty} f_Y(t) dt\\
+\end{array}$\\
+
+\underline{2 способ}\\
+$F(x,y) \Rightarrow f(x,y) = \cfrac{\partial^2 F}{\partial x \partial y}$\\
+$F(x,y) \Rightarrow 
+\begin{array}{lll}
+	F_X(x) = \lim\limits_{y \to +\infty} F(x,y)\\
+	F_Y(y) = \lim\limits_{x \to +\infty} F(x,y)\\
+\end{array} \Rightarrow
+\begin{array}{lll}
+	f_X(x) = F'_X\\
+	f_Y(y) = F'_Y\\
+\end{array}$\\
+
+\begin{enumerate}
+	\item[1)] Используем способ 2
+	$f(x,y) = \cfrac{\partial^2 F}{\partial x \partial y}$\\
+	$\cfrac{\partial F}{\partial x} = \cfrac{1}{4 \pi^2} \left[ \cfrac{4}{1 + x^2} \cdot \arctan{x} + \cfrac{2 \pi}{1 + x^2} + 0 + 0 \right]$\\
+	$f(x,y) = \cfrac{\partial F}{\partial y} \left( \cfrac{\partial F}{\partial x} \right) = \cfrac{1}{4 \pi^2} \cdot \cfrac{4}{(1 + x^2)(1 + y^2)} = \cfrac{1}{\pi^2 (1 + x^2)(1 + y^2)}$\\
+	
+	\item[2)] $F_X(x) = \lim\limits_{y \to +\infty} F(x,y) = \cfrac{1}{4 \pi^2} \left[ 4 \cdot \cfrac{\pi}{2} \cdot \arctan{x} + 2\pi \cdot \arctan{x} + 2\pi \cdot \cfrac{\pi}{2} + \pi^2 \right] = \cfrac{\arctan{x}}{\pi} + \cfrac{1}{2}$\\
+	Аналогично $F_Y(y)$
+	
+	\item[3)] $f_X(x) = \cfrac{d}{dx} \left[F_X(x)\right] = \cfrac{1}{\pi (1 + x^2)}$\\
+	$f_Y(y) = \cfrac{1}{\pi (1 + y^2}$\\
+	
+	\item[4)] % Вставить график
+	$P\{Y > X, \ X > 0\} = P\{(X,Y) \in D\}$ = (свойство непрерывности случайного вектора) = $\displaystyle  \iint\limits_{D} f(x,y) dxdy = \int\limits_0^{+\infty} dy \int\limits_0^y = \cfrac{1}{\pi^2} \cdot \cfrac{1}{1 + x^2} \cdot \cfrac{1}{(1 + y^2)} dx = \cfrac{1}{\pi^2} \int \limits_0^{+\infty} \int\limits_0^{+\infty} \cfrac{1}{1 + y^2} \cdot \arctan{x} \bigg|_0^y dy = \cfrac{1}{\pi^2} \int\limits_0^{+\infty} \cfrac{\arctan{y}}{1 + y^2} dy = \cfrac{1}{\pi^2} \int\limits_0^{+\infty} \arctan{y} d(\arctan{y}) = \cfrac{1}{\pi^2} \cdot \cfrac{1}{2} \arctan^2{y} \bigg|_0^{+\infty} = \cfrac{1}{\pi^2} \cdot \cfrac{1}{2} \cdot \left(\cfrac{\pi}{2}\right) = \cfrac{1}{8}$\\
+\end{enumerate}
+
+
+\underline{Пример:} Функция плотности случайного вектора имеет вид:\\
+$f(x,y) = 
+\begin{cases}
+	A x^2 y^2, \ (x,y) \in k\\
+	0, \text{иначе}\\
+\end{cases}$\\
+% Вставить график
+\begin{enumerate}
+	\item[1.] Найти постоянную A.
+	\item[2.] Найти маргинальные плотности случайной величины X и Y.
+	\item[3.] Найти маргинальные функции распределения случайной величины X и Y.
+	\item[4.] $P\{X + Y \leqslant 1\}$
+\end{enumerate}
+\underline{Решение:} 
+\begin{enumerate}
+	\item[1)] A найдем из условия нормировки:\\
+	$\displaystyle  1 = \iint\limits_{\mathbb{R^2}} f(x,y) dx dy = \left[ f(x,y) = 0 \ \text{вне} \ k\right] = \iint\limits_{k} A x^2 y^2 dx dy = A \int\limits_0^1 dx \int\limits_0^1 x^2 y^2 dy = A \int\limits_0^1 x^2 dx \cdot \int\limits_0^1 y^2 dy = A \cdot \cfrac{x^3}{3} \bigg|_0^1 \cdot \cfrac{y^3}{3} \bigg|_0^1 = \cfrac{A}{9} \Rightarrow A = 9$\\
+	
+	\item[2)] $\displaystyle  f_X(x) = \int\limits_{-\infty}^{+\infty} f(x,y) dy = \left\{
+	\begin{array}{lll}
+		0, \ x \not\in (0;1) \\
+		9 \int\limits_0^1 x^2 y^2 dx, \ x \in [0;1]\\
+	\end{array}
+	\right\} = 
+	\begin{cases}
+		0, \ x \not\in (0;1)\\
+		3x^2, \ x \in [0;1]\\
+	\end{cases}$\\
+	Аналогично $f_Y(y) = 
+	\begin{cases}
+		0, \ y \notin (0;1)\\
+		3y^2, \ y \in [0;1]\\
+	\end{cases}$\\
+	
+	\item[3)] %Вставить график
+	$\displaystyle  F_X(x) = \int\limits_{-\infty}^x f_X(t)dt = \left\{
+	\begin{array}{lll}
+		0, \ x \leqslant 0\\
+		\int\limits_0^x 3t^2 dt, \ 0 < x \leqslant 1\\
+		\int\limits_0^1 3t^2 dt, \ x > 1\\
+	\end{array} \right\} = \left\{
+	\begin{array}{lll}
+		0, \ x \leqslant 0\\
+		x^3, \ 0 < x \leqslant 1\\
+		1, \ x > 1\\
+	\end{array} \right\}$\\
+	
+	% Вставить график
+	Аналогично $f_Y(y) = 
+	\begin{cases} 
+		0, \ y \leqslant 0\\
+		y^3, \ 0 < y \leqslant 1\\
+		1, \ y > 1\\
+	\end{cases}$\\
+	
+	\item[4)] % Вставить график 
+	$\displaystyle  P\{X + Y \leqslant 1\} = P\{(X, Y) \in D\} = \iint\limits_D f(x,y) dxdy = (f = 0 \ \text{вне} \ k) = \iint\limits_{D_1} 0 x^2 y^2 dx dy = 9 \int\limits_0^1 dx \int\limits_0^{1 - y} x^2 y^2 dy = 9 \int\limits_0^1 x^2 dx \cdot \int\limits_0^{1 - y} y^2 dy = 3 \int\limits_0^1 y^3 (1 - y)^3 dy = \ldots$
+	% Вставить пояснение в формулу
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

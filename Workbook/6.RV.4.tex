@@ -1,0 +1,88 @@
+% 4. Независимые случайные величины.
+
+
+Пусть (X,Y) - двумерный случайный вектор.\\
+\underline{Определение:} Случайные величины X и Y называются независимыми, если\\
+$F(x,y) = F_X(x) F_Y(y)$,\\
+где F - совместная функция распределения X и Y\\
+$F_X$ и $F_Y$ - маргинальные функции распределения X и Y.\\
+
+
+\underline{Th}
+\begin{enumerate}
+	\item[1)] Если $(X,Y)$ - дискретный случайный вектор, то\\
+	$X,Y$ - независимы $\Leftrightarrow p_{ij} \equiv p_{X_i} p_{Y_j}$,\\
+	где $p_{ij} = P\left\{(X,Y) = (x_i, y_j)\right\}$\\
+	$P_{X_i} = P\{X = x_i\}$\\
+	$P_{Y_j} = P\{Y = y_j\}$\\
+	
+	\item[2)] Если (X,Y) - непрерывный случайный вектор, то\\
+	X,Y - независимы $\Leftrightarrow f(x,y) = f_X(x) f_Y(y)$, где\\
+	f - совместная плотность распределения X и Y\\
+	$f_X, f_Y$ - их маргинальные плотности\\
+\end{enumerate}
+
+
+\underline{Пример:} (см. выше)\\
+% Вставить таблицу
+$0 \neq 0.3 \cdot 0.25$\\
+то есть $P\left\{(X,Y) - (2;0)\right\} \neq P\{X = 2\} \cdot P\{Y = 0\} \Rightarrow X,Y$ - зависимы\\
+
+
+\underline{Пример:} (см.выше)\\
+$F(x,y) = \cfrac{1}{4 \pi^2} \left[ 4 \cdot \arctan{x} \cdot \arctan{y} + 2\pi \cdot \arctan{x} + 2\pi \cdot \arctan{y} + \pi^2 \right]$\\
+Было получено:\\
+$F_X(x) = \cfrac{\arctan{x}}{\pi} + \cfrac{1}{2}$\\
+$F_Y(y) = \cfrac{\arctan{y}}{\pi} + \cfrac{1}{2}$\\
+$F(x,y) = F_X(x) \cdot F_Y(y) \Rightarrow X,Y$ - независимы.
+\underline{Другой способ:}\\
+$f(x,y) = \cfrac{1}{\pi^2 (1 + x^2)(1 + y^2)}$\\
+$f_X(x) = \cfrac{1}{\pi (1 + x^2)}$\\
+$f_Y(y) = \cfrac{1}{\pi (1 + y^2)}$\\
+Так как $f(x,y) \equiv f_X(x) \cdot f_Y(y) \Rightarrow X,Y$ - независимы.\\
+
+
+\underline{Пример:} (см. выше)\\
+$f(x,y) = 
+\begin{cases}
+	9 x^2 y^2, \ (x,y) \in k\\
+	0, \ \text{иначе}\\
+\end{cases}$\\
+% Вставить график
+Было получено:\\
+$f_X(x) = 
+\begin{cases}
+	3x^2, \ x \in (0;1)\\
+	0, \ \text{иначе}\\
+\end{cases}$\\
+$f_Y(y) = 
+\begin{cases}
+	3y^2, \ y \in (0;1)\\
+	0, \ \text{иначе}\\
+\end{cases}$\\
+Так как $f(x,y) \equiv f_X(x) \cdot f_Y(y) \Rightarrow X,Y$ - независимы.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
