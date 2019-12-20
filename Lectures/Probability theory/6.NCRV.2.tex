@@ -1,0 +1,85 @@
+% 2. Дисперсия.
+
+
+\underline{Определение:} Дисперсией случайной величины X называется число $D[X] = M\left[ (X-m)^2 \right]$, где $m = MX$.\\
+
+\underline{Замечание:}
+\begin{enumerate}
+	\item[1)] Если X - дискретный случайный вектор, то\\
+	$DX = \sum\limits_i (x_i - m)^2 p_i$
+	
+	\item[2)] Если X - непрерывный случайный вектор, то\\
+	$\displaystyle  DX = \int\limits_{-\infty}^{+\infty} (x - m)^2 f(x) dx$.
+	
+	\item[3)] Механический смысл дисперсии.\\
+	Дисперсия является моментом инерции вероятностной массы, относительно математического ожидания, то есть она характеризует разброс масс относительно математического ожидания: чем больше дисперсия, тем больше разброс.\\
+	% Вставить график
+	% Вставить график
+\end{enumerate}
+
+
+\underline{Пример:} \\
+% Вставить таблицу
+$DX = \left( \sum\limits_i p_i (x_i - m)^2; m = p\right) = (1 - p)(0 - p)^2 + p \cdot (1 - p)^2 = p^2 (1 - p) + p(1 - p^2) =  p(1 - p)[p + 1 - p] = pq$ \\
+где $q = 1 - p$.\\
+
+
+\underline{Свойства дисперсии}
+\begin{enumerate}
+	\item[$1^o$] $DX \geqslant 0$
+	
+	\item[$2^o$] Если $P\{X = x_0\} = 1$, то $DX = 0$
+	
+	\item[$3^o$] Если $a,b = const$, то $D[aX + b] = a^2 DX$
+	
+	\item[$4^o$] $DX = M[X^2] - (MX)^2$
+	
+	\item[$5^o$] Если $X_1, X_2$ - независимы, то $D[X_1 + X_2] = DX_1 + DX_2$
+\end{enumerate}
+
+
+\underline{Доказательство:}
+\begin{enumerate}
+	\item[$1^o$] $DX = M[Y]$, где $Y = (X - m)^2 \geqslant 0 \Rightarrow MY \geqslant 0$
+	
+	\item[$2^o$] $DX = \left( = \sum (x_i - m)^2 \cdot p_i^2, \ m = x_0 \right) = (x_0 - x_0)^2 \cdot 1 = 0$
+	
+	\item[$3^o$] $D[aX + b] = \left(Y = aX + b \right) = DY = M\left[ (Y - MY)^2 \right] = M\left[ (aX + b - (am + b))^2 \right] = M\left[ a^2(X - m)^2 \right] = a^2 \underbrace{M\left[ (X - m)^2\right]}_{DX} = a^2 DX$ %Вставить пояснения в формулу
+	
+	\item[$4^o$] $D[X] = M\left[ (X - m)^2 \right] = M\left[ X^2 - 2mX + m^2 \right] = M[X^2] - \underbrace{2m \underbrace{MX}_{= m}}_{= 2m^2} + m^2 = M[X^2] - m^2 = M[x^2] - (MX)^2$ %Вставить пояснения в формулу
+	
+	\item[$5^o$] $D[X_1 + X_2] = M\left[(Y - MY^2)^2\right] = M \left[ \left[ (X_1 + X_2) - (MX_1 + MX_2) \right]^2 \right] = M\left[ \left[ (X_1 - m_1) + (X_2 - m_2)\right]^2\right] = M\left[ (X_1 - m_1)^2 + (X_2 - m_2)^2 + 2(X_1 - m_1)(X_2 - m_2)\right] = 
+	\underbrace{M\left[(X_1 - m_1)^2\right]}_{DX_1} + \underbrace{M\left[(X_2 - m_2)^2\right]}_{DX_2} - \underbrace{2M\left[(X_1 - m_1)(X_2 - m_2)\right]}_{Z} = DX_1 + DX_2$ \\
+	$Z = M\left[(X_1 X_2 - m_1 X_2 - m_2 X_1 + m_1 m_2)\right] = \underbrace{M[X_1 X_2]}_{(MX_1)(MX_2) = m_1 m_2} - m_1 \underbrace{M[X_2]}_{m_2} - m_2 \underbrace{M[X_1]}_{m_1} + m_1 m_2 = m_1 m_2 - m_1 m_2 - m_1 m_2 + m_1 m_2 = 0$
+	% Вставить пояснения в формулу
+\end{enumerate}
+
+
+\underline{Замечание:}
+\begin{enumerate}
+	\item[1)] Можно показать, что справедливо свойство, обратное свойству $2^o$: Если $DX = 0$, то X принимает единственное значение с вероятностью 1.
+	
+	\item[2)] Свойство $5^o$ справедливо для любого набора \underline{попарно независимых} случайных величин $X_1, \ldots, X_n$: \\
+	$D(X_1 + \ldots + X_n) = DX_1 + \ldots + DX_n$
+	
+	\item[3)] DX имеет размерность квадрата случайной величины X. Это не очень удобно, поэтому вместе с дисперсией рассматривают величину $\sigma_X = \sqrt{DX}$, которое называется среднеквадратичным отклонением случайной величины X. \\
+	$\sigma_X$ имеет ту же размерность, что и X.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
