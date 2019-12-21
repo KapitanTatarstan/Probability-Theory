@@ -1,0 +1,192 @@
+% 6. Ковариация.
+
+
+До сих пор мы изучали численные характеристики одномерных случайных величин. Ковариация является характеристикой случайного вектора.\\
+Пусть $(X,Y)$ - двумерный случайный вектор.\\
+
+
+\underline{Определение:} Ковариацией случайной величины X и Y называется число\\
+$cov(X, Y) = M\left[(X - m_1)(Y - m_2)\right]$\\
+где $m_1 = MX$, $m_2 = MY$.\\
+
+
+\underline{Замечание:}\\
+\begin{enumerate}
+	\item[1)] если $(X, Y)$ -  дискретный случайный вектор, то\\
+	$cov(X, Y) = \sum\limits_i \sum\limits_j p_{ij} (x_i - m_1)(y_j - m_2)$,\\
+	где $p_{ij} = P\{(X, Y) = (x_i, y_j)\}$\\
+	
+	\item[2)] если $(X, Y)$ - непрерывный случайный вектор, то\\
+	$\displaystyle  cov(X, Y) = \iint\limits_{\mathbb{R^2}} (x - m_1)(y - m_2) f(x,y) dx dy$,\\
+	где $f(x,y)$ - совместная плотность распределения X и Y.\\
+\end{enumerate}
+
+
+\underline{Свойства ковариации}\\
+\begin{enumerate}
+	\item[$1^o$] $D(X + Y) = DX + DY + 2cov(X, Y)$
+	\item[$2^o$] $cov(X, X) = DX$
+	\item[$3^o$] Если X, Y - независимы, то $cov(X, Y) = 0$
+	\item[$4^o$] $cov(a_1 X + a_2, b_1 Y + b_2) = a_1 b_1 \cdot cov(X, Y)$
+	\item[$5^o$] $|cov(X, Y)| \leqslant \sqrt{DX \cdot DY}$\\
+	 причем\\
+	 $|cov(X, Y)| = \sqrt{DX \cdot DY} \Leftrightarrow$ X и Y связаны мн. зависимостью, то есть  $Y = aX + b$, где $a, b = const$ 
+	 \item[$6^o$] $cov(X, Y) = M[XY] - (MX)(MY)$
+\end{enumerate}
+
+
+\underline{Доказательство} 
+\begin{enumerate}
+	\item[$1^o$] $D(X + Y) = M\left[ \left\{ (X + Y) - (M(X + Y))\right\}^2 \right] = \left\{
+	\begin{matrix}
+		m_1 = MX \\
+		m_2 = MY \\
+	\end{matrix} \right\} = 
+	M\left[ \left\{ (X - m_1) + (Y - m_2) \right\}^2 \right] = 
+	M \left[ (X - m_1)^2 + (Y - m_2)^2 + 2M\left[ (X - m_1)(Y - m_2)\right] \right] = 
+	\underbrace{M\left[(X - m_1)^2\right]}_{DX} + \underbrace{M\left[(Y - m_2)^2\right]}_{DY} + 2 \underbrace{M\left[(X - m_1)(Y - m_2)\right]}_{cov(X, Y)} = DX + DY + 2 cov(X, Y)$\\
+	
+	\item[$2^o$] $cov(X, X) = M\left[(X - m)(X - m)\right] = M\left[(X - m)^2\right] = DX$\\
+	
+	\item[$3^o$] $cov(X, Y) - M\left[(X - m_1)(Y - m_2)\right] = \underbrace{M\left[(X - m\right]}_{m = 0} \cdot M[Y - m_2] = 0$\\
+	%  Вставить пояснения в формулу
+	
+	\item[$4^o$] $cov(a_1 X + a_2, \ b_1 Y + b_2) = \left\{
+	\begin{array}{lll}
+		\text{Обозначения:}\\
+		\mu_1 = M[a_1 X + a_2] \\
+		\mu_2 = M[b_1 Y + b_2] \\
+	\end{array} \right\} = 
+	M\left[(a_1 X + a_2 - \mu_1)(b_1 Y + b_2 - \mu_2)\right] = \left\{
+	\begin{array}{lll}
+		\mu_1 = a_1 m_1 + a_2 \\
+		\mu_2 = b_1 m_2 + b_2 \\
+	\end{array} \right\} = 
+	M\left[(a_1 X - a_2 m_1)(b_1 Y - b_1 m_2)\right] = 
+	\left\{\mu - \text{ линейно}\right\} = a_1 b_1 M\left[(X - m_1)(Y - m_2)\right] = a_1 b_1 \cdot cov(X, Y)$.\\
+	
+	\item[$6^o$] $cov(X,Y) = M\left[(X - m_1)(Y - m_2)\right] = M\left[XY - m_2 X - m_1 Y + m_1 m_2\right] = M[XY] - \underbrace{m_2 MX}_{m_1 m_2} - \underbrace{m_1 MY}_{m_1 m_2} + m_1 m_2 = M[XY] - m_1 m_2$\\
+	
+	\item[$5^o$] 
+	\begin{enumerate}
+		\item[а)] Покажем, что $|cov(X, Y)| \leqslant \sqrt{DX \cdot DY}$\\
+		Рассмотрим случайную величину $Z(t) = tX - Y, \ t \in \mathbb{R}$\\
+		Тогда\\
+		$D[Z(t)] = D[tX - Y] = \left\{\text{свойство } 1^o \right\} = D(tX) - D(-Y) + 2 cov(tX, -Y) = \left\{D(aX) = a^2 DX - \text{свойство } 4^o cov \right\} = t^2 DX + DY - 2t cov(X, Y) = (DX)t^2 - 2(cov(X, Y))t + DY \geqslant 0$\\
+		% Вставить пояснения в формулу
+		% Вставить график
+		Дисперсия = $\left\{ \left(\cfrac{t^2}{2}\right) - ac\right\} = |cvo(X, Y)|^2 - DX \cdot DY \leqslant 0 \Rightarrow |cov(X, Y) \leqslant \sqrt{DX \cdot DY}$\\
+		
+		\item[б)] Покажем, что\\
+		$|cov(X, Y) = \sqrt{DX \cdot DY} \Leftrightarrow Y = aX + b$\\
+		\fbox{$\Rightarrow$} Необходимость\\
+		Если $|cov(X, Y)| = \sqrt{DX \cdot DY} \Rightarrow$ дисперсия = 0 $\Rightarrow$ уравнение $D[Z(t)] = 0$ имеет единственный корень.\\
+		Обозначим его $t = a$\\
+		Тогда случайная величина $Z(a) = aX - Y$  имеет $D[Z(a)] = 0 \Rightarrow$ Она принимает одно единственное значение (обозначим его - b)\\
+		с вероятностью 1, то есть $Z(a) = \underbrace{aX - Y = -b}_{Y = aX + b}$\\
+		
+		\fbox{$\Leftarrow$} Достаточность\\
+		Если $Y = aX + b$, то случайная величина $Z(a) = -b \Rightarrow D(Z(a)) = 0 \Rightarrow$ Дисперсия = 0 $\Rightarrow |cov(X, Y)| = \sqrt{DX \cdot DY}$\\
+	\end{enumerate}
+\end{enumerate}
+
+
+\underline{Замечание:}\\
+\begin{enumerate}
+	\item[1)] Свойства $1^o$ с учетом $4^o$ допускает обобщение\\
+	$D[aX + bY + c] = a^2 DX + b^2 DY + 2ab cov(X, Y)$\\
+	
+	\item[2)] Рассмотрим свойство $5^o$.\\
+	Пусть $Y = aX + b \Rightarrow$ $\left\{\text{в соответствии с } 4^o\right\}$ $\Rightarrow cov(X, Y) = cov(X, aX + b) = a \cdot cov(X, X) = a DX$\\
+	Если $DX \geqslant 0$, то знак $(cov(X, Y))$ =  значу $(a)$.\\
+	Таким образом свойство $5^o$ можно уточнить:\\
+	Если $Y = aX + b$, то\\
+	$cov(X, Y) = 
+	\begin{cases}
+		\sqrt{DX \cdot DY}, \ \text{если } a > 0\\
+		-\sqrt{DX \cdot DY}, \ \text{если } a < 0\\
+	\end{cases}$
+\end{enumerate}
+
+
+\underline{Определение:} Случайная величина X и Y называется некоррелированными, если\\
+$cov(X, Y) = 0$\\
+
+
+\underline{Замечание:} из свойства $3^o$ $\Rightarrow$\\
+X, Y - независимы $\Rightarrow$ X, Y - некоррелированные.\\
+Обратное неверно.\\
+
+ДЗ: привести пример случайного вектора (X, Y), для которого X, Y - зависимы, но некоррелируемы.\\
+
+
+\underline{Замечание:} недостатком ковариации является то, что она имеет размерность произведения случайных величин X и Y. В то же самое время удобно иметь некоторую безразмерную характеристику.\\
+
+
+\underline{Определение:} Коэффициентом корреляции случайных величин X и Y называют число\\
+$\rho(X, Y) = \cfrac{cov(X, Y)}{\sqrt{DX \cdot DY}}$\\
+(здесь предполагается, что $DX \cdot DY > 0$\\
+
+
+\underline{Свойства коэффициента корреляции}\\
+\begin{enumerate}
+	\item[$1^o$] $\rho(X, X) = 1$
+	\item[$2^o$] Если X, Y - независимы, то $\rho(X, Y) = 0$
+	\item[$3^o$] $\rho(a_1 X + a_2, \ b_1 Y b_2) = \pm \rho(X, Y)$\\
+	где "+"\ , если $a_1 a_2 > 0$\\
+	" - "\  , если $a_1 a_2 < 0$
+	
+	\item[$4^o$] $|\rho(X, Y)| \leqslant 1$, причем\\
+	$|\rho(X, Y) = 1| \Leftrightarrow$ X и Y связаны линейной зависимостью $Y = aX + b$.\\
+	При этом \\
+	$\rho(X, Y) = 
+	\begin{cases}
+		1, \ \text{если } a > 0 \\
+		-1, \ \text{если } a < 0 \\
+	\end{cases}$\\
+\end{enumerate}
+
+
+\underline{Доказательство}\\
+Эти свойства являются прямым следствием свойств ковариации.\\
+(Доказать самостоятельно).\\
+
+
+\underline{Замечание:} Коэффициент корреляции показывает "степень"\ линейной зависимости случайный величин X и Y.\\
+Пусть проведено достаточно много экспериментов, и все реализации вектора (X, Y) изображена на плоскости.\\
+% Вставить график
+Чем ближе эти реализации группируются около некоторой прямой, тем ближе значение $(\rho)$ к 1.\\
+Если все эти значения лежат на одной прямой, то $|\rho| = 1$.\\
+При этом если соответствующая прямая имеет положительный коэффициент, то $\rho > 0$ и $\rho \leqslant 1$. \\
+Если оно...
+%  Добавить концовку
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

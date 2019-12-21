@@ -1,0 +1,48 @@
+% 5. Квантиль
+
+
+Пусть X - случайная величина\\
+$\alpha \in (0;1)$\\
+
+\underline{Определение:} Квантилью уровня $\alpha$ случайной величины X называется число $q_\alpha$, определяемое условиями:\\
+$P\{X < q_\alpha\} \leqslant \alpha$, $P\{X > q_\alpha\} \leqslant 1 - \alpha$\\
+
+
+\underline{Замечание:}\\
+\begin{enumerate}
+	\item[1)] если X - непрерывная случайная величины, то $\forall \alpha \in (0;1)$ квантиль уровня $\alpha$ определена однозначно и является решением уравнения\\
+	$F_X(t) = \alpha$
+	%Вставить график
+	$\displaystyle  F_X(t) = \alpha \Leftrightarrow \int\limits_{-\infty}^t f_X(x) dx = \alpha$\\
+\end{enumerate}
+
+
+\underline{Определение:} Медианой случайной величины X называется квантиль уровня $\cfrac12$, то есть $q_{\frac12}$.\\
+
+
+\underline{Пример:} Пусть $X \sim Exp(\lambda)$. Найти $q_\alpha$ и медиану.\\
+% Вставить график
+$\displaystyle  \int\limits_{-\infty}^{q_\alpha} f(x) dx = \alpha \Leftrightarrow \lambda \int\limits_0^{q_\alpha} e^{-\lambda x} dx = \alpha$\\
+То есть\\
+$\displaystyle  \alpha = \lambda \int\limits_0^{q_\alpha} e^{-\lambda x} dx = - e^{-\lambda x} bigg|_0^{q_\alpha} = 
+\left(1 - e^{-\lambda q_\alpha}\right) \Rightarrow e^{-\lambda q_\alpha} = 1 - \alpha \Rightarrow -\lambda q_\alpha = \ln{1 - \alpha} \Rightarrow$ \fbox{$q_\alpha = \cfrac{-\ln{(1 - \alpha)}}{\lambda}$} - квантиль уровня $\alpha$.\\
+Медиана:\\
+$q_{\frac12} = \cfrac{-\ln{(1 - \frac12)}}{\lambda} = \cfrac{\ln{2}}{\lambda}$\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
