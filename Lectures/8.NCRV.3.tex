@@ -28,7 +28,16 @@ $P\{X = k\} = C^k_n p^k q^{n-k}, \ k = \overline{0,n}$ \\
 \textbf{II.} Пуассоновская случайная величина $X \sim \Pi(\lambda)$.\\
 $P\{X = k\} = \cfrac{\lambda^k}{k!} e^{-\lambda}, \ k = 0, 1, 2, \ldots$\\
 \begin{enumerate}
-	\item[а)] $MX = \left(\sum p_i x_i\right) = \sum\limits_{k = 0}^\infty \cfrac{\lambda^k}{k!} e^{-\lambda} \cdot k = e^{-\lambda} \sum\limits_{k = 1} \cfrac{\lambda^k}{k!} \cdot k = e^{-\lambda} \sum\limits_{k = 1}^\infty \cfrac{\lambda^k}{(k - 1)!} = e^{-\lambda} \cdot \lambda \cdot \sum\limits_{k = 1}^\infty \cfrac{\lambda^{k - 1}}{(k - 1)!} = \left[j = k - 1; \ k = 1 \Rightarrow j = 0\right]= e^{-\lambda} \cdot \lambda \cdot \underbrace{\sum\limits_{j = 0}^\infty \cfrac{\lambda^j}{j!}}_{= e^\lambda} = e^{-\lambda} \cdot e^\lambda \cdot \lambda = \lambda$\\
+	\item[а)] 
+	\begin{math} 
+	MX = \left(\sum p_i x_i\right) = 
+	\sum\limits_{k = 0}^\infty \cfrac{\lambda^k}{k!} e^{-\lambda} \cdot k = 
+	e^{-\lambda} \sum\limits_{k = 1} \cfrac{\lambda^k}{k!} \cdot k = 
+	e^{-\lambda} \sum\limits_{k = 1}^\infty \cfrac{\lambda^k}{(k - 1)!} = 
+	e^{-\lambda} \cdot \lambda \cdot \sum\limits_{k = 1}^\infty \cfrac{\lambda^{k - 1}}{(k - 1)!} = 
+	\left[j = k - 1; \ k = 1 \Rightarrow j = 0\right]= 
+	e^{-\lambda} \cdot \lambda \cdot \underbrace{\sum\limits_{j = 0}^\infty \cfrac{\lambda^j}{j!}}_{= e^\lambda} = e^{-\lambda} \cdot e^\lambda \cdot \lambda = \lambda
+	\end{math}
 	Аналогично можно показать, что $DX = \lambda$.
 \end{enumerate}
 
@@ -71,13 +80,17 @@ $\displaystyle  M[X^2] = \int\limits_{-\infty}^{+\infty} x^2 f(x) dx = \lambda \
 \textbf{VI.} Нормальное распределение: $X \sim N(m, \sigma^2)$\\
 $f(x) = \cfrac{1}{\sqrt{2\pi} \sigma} \cdot e^{-\cfrac{(x-m)^2}{2 \sigma^2}}, \ x \in \mathbb{R}$\\
 %  Вставить рисунок
-$\displaystyle  MX = \int\limits_{-\infty}^{+\infty} xf(x)dx = \cfrac{1}{\sqrt{2\pi} \sigma} \int\limits_{-\infty}^{+\infty} x \cdot e^{-\cfrac{(x-m)^2}{2 \sigma^2}} \ dx = \left\{
-\begin{array}{lll}
+$\displaystyle  MX = \-
+\int\limits_{-\infty}^{+\infty} xf(x)dx = \-
+\cfrac{1}{\sqrt{2\pi} \sigma} \int\limits_{-\infty}^{+\infty} x \cdot e^{-\cfrac{(x-m)^2}{2 \sigma^2}} \ dx = \-
+\left\{ \begin{array}{lll}
 	\frac{x - m}{\sigma} = t\\
 	dx = \sigma dt\\
 	x = \sigma t + m\\
-\end{array} \right\} = 
-\cfrac{1}{\sqrt{2 \pi} \sigma} \cdot \sigma \int\limits_{-\infty}^{+\infty} (\sigma t + n) e^{-\frac{t^2}{2}} \ dt = \cfrac{1}{\sqrt{2\pi}} \left[ \sigma \int\limits_{-\infty}^{+\infty} t e^{-\frac{t^2}{2}} dt + m \int\limits_{-\infty}^{+\infty} e^{-\frac{t^2}{2}} dt \right] = m \cdot \cfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} e^{- \frac{t^2}{2}} dt = m$\\
+\end{array} \right\} = \-
+\cfrac{1}{\sqrt{2 \pi} \sigma} \cdot \sigma \int\limits_{-\infty}^{+\infty} (\sigma t + n) e^{-\frac{t^2}{2}} \ dt = \-
+\cfrac{1}{\sqrt{2\pi}} \left[ \sigma \int\limits_{-\infty}^{+\infty} t e^{-\frac{t^2}{2}} dt + m \int\limits_{-\infty}^{+\infty} e^{-\frac{t^2}{2}} dt \right] = \-
+m \cdot \cfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} e^{- \frac{t^2}{2}} dt = m$\\
 % Вставить пояснения в формулу
 $\cfrac{1}{\sqrt{2\pi}} \cdot e^{- \frac{t^2}{2}} = f_{0,1} (t)$ - функция плотности распределения $N(0;1)$\\
 $\displaystyle  DX = M\left[(X - MX)^2\right] = \int\limits_{-\infty}^{+\infty} (x - m)^2 f(x) dx = \cfrac{1}{\sqrt{2\pi} \sigma} \int\limits_{-\infty}^{+\infty} (x - m)^2 \cdot e^{- \frac{(x - m)^2}{2 \sigma^2}} \ dx = \left\{ \cfrac{(x - m)}{\sigma} = t \right\} = \cfrac{1}{\sqrt{2\pi} \sigma} \cdot \sigma \cdot \sigma^2 \cdot \int\limits_{-\infty}^{+\infty} t^2 \cdot e^{- \frac{t^2}{2}} dt = 
