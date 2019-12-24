@@ -1,0 +1,83 @@
+Рассмотрим:
+\begin{enumerate}
+	\item[1)] $X_1 \sim N(m_1, \sigma_1^2)$
+	\item[2)] $X_2 \sim N(m_2, \sigma_2^2)$
+	\item[3)] $X_1, X_2$ - независимы
+\end{enumerate}
+Тогда\\
+$f_{X_i}(x_i) = \cfrac{1}{\sqrt{2\pi} \sigma_i} e^{- \frac{(x - m_i)^2}{2 \sigma_i^2}}$, \ $x \in \mathbb{R}$, $i = \overline{1, 2}$\\
+При этом функция плотности случайного вектора $(X_1, X_2)$:\\
+$f(x_1, x_2)$ = ($X_1, X_2$) - независимы) = $f_{X_1} (x_1) \cdot f_{X_2} (x_2) = \cfrac{1}{(\sqrt{2\pi})^2 \cdot \sigma_1 \cdot \sigma_2} \cdot e^{- \frac12 \left[ \frac{(x - m_1)^2}{\sigma_1^2} + \frac{(x - m_2)^2}{\sigma_2^2}\right]}$\\
+Для вектора $(X_1, X_2)$:\\
+$\vec{m} = (m_1, m_2)$ является вектором математического ожидания.
+\\
+$\sum = 
+\begin{bmatrix}
+	\sigma_1^2 & 0 \\
+	0 & \sigma_2^2 \\
+\end{bmatrix}$ - ковариационная матрица.
+\\
+С учетом этих обозначений:\\
+$f(x_1, x_2) = \cfrac{1}{(\sqrt{2\pi})^2 \sqrt{\det{\sum}}} e^{-\frac12 (\vec{x} - \vec{m}) \overset{\sim}{\sum} (\vec{x} - \vec{m})^T}$,\\
+где $\vec{x} = (x_1, x_2)$\\
+$\overset{\sim}{\sum} = \sum^{-1} = 
+\begin{bmatrix}
+	\frac{1}{\sigma_1^2}	& 0 \\
+	0	& \frac{1}{\sigma_2^2} \\
+\end{bmatrix}$
+\\
+Пусть теперь $\sum$ - произвольная матрица 2-го порядка.\\
+Для того, чтобы $\sum$ была ковариационной матрицей, необходимо:\\
+\begin{enumerate}
+	\item[1)] $\sum$ была положительно (неотрицательно) определена
+	
+	\item[2)] $\sum^+ = \sum$\\
+	Если\\
+	$\sum = 
+	\begin{bmatrix}
+		\sigma_{11}	&	\sigma_{12} \\
+		\sigma_{21}	&	\sigma_{22} \\
+	\end{bmatrix}$\\
+\end{enumerate}
+то эти условия примут вид:\\
+\begin{enumerate}
+	\item[1)] $\sigma_n \geqslant 0$, $\sigma_{11} \cdot \sigma_{22} - \sigma_{21} \cdot \sigma_{12} \geqslant 0$
+	
+	\item[2)] $\sigma_{12} = \sigma_{21}$
+\end{enumerate}
+Наложим на $\sum$ несколько дополнительных ограничений:\\
+\begin{enumerate}
+	\item[1)] Чтобы $\exists \sum^{-1}$, необходимо и достаточно чтобы $\det{\sum} \neq 0$; с учетом сделанного выше допущения:\\
+	$\det{\sum} > 0$,\\
+	то есть $\sigma_{11} \cdot \sigma_{22} - \sigma_{12}^2 > 0$\\ %проверить формулу на корректность
+	
+	\item[2)] Если $\sigma_{22} = 0$, то $D[X_2] = 0 \Rightarrow X_2$ принимает единственное значение с вероятностью 1 (то есть $X_2$ не является случайной величиной) $\Rightarrow$ распределение $X_2$ -вырожденное
+\end{enumerate}
+
+
+На этой ... будем считать, что $\sigma_{22} > 0$\\
+Таким образом с учетом сделанных выше допущений:\\
+матрица $\sum$ является положительно определенной.
+\\
+\underline{Определение:} Говорят, что случайный вектор $(X_1, X_2)$ имеет невырожденное двумерное нормальное распределение, если его функция плотности имеет вид:\\
+$f(x_1, x_2) = \cfrac{1}{(\sqrt{2\pi})^2 \sqrt{\det{\sum}}} \cdot e^{-\frac12 (\vec{x} - \vec{m}) \overset{\sim}{\sum} (\vec{x} - \vec{m})^T}$\\
+где\\
+$\sum = 
+\begin{bmatrix}
+	\sigma_{11}	&	\sigma_{12}	\\
+	\sigma_{12}	&	\sigma_{22}	\\
+\end{bmatrix}$ - положительно определена ...\\
+$\vec{m} = (m_1, m_2) \in \mathbb{R}^2$\\
+$\vec{x} = (x_1, x_2) \in \mathbb{R}^2$\\
+
+
+\underline{Замечание:}
+\begin{enumerate}
+	\item[1)] Можно показать, что в этом случае\\
+	$m_i = M[X_i], \ i = \overline{1, 2}$\\
+	$\sigma_{ii} = D[X_i], \ \i = \overline{1, 2}$\\
+	$\sigma_{12} = cov(X_1, X_2)$.
+	
+	\item[2)] Таким образом двумерное нормальное распределение полностью задается 5-ю параметрами:\\
+	$m_1, \ m_2, \ \sigma_{11}, \ \sigma_{22}, \ \sigma_{12}$
+\end{enumerate}

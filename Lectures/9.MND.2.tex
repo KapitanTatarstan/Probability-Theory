@@ -1,0 +1,151 @@
+
+
+\underline{Определение:} Говорят, случайный вектор $\vec{X}(X_1, \ldots, X_n)$ имеет n-мерное нормальное распределение, если его функция плотности имеет вид\\
+$f(\vec{x}) = \cfrac{1}{(\sqrt{2\pi})^n \sqrt{\det{\sum}}} \cdot e^{-frac12 (\vec{x} - \vec{m}) \overset{\sim}{\sum} (\vec{x} - \vec{m})^T}$, $\vec{x} \in \mathbb{R}^n$,\\
+где $\vec{x} = (x_1, \ldots, x_n)$\\
+$\vec{m} = (m_1, \ldots, m_n) \in \mathbb{R}^n$\\
+$\sum = (\sigma_{ij})$, $\i,j = \overline{1, n}$\\
+% Вставить пояснения
+$\overset{\sim}{\sum} = \sum^{-1}$\\
+
+
+\underline{Замечание:}\\
+Обозначение: $\vec{X} \sim N(\vec{m}, \sum)$\\
+
+
+Свойства n-мерного нормального распределения.\\
+\begin{enumerate}
+	\item[$1^o$] Если $\vec{X} \sim N(\vec{m}, \sum)$,\\
+	то $\vec{m}$ - вектор математических ожиданий вектора $\vec{X}$\\
+	$\sum$ - ковариационная матрица.
+	
+	\item[$2^o$] Если $\vec{X} \sim N(\vec{m}, \sum)$, то\\
+	$X_i \sim N(m_i, \sigma_i^2)$, $i = \overline{1, n}$\\
+	где $\sigma_i^2 = \sigma_ii$ %Проверить корректность формулы
+	
+	\item[$3^o$] Если\\
+	\begin{enumerate}
+		\item[1)] $\vec{X} \sim N(\vec{m}, \sum)$
+		\item[2)] $\sum$ - ... матрица\\ % Вставить пробел в текст
+		то случайные величины $X_1, \ldots, X_n$ независимы (в совокупности)
+	\end{enumerate}
+	
+	\underline{Замечание:} Таким образом для нормальных случайных величин из некоррелированности $\Rightarrow$ независимость (для случайных величины "вообще"\ это свойство неверно).
+	
+	\item[$4^o$] Пусть\\
+	\begin{enumerate}
+		\item[1)] $\vec{X} \sim N(\vec{m}, \sum)$
+		\item[2)] $\vec{X} = (X_1, \ldots, X_n)$\\
+		$\vec{m} = (m_1, \ldots, m_n)$
+		\item[3)] $\sum = 
+		\begin{bmatrix}
+			\sigma_{11}	&	\dots		&	\sigma_{1m}	\\
+			\vdots			&	\ddots	&	\vdots			\\
+			\sigma_{n1}	&	\dots		&	\sigma_{nm}	\\
+		\end{bmatrix}$\\
+	\end{enumerate}
+	Тогда
+	$\vec{X} = (X_1, \ldots, X_{n - 1})$\\
+	будет иметь распределение $N(\vec{m}', \sum')$\\
+	где $\vec{m}' = (m_1, \ldots, m_{n - 1})$\\
+	$\sum'$ получается из $\sum$ ... % Вставить пробел
+	
+	\item[$5^o$] Пусть\\
+	\begin{enumerate}
+		\item[1)] $\vec{X} \sim (\vec{m}, \sum)$
+		\item[2)] $Y = \lambda_1 X_1 + \ldots + \lambda_n X_n + \lambda_0$,\\
+		где $\lambda_i \in \mathbb{R}$, $i = \overline{0, n}$
+	\end{enumerate}
+	Тогда Y имеет нормальное распределение (таким образом комбинация  нормальной случайной величины также является нормальной случайной величиной)
+	
+	\item[$6^o$] Пусть\\
+	\begin{enumerate}
+		\item[1)] $(X, Y) \sim N(\vec{m}, \sum)$ - двумерный нормальный вектор
+		\item[2)] $\vec{m} = (m_1, m_2)$
+		\item[3)] $\sum = 
+		\begin{bmatrix}
+			\sigma_1^2	&	\rho \cdot \sigma_1 \cdot \sigma_2		\\
+			\rho \cdot \sigma_1 \cdot \sigma_2		&	\sigma_2^2	\\
+		\end{bmatrix}$\\
+		$\left( \sum = 
+		\begin{bmatrix}
+			\sigma_{11}	&	\sigma_{12}	\\
+			\sigma_{21}	&	\sigma_{22}	\\
+		\end{bmatrix}	\right)$\\
+		Здесь\\
+		$\sigma_{11} = D[X_1] = (\text{Обозначение}) = \sigma_1^2$\\
+		$\sigma_{22} = D[X_2] = (\text{Обозначение}) = \sigma_2^2$\\
+		$\sigma_{12} = cov(X_1, X_2) = \rho \cdot \sqrt{D[X_1] \cdot D[X_2]} = \rho \cdot \sigma_1 \cdot \sigma_2$, где $\rho$ - коэффициент корреляции случайных величин $X_1, X_2$.
+	\end{enumerate}
+	Тогда условное распределение компоненты X при условии Y = y также будет ...\\
+	причем $M[X|Y = y] = m_1 - \rho \cfrac{\sigma_1}{\sigma_2} (y - m_2)$\\
+	$D[X|Y = y] = \sigma_1^2 (1 - \rho^2)$
+\end{enumerate}
+
+
+\underline{Доказательство}\\
+Без доказательства.\\
+
+
+\underline{Пример:} 
+$(X, Y) \sim N (\vec{m}, \sum)$,\\ 
+где $\vec{m} = (-1, 2)$\\
+$\sum = 
+\begin{bmatrix}
+	4	&	2	\\
+	2	&	9	\\
+\end{bmatrix}$\\
+Найти\\
+\begin{enumerate}
+	\item[1)]	$P\{-1 < X + 2Y < 2\}$
+	\item[2)]	$P\{Y > 3X + 1\}$
+	\item[3)]	$P\{-1 < X < 2|Y = 4\}$
+\end{enumerate}
+\underline{Решение:}\\
+\begin{enumerate}
+	\item[1)] Рассмотрим $Z = X + 2Y$\\
+	Z является линейной комбинацией нормальных случайных величин X, Y $\Rightarrow$ Z имеет нормальное распределение, то есть\\
+	$Z \sim N(m_z, \sigma_z^2)$\\
+	$m_z = M[Z] = M[X + 2Y]$ = (свойство линейности математического ожидания) = $M[X] + M[2Y] = -1 + 4 = 3$\\
+	$\sigma_z^2 = D[Z] = D[X + 2Y]$ = (свойство дисперсии) = $D[X] + 4D[Y] + 2 \cdot 1 \cdot 2 \cdot cov(X, Y) = 4 + 4 \cdot 9 + 4 \cdot 2 = 48$\\
+	$P\{-1 < X + 2Y < 2\} = P\{-1 < Z < 2\}$ = (Формула) = $\Phi_0 \left(\cfrac{2 - m_z}{\sigma_2}\right) - \Phi_0 \left(\cfrac{-1 - m_z}{\sigma_2}\right) = \Phi_0 \left(\cfrac{2 - 3}{\sqrt{48}}\right) - \Phi_0 \left(\cfrac{-1 - 3}{\sqrt{48}}\right) = \Phi_0 \left(-\cfrac{1}{\sqrt{48}}\right) - \Phi_0 \left(-\cfrac{4}{\sqrt{48}}\right)$ = ($\Phi_0$ - нечетная) = $\Phi_0 \left(\cfrac{4}{\sqrt{48}}\right) - \Phi_0 \left(\cfrac{1}{\sqrt{48}}\right) = \Phi_0 \left(\cfrac{1}{\sqrt{3}}\right) - \Phi_0 \left(\cfrac{1}{4\sqrt{3}}\right) \approx \Phi_0 (0.577) - \Phi_0 (0.144) \approx 0.218 - 0.057 \approx 0.161$.
+	
+	\item[2)] Рассмотрим $Z = 3X - Y + 1$\\
+	Z является линейной комбинацией нормальной случайной величины $\Rightarrow Z \sim N(m_z, \sigma_z^2)$\\
+	$m_z = M[Z] = M[3X - Y + 1] = 3M[X] - M[Y] + 1 = -4$\\
+	$\sigma_z^2 = D[Z] = D[3X - Y + 1] = 9D[X] + D[Y] + 2 \cdot 3 \cdot (-1) \cdot cov(X,Y) = 33$\\
+	$P\{Y > 3X + 1\} = P\{\underbrace{3X + 1 - Y}_{Z} < 0\} = P\{Z < 0\} = -\Phi_0 \left(\cfrac{-\infty - m_z}{\sigma_z}\right) + \Phi_0 \left(\cfrac{0 - m_z}{\sigma_2}\right) = -\Phi_0 (-\infty) + \Phi_0 \left(\cfrac{4}{\sqrt{33}}\right) \approx \cfrac12 + 0.257 \approx 0.757$\\
+	
+	\item[3)] Пусть y = 4\\
+	Условное распределение случайной величины X при условии Y = y также будет нормальным с параметрами m и $\sigma^2$, где\\
+	$\rho = \cfrac{cov(X, Y)}{\sqrt{D[X] \cdot D[Y]}} = \cfrac{2}{\sqrt{4 \cdot 9}} = \cfrac13$\\
+	$\sigma_1 = \sqrt{D[X]} = 2$\\
+	$\sigma_2 = \sqrt{D[Y]} = 3$\\
+	$m = M[X|Y = 4] = m_1 + \rho \cfrac{\sigma_1}{\sigma_2} (4 - m_2) = -2 + \cfrac13 \cdot \cfrac23 (4 - 2) = - \cfrac59$\\
+	$\sigma^2 = \sigma_1^2 (1 - \rho^2) = 4(1 - \cfrac19) = \cfrac{32}9$\\
+	$\sigma = \sqrt{\cfrac{32}9} = \cfrac43 \sqrt{2}$\\
+	Тогда\\
+	$P\{-1 < X < 2|Y = 4\} = \Phi_0 \left(\cfrac{2 - m}{\sigma}\right) - \Phi_0 \left(\cfrac{-1 - m}{\sigma}\right) = \Phi_0 \left(\cfrac{2 + \frac59}{\frac43 \sqrt{2}}\right) - \Phi_0 \left(\cfrac{-1 + \frac59}{\frac43 \sqrt{2}}\right) \approx 0.505$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

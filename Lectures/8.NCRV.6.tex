@@ -162,6 +162,40 @@ $\rho(X, Y) = \cfrac{cov(X, Y)}{\sqrt{DX \cdot DY}}$\\
 %  Добавить концовку
 
 
+Пусть $\vec{X} = (X_1, \ldots, X_n)$ - n-мерный случайный вектор.
+\\
+\underline{Определение:} Ковариационной матрицей вектора $\vec{X}$ называется матрица \\
+$sum = (\sigma_{ij})$ \ $i, j = \overline{1,n}$,\\
+где $\sigma_{ij} = cov(X_i, X_j)$
+\\
+\underline{Замечание:}
+\begin{enumerate}
+	\item[1)] $\sigma_{ij} = D[X_i]$, $i = \overline{1,n}$
+	
+	\item[2)] $\sum^T = \sum$, так как \\
+	$cov(X_i, X_j) = cov(X_i, X_j)$
+	
+	\item[3)] Если  $\vec{Y} = \vec{X}B + \vec{C}$\\
+	где $B \in M_{m,m} (\mathbb{R})$\\
+	$\vec{X} = (X_1, \ldots, X_m)$\\
+	$\vec{Y} = (Y_1, \ldots, Y_m)$\\
+	$\vec{C} = (C_1, \ldots, C_m)$\\
+	(B, $\vec{C}$ - числовые матрицы)\\
+	то $\sum \vec{Y} = B^T \sum_{\vec{X}} B$\\
+	
+	\item[4)] Матрица $\sum$ является неотрицательно определенной (то есть соответствующая квадратичная форма является неотрицательно определенной) то есть\\
+	$\forall \vec{x} = (x_1, \ldots, x_n) \in \mathbb{R}$\\
+	$f(\vec{x}) = \vec{x} \sum \vec{x}^T \geqslant 0$\\
+	
+	\item[5)] Если все компоненты случайного вектора $\vec{X}$ попарно независимы, то его ковариационная матрица является диагональной, так как\\
+	$cov(X_i, X_j)$ = (если $i \neq j$, то $X_i, X_j$ - независимы) = 0.
+\end{enumerate}
+
+
+\underline{Определение:} Ковариационной матрицей вектора $\vec{X}$ называется матрица\\
+$P = (\rho_{ij})$, $i, j = \overline{1,n}$\\
+где $\rho_{ij} = \rho(X_i, X_j)$\\
+
 
 
 
